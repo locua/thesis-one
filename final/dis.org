@@ -1,22 +1,56 @@
 #+title: Spatial memory, embodied thinking, computer vision projection application
 #+author: Louis James
-#+setupfile:  structure.tex
-#+options: h:2 num:t toc:t
+#+options: h:2 num:t toc:nil
 
-* Research notes
+#+latex_class: myreport
+
+* Abstract :ignore:
+
+#+LaTeX: \begin{abstract}
+This is the abstract.
+#+LaTeX: \end{abstract}
+
+* Acknowledgements :ignore:
+
+\renewcommand{\abstractname}{Acknowledgements}
+\begin{abstract}
+ Thanks Mum!
+\end{abstract}
+
+* Toc :ignore:
+
+\tableofcontents
+
+* Introduction
+
+* Background
+
+* Specification and context
+
+* Project in depth
+
+* Creative process
+
+* Debugging and problem solving
+
+* Evaluation and Conclusions
+
+* Research notes :noexport:
 ** SAGE GUIDEBOOK for digital technology research
 *** Theories of embodiment in HCI
 *** Haptic interfaces
 *** ethno methodology
 
-* Links
+* Links :noexport:
 - http://web.mit.edu/ebj/www/JPER.pdf - similar project - urban planning workbench
 - Sage digital tech research handbook
   - embodied interaction
   - haptic interfaces
-  - ethno methodology
-* 
-* 
-* 
-* 
-* 
+  - ethnomethodology 
+
+
+
+* REF :ignore:
+
+bibliographystyle:ieeetr
+bibliography:references.bib
