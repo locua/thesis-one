@@ -1,0 +1,73 @@
+#+title: Project Specification - Cognitive aspects of HCI in /"the dynamic medium"/
+#+author: Louis James
+#+options: h:1 num:nil toc:nil \n:t
+#+LATEX_HEADER: \setlength{\parindent}{0pt}
+* Project overview
+
+In this project I will create a browser based system for spatial tabletop computer interaction. It will be web based interactive {computing} environment where one can /write programs/ by arranging coloured objects on the table. When put in particular patterns this will trigger an affect. This could be displaying an image or connecting objects in the space, displaying a text editor or a web page. The fundamental idea here would be an interaction model based of physical placement and movement of objects on a 2d surface space which then reacts live. 
+
+#+CAPTION: sketch 1
+[[file:setup.jpg]]
+
+A set of 4 or 5 different symbols each represented by coloured dots will be created and this will control the environment. These will be printed on paper or be individual pieces which are place around the surface. The relative positioning and interaction of these dots will cause various effects. 
+
+I thought of the possibility of implementing a Turing Machine but the first thing would be creating simple interactive models; this could also be a drawing or modelling tool or game. I would like to create a base setup which would allow for easy expansion and be modular in it's essence, first creating a base Computer vision and display system with an API following this an interaction design style game experiment. This could be something relatively simple but it would be a game that facilitates an exploration of the cognitive aspects of /human computer interaction/.
+
+* Technologies and Materials
+
+The setup will consist of a nodejs server serving client side javascript. This will include an [[https://docs.opencv.org/3.4/d4/da1/tutorial_js_setup.html][emscripten]] or [[https://webassembly.org/][WebAssembly]] compiled version of the opencv library. For the projection mapped surface I will do this with Javascript, HTML and the DOM and potentially with [[https://reactjs.org/][React Js]]. Scripting of the language model and base system API will be done in Javascript as well as the games implemented. I will look into React for the interface but may end up using the standard Javascript, HTML and DOM elements.
+
+The motivation for having a browser based system is accessibility and portability as a compromise over speed. As PaperPrograms demonstrates a responsive enough system is doable through the browser and with this it allows for easy usage by anyone with a projector, webcam and computer. In keeping with [[https://paperprograms.org/][PaperProgram's]] system I will use postgresql for a database system if this ends up being a necessary part of the overall piece. I should also formally mention PaperPrograms, which uses this nodejs, opencv and postgresql stack, as my main technical reference for the project.
+
+Hardware will consist of my laptop running locally the node server and client system as well as a projector; PaperPrograms recommend 1080p and at least 2000 Limns. Colour printing and potentially colour pens or some other source of coloured paper. Colour printing should be good for consistent colour.
+
+* Context and research
+
+My main point of reference is [[https://dynamicland.org][Dynamicland]] cite:VictorKayDynamicLand, an immersive collaborative computer system based in Oakland (US), and more specifically PaperPrograms, a web implementation of one element of Dynamicland's /Realtalk OS/. /PaperPrograms/ is a camera, projector and computer setup where colour pattern coded  pieces of paper are recognised by a camera and corresponding Javascript programs are then run and the results of which are projected onto the same surface. This creates a loop where program-object has physical representation on a surface; it's position and relation to other programs can have effects on the overall system.
+
+Through the project I would like to explore the cognitive aspects of /Human Computer Interaction/ cite:SharpHelen2019IDBH, particularly behavioural influence. This could be done by creating a simple interactive game/s or experience which illustrates some of the psychological and cognitive phenomena of HCI.
+
+* Existing knowledge
+
+My existing knowledge is in Web development (Nodejs, Flask, MySQL, MongoDB) and Computer Vision work in P5.js last year and from my [[https://github.com/locua/CPY1-code-experiment-with-colour--and-sound][First Year Project]] where I used a blob tracking algorithm in Processing. This will be developed with a more advanced colour tracking and blob detection algorithm as well as  pattern detection that will work on top of this.
+
+* New knowledge
+
+More detailed Javascript manipulation of the DOM will be new to me as well as the implementation of complex Computer vision approaches. I have begun to study the setup of PaperPrograms in detail and will continue as necessary and where it relates to my project.
+
+Nodejs is something I've used somewhat but not for any big projects so that will also be a new area for learning but I think I have the main relevant understanding.
+
+I would like to do a little more reading cite:Li-HsingShih2016PDfP,2005CACL  on persuasive technologies and behavioural change and use this as the basis for the high level system design. 
+
+* Timeline and milestones
+
+** By January
+Implementation of blob and colour tracking algorithm. I want to get this completed as quickly as possible so that I can move on to the system itself. I would also like to have the projection element in place and able to receive data from the camera input and detection scripts.
+*** TODO Implement blob and colour tracking.
+*** TODO Projection element also in place.
+** January to Feburary
+Development on the HCI system will be finalised and will begin work on this with an aim to keep the 
+*** TODO Finalise design on HCI system
+*** TODO Implement base system and API for defining patterns of colours and blob (node) relationships.
+** Feburary and March
+*** TODO Implement and play test first game experiment, this will be a simple interaction design example or game which makes use of the interactive medium the setup presents.
+*** TODO Iterate this implementation. This could include a public setup in this period to get wider user testing.
+** Mid March to April
+*** TODO Further iterate and develop interaction system design. If interesting game idea develops follow this.
+*** TODO Finalise system operation and game element. Tweak hardware setup where needed.
+** April 
+*** TODO Finalise project form
+*** TODO Begin write up and
+
+* Potential */alternative project variation/* if authorities allow
+
+Another project variation idea I would like to discuss with the department is whether I could use the PaperPrograms system (that I've had running locally on my system) and use this as the software platform with which to build a cognitive HCI experiment / game system on top of. PaperPrograms is a nice system and it would be a great starting point to build something on top of itself...
+
+* Technical references
+** [[https://paperprograms.org/][Paperprograms]]
+** [[https://webassembly.org/][WebAssembly]]
+** [[https://docs.opencv.org/3.4/d5/d10/tutorial_js_root.html][opencv.js]]
+** [[https://developer.mozilla.org/en-US/docs/Web/javascript][Javascript MDN web docs]]
+* other ref
+bibliographystyle:ieeetr
+bibliography:project.bib

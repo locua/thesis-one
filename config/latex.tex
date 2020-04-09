@@ -1,0 +1,33 @@
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+% \setmonofont{Libertinus Mono}
+\setmonofont{Roboto Mono}
+
+\usepackage[a4paper,top=2.25cm,bottom=2.25cm,left=3.0cm,right=3.0cm]{geometry}
+
+\usepackage[outputdir=export]{minted}
+
+\ExecuteBibliographyOptions{
+  sorting=nyt,
+  maxcitenames=2,
+  giveninits=true,
+  doi=true,
+  url=true,
+  isbn=false,
+  eprint=false,
+  uniquename=allinit,
+  uniquelist=minyear
+}
+
+% For non-indented paragraphs.
+% \usepackage{parskip}
+
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep,nosep}
+\setlist[description]{noitemsep,nosep}
+
+% \setlength{\tabulinesep}{5pt}
+
+% Skip page number on title page
+\thispagestyle{empty}

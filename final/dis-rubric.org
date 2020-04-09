@@ -1,0 +1,78 @@
+* Dissertation contents
+8000 words
+** Technical content [40%]
+- Clean well organised code
+- ...well presented and commented
+- Production values: Physical builds / UI / graphics
+- Made appropriate technical, design and aesthetic choices
+- Code technically ambitious
+- Significant in relation to the state-of-the-art?
+- Does the system work as intended
+** Testing and evaluation [20%]
+- Iterated design?
+- Iterated using relevant stakeholders, users / audience
+- Tested implementation / interaction thoroughly / make sure robust
+- Methodical user testing. Ethnomethodology(?)
+  - How would it have been tested in normative circumstances
+- Reflected on how your final product meets your initial expectations
+  - Changes, technical progression
+- Reflected on your creative process, how could this be improved?
+  - A methodological, scientific process.
+- Have you reflected on what you have learnt as a result of the project?
+  - Learnt about the subject area?
+** Quality of report [40%]
+- Clear and logical structure
+- Provided context to your work? Critical discussion...
+- Problems you're addressing?
+- Considered legal, social, ethical and professional issues?
+- Explained and justified you decisions?
+- Supporting media
+- Professional standard?
+** Structure
+*** Front matter
+**** Title
+**** Abstract
+**** acknowledgements
+**** table of contents
+**** list of tables
+**** list of figures
+**** list of abbreviations
+*** Main body
+**** Chapter 1: intro
+**** Chapter 2: Background
+**** Chapter 3: Spec and design. Context, users // design, goals
+**** Chapter 4: Implementation, project in depth
+**** Chapter 5: Software testing, Creative process
+**** Chapter 6: System evaluation, Debugging and problem solving
+**** Chapter 7: Self eval and conclusions
+**** Ref
+**** Appendices
+*** Additional material
+**** References
+**** Appendices
+E.g. transcripts: user interviews etc.
+** Writing
+*** Project or piece of research?
+*** Solutions to problems
+*** Answers to questions
+*** Argument supported by evidence
+*** AUTHORITATIVE
+*** PERSUASIVE
+*** READABLE
+*** Iteration
+**** Researching: coding, experiments, data collection, practice
+**** Planning
+**** Writing
+**** Editing
+**** Thinking
+*** paragraphs
+**** make a point
+**** start with a topic sentence
+**** provide evidence
+**** provide anal
+**** relate to bigger argument // narrative of the report
+**** End with summary ( reiterate point made ) 
+*** Outline before draft
+*** Signposting 
+**** Tell the reader where u are going
+*** Revising and editing

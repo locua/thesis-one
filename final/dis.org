@@ -1,0 +1,22 @@
+#+title: Spatial memory, embodied thinking, computer vision projection application
+#+author: Louis James
+#+setupfile:  structure.tex
+#+options: h:2 num:t toc:t
+
+* Research notes
+** SAGE GUIDEBOOK for digital technology research
+*** Theories of embodiment in HCI
+*** Haptic interfaces
+*** ethno methodology
+
+* Links
+- http://web.mit.edu/ebj/www/JPER.pdf - similar project - urban planning workbench
+- Sage digital tech research handbook
+  - embodied interaction
+  - haptic interfaces
+  - ethno methodology
+* 
+* 
+* 
+* 
+* 
