@@ -1,40 +1,37 @@
 #+title: Spatial memory, embodied thinking, computer vision projection application
 #+author: Louis James
-#+options: h:2 num:t toc:nil
-
-#+latex_class: myreport
-
-* Abstract :ignore:
-
-#+LaTeX: \begin{abstract}
-This is the abstract.
-#+LaTeX: \end{abstract}
+#+options: h:2 num:t toc:nil \n:t
+#+latex_class: book
+#+latex_header_extra: \input{config.tex}
+#+LATEX_HEADER: \setlength{\parindent}{0pt}
+#+LATEX_HEADER: \usepackage[margin=1.6in]{geometry}
+#+LATEX_HEADER: \usepackage{emptypage}
 
 * Acknowledgements :ignore:
-
 \renewcommand{\abstractname}{Acknowledgements}
 \begin{abstract}
  Thanks Mum!
 \end{abstract}
+\newpage
+
+* Abstract :ignore:
+\renewcommand{\abstractname}{Abstract}
+#+LaTeX: \begin{abstract}
+This project...
+#+LaTeX: \end{abstract}
 
 * Toc :ignore:
-
 \tableofcontents
-
 * Introduction
 
+Some stuff cite:VictorKayDynamicLand 
+
 * Background
-
 * Specification and context
-
 * Project in depth
-
 * Creative process
-
 * Debugging and problem solving
-
 * Evaluation and Conclusions
-
 * Research notes :noexport:
 ** SAGE GUIDEBOOK for digital technology research
 *** Theories of embodiment in HCI

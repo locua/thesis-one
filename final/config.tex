@@ -1,0 +1,27 @@
+\usepackage{tikz}
+\usetikzlibrary{graphs,graphs.standard,bayesnet,arrows.meta,shapes.arrows}
+
+% Colorlinks sets pdfborder to zero.
+%\hypersetup{colorlinks,linkcolor=,urlcolor=gray}
+
+%\usepackage[a4paper,top=2.25cm,bottom=2.25cm,left=3.0cm,right=3.0cm]{geometry}
+
+\makeatletter
+\renewenvironment{abstract}{%
+    \if@twocolumn
+      \section*{\abstractname}%
+    \else %% <- here I've removed \small
+      \begin{center}%
+        {\bfseries \Huge\abstractname\vspace{\z@}}%  %% <- here I've added \Large
+      \end{center}%
+      \quotation
+    \fi}
+    {\if@twocolumn\else\endquotation\fi}
+\makeatother
+
+%\pagecolor{yellow!10}
+
+\documentclass{book}
+\usepackage{sectsty}
+\chapternumberfont{\large} 
+\chaptertitlefont{\huge}
