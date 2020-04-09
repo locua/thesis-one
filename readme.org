@@ -1,0 +1,57 @@
+* Report repo
+** Struct
+
+.
+├── auto
+│   └── project-spec.el
+├── config
+│   ├── common.tex
+│   ├── latex.tex
+│   ├── main.tex
+│   └── structure.tex
+├── final
+│   ├── dis.org
+│   ├── dis.pdf
+│   ├── dis.tex
+│   └── ref.bib
+├── interim
+│   └── Interim report.odt
+├── notes
+│   └── dis-rubric.org
+├── references
+│   ├── alex-mcleanthesis.pdf
+│   ├── Augmented-urban-planning-workbench.pdf
+│   ├── AxelRodChiPlayCameraReady.pdf
+│   ├── cognition
+│   │   ├── [Andrew-Sears,-Julie-A.-Jacko]-The-Human-Computer-(z-lib.org).pdf
+│   │   ├── [Gerd-Gigerenzer]-Gut-Feelings_-The-Intelligence-o(z-lib.org).pdf
+│   │   └── the-sage-handbook-of-digital-technology-research_n11-theories-emobdiment.pdf
+│   ├── fan13_analy_model_propag_social_influen.pdf
+│   ├── hci
+│   │   ├── 2014-looking-back.pdf
+│   │   ├── a-circumplex-model-of-affect.pdf
+│   │   ├── EmojiACMless.pdf
+│   │   ├── HCIhandbook3rd.pdf
+│   │   ├── Interaction_Design_Beyond_Human-Computer_Interacti..._----_(Chapter_4_Cognitive_Aspects).pdf
+│   │   ├── Interaction_Design_Beyond_Human-Computer_Interacti..._----_(Chapter_5_Social_Interaction).pdf
+│   │   ├── Interaction_Design_Beyond_Human-Computer_Interacti..._----_(Chapter_6_Emotional_Interaction).pdf
+│   │   └── the-sage-handbook-of-digital-technology-research_n23-haptic-interfaces.pdf
+│   ├── Interim report.pdf
+│   ├── notes.org
+│   ├── online-targeting-and-ad-sensing.pdf
+│   ├── Persuasive_design_a_different.pdf
+│   ├── the-sage-handbook-of-digital-technology-research_n16-ethno-methodology.pdf
+│   ├── thomas10_suicid_englan_wales.pdf
+│   └── wikipedia-is-a-sociotechnical-system.pdf
+└── spec
+    ├── middle3.jpg
+    ├── pp1.gif
+    ├── project.bib
+    ├── project-spec.bbl
+    ├── project-spec.org
+    ├── project-spec.pdf
+    ├── project-spec.tex
+    ├── setup.jpg
+    └── structure.tex
+
+9 directories, 42 files
