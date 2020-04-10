@@ -38,13 +38,13 @@
 **** list of figures
 **** list of abbreviations
 *** Main body
-**** Chapter 1: intro
-**** Chapter 2: Background
-**** Chapter 3: Spec and design. Context, users // design, goals
-**** Chapter 4: Implementation, project in depth
-**** Chapter 5: Software testing, Creative process
-**** Chapter 6: System evaluation, Debugging and problem solving
-**** Chapter 7: Self eval and conclusions
+**** Chapter 1: intro (500 words)
+**** Chapter 2: Background (1500 words)
+**** Chapter 3: Spec and design. Context, users // design, goals (1000 words)
+**** Chapter 4: Implementation, project in depth (1500 words)
+**** Chapter 5: Software testing, Creative process (1500 words)
+**** Chapter 6: System evaluation, Debugging and problem solving (1000 words)
+**** Chapter 7: Self eval and conclusions (1000 words)
 **** Ref
 **** Appendices
 *** Additional material
