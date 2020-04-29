@@ -1,7 +1,11 @@
-#+title: Spatial memory, embodied thinking, computer vision projection application
-#+title: Exploring cognition and interaction in a spatial and physicalised computer environment. 
+#+title: Spatial memory, embodied thinking, computer vision projection application \\
+#+title: or \\
+#+title: Exploring cognition and interaction in a spatial and physicalised computer environment. \\
+#+title: or \\
+#+title: A system for exploring haptic and spatial interaction environments
 #+author: Louis James
 #+options: h:2 num:t toc:nil \n:nil
+#+description: Final year project for Creative Computing
 #+latex_class: book
 #+latex_header_extra: \input{config.tex}
 #+LATEX_HEADER: \setlength{\parindent}{0pt}
@@ -73,7 +77,7 @@ hundreds of projects that would have been impossible anywhere else.
 transition back in scale to the days of the first computers ENIAC). Programs are
 embodied in the room on pieces of colour-coded paper. The programs are
 recognised via the codes and their code, stored in a database is then run. It
-can also /read/ code using OCR but generally the code is there [[https://thenewstack.io/dynamicland-rethinks-computer-interfaces/][symbolically]].
+can also /read/ code using OCR but generally the code is there [[https://thenewstack.io/dynamicland-rethinks-computer-interfaces/][symbolically]]. 
 
 #+caption: RealtalkOS, the operating system of Dynamicland
 [[file:assets/realtalk-os.jpg]]
