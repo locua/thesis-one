@@ -1,6 +1,8 @@
 #+title: Spatial memory, embodied thinking, computer vision projection application
+#+title: or
+#+title: Exploring cognition and interaction in a spatial and physicalised computer environment. 
 #+author: Louis James
-#+options: h:2 num:t toc:nil \n:t
+#+options: h:2 num:t toc:nil \n:nil
 #+latex_class: book
 #+latex_header_extra: \input{config.tex}
 #+LATEX_HEADER: \setlength{\parindent}{0pt}
@@ -10,7 +12,7 @@
 * Acknowledgements :ignore:
 \renewcommand{\abstractname}{Acknowledgements}
 \begin{abstract}
- Thanks Mum!
+ Thanks to my family, Florent, Chudleigh dwellers, Jamie ...
 \end{abstract}
 \newpage
 
@@ -19,14 +21,63 @@
 #+LaTeX: \begin{abstract}
 This project...
 #+LaTeX: \end{abstract}
-
 * Toc :ignore:
 \tableofcontents
+* Group writing session -                                          :noexport:
+
+** Today: 
+Outline background research and
+** So far 
+Only the main structure is in place
+** By the end of the session:
+Have written a good overview of literature sorted out main references and cited
+them
+** First 45 mins
+Identify main references and begin writing. Describing background research and
+academic context for the project.
+
 * Introduction
-
-Some stuff cite:VictorKayDynamicLand 
-
 * Background
+
+The motivation for this project stems in part from a feeling of frustration in
+how working on computers can often be a constricted affair and a pondering over
+how we might expand the /keyboard-mouse-monitor/ model to improve the utility of
+computers regarding our own perceptive abilities. How might a spatial and more
+/haptic/ environment for interaction create an improved space for thinking with
+computers as well as our physical health.
+
+** Definitions
+*** Computing
+*** keyboard-mouse-monitor model (kmm model) (?)
+
+** Dynamic land
+Creative technology solutions can improve the accessibility and power of computing.
+ 
+** Paper programs - open source
+
+** Sage digital research
+
+** Design of everyday things??
+
+** Nielsen: augmenting ltm and using ai to augment human-i
+
+** Health risks of contemporary computing 
+
+
+** Main refs :noexport:
+- Interaction design beyond HCI cite:SharpHelen2019IDBH
+- Sage handbook of digital technology research cite:HigginsSteve2015TSho
+  - Embodied cognition
+  - Haptic interfaces
+    - Augmented planning workbench cite:IshiiH2002Aupw 
+  - Ethnomethodology
+    - As an evaluative framework cite:HigginsSteve2015TSho
+- Dynamicland cite:VictorKayDynamicLand
+- The design of everyday things cite:TennerEdward2015TDoE
+- Tidal cycles, Alex mcleans thesis ???
+- Why increases in adolescent depression may be linked to the technological environment cite:TwengeJeanM2020Wiia
+- Augmenting long term memory cite:NielsenMich2018altm 
+
 * Specification and context
 * Project in depth
 * Creative process
@@ -36,8 +87,13 @@ Some stuff cite:VictorKayDynamicLand
 ** SAGE GUIDEBOOK for digital technology research
 *** Theories of embodiment in HCI
 *** Haptic interfaces
-*** ethno methodology
+"the widgets cannot provide the haptic response that physical objects do when
+touched or clicked. By adding haptic feedback to user interfaces, we can
+recreate the physical sensation of pressing a button, holding a ball or even
+create completely new touch sensations."
 
+*** ethno methodology
+- Propose and trial ethnomethodological framework for project evaluation
 * Links :noexport:
 - http://web.mit.edu/ebj/www/JPER.pdf - similar project - urban planning workbench
 - Sage digital tech research handbook
@@ -45,11 +101,9 @@ Some stuff cite:VictorKayDynamicLand
   - haptic interfaces
   - ethnomethodology 
 
-
-
 * REF :ignore:
 
-bibliographystyle:ieeetr
+bibliographystyle:ieeetr 
 bibliography:references.bib
 
 * Appendix

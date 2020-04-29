@@ -1,5 +1,5 @@
 * Dissertation contents
-8000 words
+~8000 words
 ** Technical content [40%]
 - Clean well organised code
 - ...well presented and commented
