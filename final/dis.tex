@@ -1,4 +1,4 @@
-% Created 2020-04-29 Wed 18:43
+% Created 2020-04-29 Wed 20:07
 % Intended LaTeX compiler: pdflatex
 \documentclass[12pt]{report}
 \usepackage[utf8]{inputenc}
@@ -15,7 +15,7 @@
 \usepackage{capt-of}
 \usepackage{hyperref}
 \setlength{\parindent}{0pt}
-\usepackage[margin=1.6in]{geometry}
+\usepackage[margin=1in]{geometry}
 \usepackage{emptypage}
 \input{config.tex}
 \author{Louis James}
@@ -24,14 +24,14 @@
 or \\
 Exploring cognition and interaction in a spatial and physicalised computer environment. \\
 or \\
-A system for exploring haptic and spatial interaction environments}
+A system for exploring haptic and spatial interaction}
 \hypersetup{
  pdfauthor={Louis James},
  pdftitle={Spatial memory, embodied thinking, computer vision projection application \\
 or \\
 Exploring cognition and interaction in a spatial and physicalised computer environment. \\
 or \\
-A system for exploring haptic and spatial interaction environments},
+A system for exploring haptic and spatial interaction},
  pdfkeywords={},
  pdfsubject={Final year project for Creative Computing},
  pdfcreator={Emacs 26.3 (Org mode 9.3.6)}, 
@@ -52,9 +52,9 @@ This project\ldots{}
 \end{abstract}
 \tableofcontents
 \chapter{Introduction}
-\label{sec:orgfdd50b0}
+\label{sec:org1522a59}
 \chapter{Background}
-\label{sec:org43f6876}
+\label{sec:orgbbdfea8}
 
 The motivation for this project stems in part from a feeling of frustration in
 how working on computers can often be a constricted affair and a pondering over
@@ -64,24 +64,24 @@ computers regarding our own perceptive abilities. How might a spatial and more
 computers as well as our physical health.
 
 \section{Definitions}
-\label{sec:org917710e}
+\label{sec:org44458f9}
 \begin{enumerate}
 \item Computing
-\label{sec:org32fe2f3}
+\label{sec:orgafa46fb}
 \item keyboard-mouse-monitor model (kmm model) (?)
-\label{sec:orgc511e0d}
+\label{sec:org95e3242}
 \end{enumerate}
 
 \section{Original ideas with exocortexes; Externalised memory and organisational systems}
-\label{sec:org36a782a}
+\label{sec:org9781d8c}
 
 \begin{enumerate}
 \item Org mode and nataniev ecosystem
-\label{sec:org7fdf1b4}
+\label{sec:orge8a9cd4}
 \end{enumerate}
 
 \section{Dynamicland}
-\label{sec:org977886d}
+\label{sec:org8edbb77}
 
 One of my original points of reference was \emph{Dynamicland}, a research project in
 Oakland, USA. The aim of the project is to implement a new more powerful and
@@ -94,69 +94,87 @@ In Oakland, we built the first full-scale realization of the vision, inviting
 thousands of people into our space to collaborate. Together, these artists,
 scientists, teachers, students, programmers, and non-programmers created
 hundreds of projects that would have been impossible anywhere else.
--- Dynamicland.org
+-- Dynamicland.org 
 \end{quote}
 
-\emph{Dynamicland} is a communal computer where the building is the computer (a
-transition back in scale to the days of the first computers ENIAC). Programs are
-embodied in the room on pieces of colour-coded paper. The programs are
-recognised via the codes and their code, stored in a database is then run. It
-can also \emph{read} code using OCR but generally the code is there \href{https://thenewstack.io/dynamicland-rethinks-computer-interfaces/}{symbolically}. 
+
+\emph{Dynamicland} is a communal computer where the building is the computer (ENIAC).
+Programs are embodied in the room on pieces of colour-coded paper. The programs
+are recognised via the codes and their code, stored in a database is then run,
+it can also \emph{read} code using OCR but generally the code is there \href{https://thenewstack.io/dynamicland-rethinks-computer-interfaces/}{symbolically}.
+Projectors on the ceiling transform the paper and workbenches into whatever the
+programmer decides. This relatively simple model makes for an exciting new
+ecosystem for collaborative computing and expressive programming. Victors,
+highlights his ideas for the progression of computing and interaction in a
+series of talks (available online) and on his \href{http://worrydream.com}{website}. In his talk "Seeing
+Spaces" he talks of a new kind of maker-space which allow makers to see across
+time and possibilities. \emph{Dynamicland} offers a computational medium which allows
+for full use of the human senses for the exploration with of "\href{https://vimeo.com/115154289}{humane
+representation[s] of thought}". \cite{VictorKayDynamicLand} \\
+
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=.9\linewidth]{assets/realtalk-os.jpg}
+\includegraphics[width=15cm]{assets/realtalk-os.jpg}
 \caption{RealtalkOS, the operating system of Dynamicland}
+\end{figure} 
+
+\emph{Dynamicland} was the inspiration for the main physical and technical model for
+this project, an \emph{augmented} workspace either on the floor or a table which is
+projected onto. A camera/s pointing down onto the projection space is the sensor
+for detecting interaction, with the projector as the actuator. This model can be
+seen in the Figure \ref{pp-schema}  .
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=15cm]{assets/pp-diag.png}
+\caption{The initial physical schema, using \emph{Paperprograms}, a browser-based partial clone of Dynamicland \label{pp-schema}}
 \end{figure}
 
-\begin{enumerate}
-\item Dynamiclands opensource model
-\label{sec:orga1b94f2}
-\end{enumerate}
 
 
 \section{Paper programs - open source}
-\label{sec:orge34c9bc}
+\label{sec:orgf6f2ecd}
 
 \section{Sage digital research}
-\label{sec:org4488537}
+\label{sec:org8c8ca39}
 
 \section{Design of everyday things?}
-\label{sec:orge176ef2}
+\label{sec:org7d9b5ba}
 
 \section{Nielsen: augmenting ltm and using ai to augment human-i}
-\label{sec:org1dea1c8}
+\label{sec:org5da4105}
 
 \section{mental and physical health implications of contemporary computing ? Are they really quite minor?}
-\label{sec:orgefe4cfe}
+\label{sec:orgd2bec92}
 
 \section{Computational creativity?}
-\label{sec:org360622a}
+\label{sec:orgffeb2ca}
 
 \begin{enumerate}
 \item Open source
-\label{sec:org2d1dae3}
+\label{sec:orgd6167d4}
 
 \item alex mclean thesis
-\label{sec:org8010e45}
+\label{sec:org25d33d1}
 
 \item 
-\label{sec:org0ae3e29}
+\label{sec:org307b4f1}
 \end{enumerate}
 
 \chapter{Specification and context}
-\label{sec:orgedefed5}
+\label{sec:org55c1bab}
 \chapter{Project in depth}
-\label{sec:org3dc1183}
+\label{sec:orgb71ed72}
 \chapter{Creative process}
-\label{sec:org69b5cef}
+\label{sec:org3214465}
 \chapter{Debugging and problem solving}
-\label{sec:orge8abb54}
+\label{sec:org4bc28f7}
 \chapter{Evaluation and Conclusions}
-\label{sec:org4ba246a}
+\label{sec:org35be2ba}
 \bibliographystyle{ieeetr} 
 \bibliography{references}
 
 \chapter{Appendix}
-\label{sec:orgb07a881}
+\label{sec:org7ecf52f}
 \end{document}
