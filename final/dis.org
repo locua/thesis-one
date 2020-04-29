@@ -1,5 +1,4 @@
 #+title: Spatial memory, embodied thinking, computer vision projection application
-#+title: or
 #+title: Exploring cognition and interaction in a spatial and physicalised computer environment. 
 #+author: Louis James
 #+options: h:2 num:t toc:nil \n:nil
@@ -50,19 +49,55 @@ computers as well as our physical health.
 *** Computing
 *** keyboard-mouse-monitor model (kmm model) (?)
 
-** Dynamic land
-Creative technology solutions can improve the accessibility and power of computing.
- 
+** Original ideas with exocortexes; Externalised memory and organisational systems
+
+*** Org mode and nataniev ecosystem
+
+** Dynamicland
+
+One of my original points of reference was /Dynamicland/, a research project in
+Oakland, USA. The aim of the project is to implement a new more powerful and
+accessible model of computing.
+
+#+begin_quote
+
+In Oakland, we built the first full-scale realization of the vision, inviting
+thousands of people into our space to collaborate. Together, these artists,
+scientists, teachers, students, programmers, and non-programmers created
+hundreds of projects that would have been impossible anywhere else.
+-- Dynamicland.org
+
+#+end_quote
+
+/Dynamicland/ is a communal computer where the building is the computer (a
+transition back in scale to the days of the first computers ENIAC). Programs are
+embodied in the room on pieces of colour-coded paper. The programs are
+recognised via the codes and their code, stored in a database is then run. It
+can also /read/ code using OCR but generally the code is there [[https://thenewstack.io/dynamicland-rethinks-computer-interfaces/][symbolically]].
+
+#+caption: RealtalkOS, the operating system of Dynamicland
+[[file:assets/realtalk-os.jpg]]
+
+*** Dynamiclands opensource model
+
+
 ** Paper programs - open source
 
 ** Sage digital research
 
-** Design of everyday things??
+** Design of everyday things?
 
 ** Nielsen: augmenting ltm and using ai to augment human-i
 
-** Health risks of contemporary computing 
+** mental and physical health implications of contemporary computing ? Are they really quite minor?
 
+** Computational creativity?
+
+*** Open source
+
+*** alex mclean thesis
+
+*** 
 
 ** Main refs :noexport:
 - Interaction design beyond HCI cite:SharpHelen2019IDBH
