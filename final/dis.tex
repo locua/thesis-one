@@ -1,4 +1,4 @@
-% Created 2020-04-29 Wed 20:07
+% Created 2020-05-01 Fri 17:01
 % Intended LaTeX compiler: pdflatex
 \documentclass[12pt]{report}
 \usepackage[utf8]{inputenc}
@@ -20,18 +20,10 @@
 \input{config.tex}
 \author{Louis James}
 \date{\today}
-\title{Spatial memory, embodied thinking, computer vision projection application \\
-or \\
-Exploring cognition and interaction in a spatial and physicalised computer environment. \\
-or \\
-A system for exploring haptic and spatial interaction}
+\title{A system for exploring haptic and spatial interaction}
 \hypersetup{
  pdfauthor={Louis James},
- pdftitle={Spatial memory, embodied thinking, computer vision projection application \\
-or \\
-Exploring cognition and interaction in a spatial and physicalised computer environment. \\
-or \\
-A system for exploring haptic and spatial interaction},
+ pdftitle={A system for exploring haptic and spatial interaction},
  pdfkeywords={},
  pdfsubject={Final year project for Creative Computing},
  pdfcreator={Emacs 26.3 (Org mode 9.3.6)}, 
@@ -39,7 +31,6 @@ A system for exploring haptic and spatial interaction},
 \begin{document}
 
 \maketitle
-
 \renewcommand{\abstractname}{Acknowledgements}
 \begin{abstract}
  Thanks to my family, Florent, Chudleigh dwellers, Jamie ...
@@ -51,10 +42,11 @@ A system for exploring haptic and spatial interaction},
 This project\ldots{}
 \end{abstract}
 \tableofcontents
+\listoffigures
 \chapter{Introduction}
-\label{sec:org1522a59}
+\label{sec:org41d9406}
 \chapter{Background}
-\label{sec:orgbbdfea8}
+\label{sec:orgf25dcaa}
 
 The motivation for this project stems in part from a feeling of frustration in
 how working on computers can often be a constricted affair and a pondering over
@@ -64,24 +56,38 @@ computers regarding our own perceptive abilities. How might a spatial and more
 computers as well as our physical health.
 
 \section{Definitions}
-\label{sec:org44458f9}
+\label{sec:org6cd57f5}
 \begin{enumerate}
 \item Computing
-\label{sec:orgafa46fb}
+\label{sec:orgc9a1233}
 \item keyboard-mouse-monitor model (kmm model) (?)
-\label{sec:org95e3242}
+\label{sec:orga811450}
 \end{enumerate}
 
-\section{Original ideas with exocortexes; Externalised memory and organisational systems}
-\label{sec:org9781d8c}
+\section{Beginning with the Exocortex}
+\label{sec:org79f4dcb}
 
-\begin{enumerate}
-\item Org mode and nataniev ecosystem
-\label{sec:orge8a9cd4}
-\end{enumerate}
+I started off looking at \emph{Exocortexes} and other personal archiving systems.
+Systems that allow the user to externalise thought and memory. This could be via
+simply storing and organising work and ideas efficiently and methodically or
+unifying many tasks or different workflows into a singular interface. \\
+
+Org mode is a good example of such a system. Org mode is a "computing
+environment for authoring mixed natural and computer language documents"
+\cite{Schulte:Davison:Dye:Dominik:2011:JSSOBK:v46i03}. It is designed for taking
+notes, producing documents and organising and runs inside of the text editor,
+Emacs. It has the ability to export to different formats such as HTML, \LaTeX{} and
+supports "outlining, note-taking, hyperlinks, spreadsheets, TODO lists, project
+planning, GTD" as well as literate programming
+\cite{Schulte:Davison:Dye:Dominik:2011:JSSOBK:v46i03}.
+
+\begin{itemize}
+\item org mode
+\item nataniev ecosystem
+\end{itemize}
 
 \section{Dynamicland}
-\label{sec:org8edbb77}
+\label{sec:orgd3cc1be}
 
 One of my original points of reference was \emph{Dynamicland}, a research project in
 Oakland, USA. The aim of the project is to implement a new more powerful and
@@ -123,7 +129,7 @@ representation[s] of thought}". \cite{VictorKayDynamicLand} \\
 this project, an \emph{augmented} workspace either on the floor or a table which is
 projected onto. A camera/s pointing down onto the projection space is the sensor
 for detecting interaction, with the projector as the actuator. This model can be
-seen in the Figure \ref{pp-schema}  .
+seen in the Figure \ref{pp-schema} .
 
 \begin{figure}[htbp]
 \centering
@@ -134,47 +140,52 @@ seen in the Figure \ref{pp-schema}  .
 
 
 \section{Paper programs - open source}
-\label{sec:orgf6f2ecd}
+\label{sec:orga8cea4f}
 
 \section{Sage digital research}
-\label{sec:org8c8ca39}
+\label{sec:org0d3c0aa}
 
 \section{Design of everyday things?}
-\label{sec:org7d9b5ba}
+\label{sec:orga1df800}
 
 \section{Nielsen: augmenting ltm and using ai to augment human-i}
-\label{sec:org5da4105}
+\label{sec:org5ea291f}
 
 \section{mental and physical health implications of contemporary computing ? Are they really quite minor?}
-\label{sec:orgd2bec92}
+\label{sec:orgf89ecc9}
 
 \section{Computational creativity?}
-\label{sec:orgffeb2ca}
+\label{sec:orgc81e7e7}
 
 \begin{enumerate}
 \item Open source
-\label{sec:orgd6167d4}
+\label{sec:org87da904}
 
 \item alex mclean thesis
-\label{sec:org25d33d1}
+\label{sec:orgb3a7f7d}
 
 \item 
-\label{sec:org307b4f1}
+\label{sec:org2243d13}
 \end{enumerate}
 
 \chapter{Specification and context}
-\label{sec:org55c1bab}
+\label{sec:org62455f8}
 \chapter{Project in depth}
-\label{sec:orgb71ed72}
+\label{sec:orgf8dcba2}
+
+See system schema Fig.  \ref{system-schema}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.9\linewidth]{assets/project-schema-final.png}
+\caption{System schema \label{system-schema}}
+\end{figure}
 \chapter{Creative process}
-\label{sec:org3214465}
+\label{sec:orga3e67eb}
 \chapter{Debugging and problem solving}
-\label{sec:org4bc28f7}
+\label{sec:org3280de0}
 \chapter{Evaluation and Conclusions}
-\label{sec:org35be2ba}
+\label{sec:org707b8bd}
 \bibliographystyle{ieeetr} 
 \bibliography{references}
-
-\chapter{Appendix}
-\label{sec:org7ecf52f}
 \end{document}

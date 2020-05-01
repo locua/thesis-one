@@ -1,5 +1,10 @@
 \begin{thebibliography}{1}
 
+\bibitem{Schulte:Davison:Dye:Dominik:2011:JSSOBK:v46i03}
+E.~Schulte, D.~Davison, T.~Dye, and C.~Dominik, ``A multi-language computing
+  environment for literate programming and reproducible research,'' {\em
+  Journal of Statistical Software}, vol.~46, pp.~1--24, 1 2012.
+
 \bibitem{VictorKayDynamicLand}
 B.~Victor and A.~Kay, ``Dynamicland,'' 2014, https://dynamicland.org.
 

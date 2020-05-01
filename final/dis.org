@@ -1,7 +1,3 @@
-#+title: Spatial memory, embodied thinking, computer vision projection application \\
-#+title: or \\
-#+title: Exploring cognition and interaction in a spatial and physicalised computer environment. \\
-#+title: or \\
 #+title: A system for exploring haptic and spatial interaction 
 #+author: Louis James
 #+options: h:2 num:t toc:nil \n:nil
@@ -11,7 +7,11 @@
 #+LATEX_HEADER: \setlength{\parindent}{0pt}
 #+LATEX_HEADER: \usepackage[margin=1in]{geometry}
 #+LATEX_HEADER: \usepackage{emptypage}
-
+* other title ideas :noexport:
+# #+title: Spatial memory, embodied thinking, computer vision projection application \\
+# #+title: or \\
+# #+title: Exploring cognition and interaction in a spatial and physicalised computer environment. \\
+# #+title: or \\
 * Acknowledgements :ignore:
 \renewcommand{\abstractname}{Acknowledgements}
 \begin{abstract}
@@ -26,6 +26,7 @@ This project...
 #+LaTeX: \end{abstract}
 * Toc :ignore:
 \tableofcontents
+#+latex: \listoffigures
 * Group writing session -                                          :noexport:
 
 ** Today: 
@@ -53,9 +54,24 @@ computers as well as our physical health.
 *** Computing
 *** keyboard-mouse-monitor model (kmm model) (?)
 
-** Original ideas with exocortexes; Externalised memory and organisational systems
+** Beginning with the Exocortex
 
-*** Org mode and nataniev ecosystem
+I started off looking at /Exocortexes/ and other personal archiving systems.
+Systems that allow the user to externalise thought and memory. This could be via
+simply storing and organising work and ideas efficiently and methodically or
+unifying many tasks or different workflows into a singular interface. \\
+
+Org mode is a good example of such a system. Org mode is a "computing
+environment for authoring mixed natural and computer language documents"
+cite:Schulte:Davison:Dye:Dominik:2011:JSSOBK:v46i03. It is designed for taking
+notes, producing documents and organising and runs inside of the text editor,
+Emacs. It has the ability to export to different formats such as HTML, LaTeX and
+supports "outlining, note-taking, hyperlinks, spreadsheets, TODO lists, project
+planning, GTD" as well as literate programming
+cite:Schulte:Davison:Dye:Dominik:2011:JSSOBK:v46i03.
+
+- org mode
+- nataniev ecosystem
 
 ** Dynamicland
 
@@ -99,7 +115,7 @@ projected onto. A camera/s pointing down onto the projection space is the sensor
 for detecting interaction, with the projector as the actuator. This model can be
 seen in the Figure ref:pp-schema .
 
-#+caption: The initial physical schema, using /Paperprograms/, a browser-based partial clone of Dynamicland label:pp-schema  
+#+caption: The initial physical schema, using /Paperprograms/
 #+ATTR_LATEX: :width 15cm
 [[file:assets/pp-diag.png]]
 
@@ -108,6 +124,7 @@ seen in the Figure ref:pp-schema .
 
 
 ** Paper programs - open source
+...a browser-based partial clone of Dynamicland label:pp-schema  
 
 ** Sage digital research
 
@@ -141,6 +158,11 @@ seen in the Figure ref:pp-schema .
 
 * Specification and context
 * Project in depth
+
+See system schema Fig.  ref:system-schema
+
+#+caption: System schema label:system-schema
+[[file:assets/project-schema-final.png]]
 * Creative process
 * Debugging and problem solving
 * Evaluation and Conclusions
@@ -162,9 +184,10 @@ create completely new touch sensations."
   - haptic interfaces
   - ethnomethodology 
 
-* REF :ignore:
+* Bibliography :ignore:
 
 bibliographystyle:ieeetr 
 bibliography:references.bib
 
-* Appendix
+* Appendix :ignore:
+
