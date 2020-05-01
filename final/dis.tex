@@ -1,4 +1,4 @@
-% Created 2020-05-01 Fri 17:01
+% Created 2020-05-01 Fri 19:02
 % Intended LaTeX compiler: pdflatex
 \documentclass[12pt]{report}
 \usepackage[utf8]{inputenc}
@@ -31,12 +31,13 @@
 \begin{document}
 
 \maketitle
+
+
 \renewcommand{\abstractname}{Acknowledgements}
 \begin{abstract}
  Thanks to my family, Florent, Chudleigh dwellers, Jamie ...
 \end{abstract}
 \newpage
-
 \renewcommand{\abstractname}{Abstract}
 \begin{abstract}
 This project\ldots{}
@@ -44,9 +45,9 @@ This project\ldots{}
 \tableofcontents
 \listoffigures
 \chapter{Introduction}
-\label{sec:org41d9406}
+\label{sec:orgea35e9f}
 \chapter{Background}
-\label{sec:orgf25dcaa}
+\label{sec:org96f72a8}
 
 The motivation for this project stems in part from a feeling of frustration in
 how working on computers can often be a constricted affair and a pondering over
@@ -56,16 +57,20 @@ computers regarding our own perceptive abilities. How might a spatial and more
 computers as well as our physical health.
 
 \section{Definitions}
-\label{sec:org6cd57f5}
+\label{sec:org2af3ec0}
 \begin{enumerate}
 \item Computing
-\label{sec:orgc9a1233}
+\label{sec:org3d867a2}
 \item keyboard-mouse-monitor model (kmm model) (?)
-\label{sec:orga811450}
+\label{sec:org45210ef}
+\item Cognition
+\label{sec:org214fa66}
+\item Exocortex
+\label{sec:org07f9845}
 \end{enumerate}
 
 \section{Beginning with the Exocortex}
-\label{sec:org79f4dcb}
+\label{sec:org33257ea}
 
 I started off looking at \emph{Exocortexes} and other personal archiving systems.
 Systems that allow the user to externalise thought and memory. This could be via
@@ -78,16 +83,32 @@ environment for authoring mixed natural and computer language documents"
 notes, producing documents and organising and runs inside of the text editor,
 Emacs. It has the ability to export to different formats such as HTML, \LaTeX{} and
 supports "outlining, note-taking, hyperlinks, spreadsheets, TODO lists, project
-planning, GTD" as well as literate programming
-\cite{Schulte:Davison:Dye:Dominik:2011:JSSOBK:v46i03}.
+planning, GTD" as well as literate programming, all in plain-text
+\cite{Schulte:Davison:Dye:Dominik:2011:JSSOBK:v46i03}. (it is incidentally what
+this document is produced with) \\
 
-\begin{itemize}
-\item org mode
-\item nataniev ecosystem
-\end{itemize}
+
+Another point of reference when I was looking at externalised 'artificial
+information-processing systems' was Devine Lu Linvega's Exocortex and personal
+logging system \href{https://wiki.xxiivv.com/site/nataniev.html}{XXIIV -- nataniev}. \emph{XXIIV} is a personal archive and log with
+documentation of Linvega's personal tools and artworks. The site has gone
+through some changes since I first came across it. Originally a static,
+javascript and lisp based website with diaries, blog type posts and categorised
+personal logs. It is now somewhat stripped back in style and has been rewritten
+in \href{https://en.wikipedia.org/wiki/C99}{C (C99)} which generates the HTML pages. The work contains a selection of
+esoteric programming tools including a synthetic language, games, software all
+logged using their own \emph{Arvelie calendar} \cite{DevineNataniev}. \\
+
+Both these two systems have their own specific use-cases, \emph{Org-mode} in academia
+and science and \emph{XXIIV}, a personal archive and experimental system. They both
+are exist in the contemporary and prevailing \emph{keyboard-mouse-monitor} paradigm
+of computer interaction but push the boundaries of cognition in this medium,
+particularly regarding memory and productivity.
+
+
 
 \section{Dynamicland}
-\label{sec:orgd3cc1be}
+\label{sec:org64c773d}
 
 One of my original points of reference was \emph{Dynamicland}, a research project in
 Oakland, USA. The aim of the project is to implement a new more powerful and
@@ -115,77 +136,78 @@ highlights his ideas for the progression of computing and interaction in a
 series of talks (available online) and on his \href{http://worrydream.com}{website}. In his talk "Seeing
 Spaces" he talks of a new kind of maker-space which allow makers to see across
 time and possibilities. \emph{Dynamicland} offers a computational medium which allows
-for full use of the human senses for the exploration with of "\href{https://vimeo.com/115154289}{humane
-representation[s] of thought}". \cite{VictorKayDynamicLand} \\
-
+for full use of the human senses and a more \href{https://vimeo.com/115154289}{humane representation of thought}
+\cite{VictorKayDynamicLand}. \\
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=15cm]{assets/realtalk-os.jpg}
+\includegraphics[width=12cm]{assets/realtalk-os.jpg}
 \caption{RealtalkOS, the operating system of Dynamicland}
-\end{figure} 
+\end{figure}  
 
-\emph{Dynamicland} was the inspiration for the main physical and technical model for
+
+\emph{DL} was the inspiration for the main physical and technical model for
 this project, an \emph{augmented} workspace either on the floor or a table which is
 projected onto. A camera/s pointing down onto the projection space is the sensor
-for detecting interaction, with the projector as the actuator. This model can be
-seen in the Figure \ref{pp-schema} .
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=15cm]{assets/pp-diag.png}
-\caption{The initial physical schema, using \emph{Paperprograms}, a browser-based partial clone of Dynamicland \label{pp-schema}}
-\end{figure}
+for detecting interaction, with the projector as the actuator. This base model can be
+seen in Figures \ref{pp-schema} and  \ref{systemSchema}.
 
 
 
 \section{Paper programs - open source}
-\label{sec:orga8cea4f}
+\label{sec:orgedceb46}
+
+Looking to find some of the code for \emph{Dynamicland} and a more detailed
+specification was available online I stumbled across \emph{Paper Programs}
+(\emph{Dynamicland} has an 'open-source model', but it is only open if you can visit
+it physically as the source code is physically in the space). \emph{Paper Programs}
+is a browser-based partial clone of \emph{Dynamicland}. This was another starting
+point for playing around with but I found that I couldn't set it up and have it
+stable enough to develop on. It also suffers from being quite slow, due to the
+Computer Vision and graphics being done in the browser (it uses a
+version of OpenCv compiled to \href{https://webassembly.org/}{WebAssembly}) \cite{JpPaperPrograms}.
+
 
 \section{Sage digital research}
-\label{sec:org0d3c0aa}
+\label{sec:org5258e62}
 
-\section{Design of everyday things?}
-\label{sec:orga1df800}
+Ethnomethodology
 
-\section{Nielsen: augmenting ltm and using ai to augment human-i}
-\label{sec:org5ea291f}
+Embodied Cognition
 
-\section{mental and physical health implications of contemporary computing ? Are they really quite minor?}
-\label{sec:orgf89ecc9}
+Haptic interfaces
 
-\section{Computational creativity?}
-\label{sec:orgc81e7e7}
-
-\begin{enumerate}
-\item Open source
-\label{sec:org87da904}
-
-\item alex mclean thesis
-\label{sec:orgb3a7f7d}
-
-\item 
-\label{sec:org2243d13}
-\end{enumerate}
+\section{Nielsen: augmenting ltm and using ai to augment human-i ??????}
+\label{sec:org6956ad0}
 
 \chapter{Specification and context}
-\label{sec:org62455f8}
-\chapter{Project in depth}
-\label{sec:orgf8dcba2}
-
-See system schema Fig.  \ref{system-schema}
+\label{sec:org37c65bc}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=.9\linewidth]{assets/project-schema-final.png}
-\caption{System schema \label{system-schema}}
+\includegraphics[width=15cm]{assets/pp-diag.png}
+\caption{The initial physical schema: \emph{Paperprograms} \label{pp-schema}}
 \end{figure}
+
+
+\chapter{Project in depth}
+\label{sec:orgc7b38b2}
+
+See system schema Fig.  
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=15cm]{assets/project-schema-final.png}
+\caption{System schema \label{systemSchema}}
+\end{figure}
+
+
 \chapter{Creative process}
-\label{sec:orga3e67eb}
+\label{sec:org1c7f2b4}
 \chapter{Debugging and problem solving}
-\label{sec:org3280de0}
+\label{sec:org7063455}
 \chapter{Evaluation and Conclusions}
-\label{sec:org707b8bd}
+\label{sec:org40f93e2}
 \bibliographystyle{ieeetr} 
 \bibliography{references}
 \end{document}

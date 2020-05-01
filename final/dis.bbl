@@ -5,7 +5,15 @@ E.~Schulte, D.~Davison, T.~Dye, and C.~Dominik, ``A multi-language computing
   environment for literate programming and reproducible research,'' {\em
   Journal of Statistical Software}, vol.~46, pp.~1--24, 1 2012.
 
+\bibitem{DevineNataniev}
+D.~L. Linvega, ``The nataniev ecosystem is a collection of exocortex tools,''
+  2020, 18W04, https://wiki.xxiivv.com/site/about.html.
+
 \bibitem{VictorKayDynamicLand}
 B.~Victor and A.~Kay, ``Dynamicland,'' 2014, https://dynamicland.org.
+
+\bibitem{JpPaperPrograms}
+JP, ``Paper programs is a browser-based system for running javascript programs
+  on pieces of paper,'' 2018, https://paperprograms.org/.
 
 \end{thebibliography}

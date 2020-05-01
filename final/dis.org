@@ -7,6 +7,8 @@
 #+LATEX_HEADER: \setlength{\parindent}{0pt}
 #+LATEX_HEADER: \usepackage[margin=1in]{geometry}
 #+LATEX_HEADER: \usepackage{emptypage}
+
+
 * other title ideas :noexport:
 # #+title: Spatial memory, embodied thinking, computer vision projection application \\
 # #+title: or \\
@@ -18,6 +20,12 @@
  Thanks to my family, Florent, Chudleigh dwellers, Jamie ...
 \end{abstract}
 \newpage
+* Questions :noexport:
+** Main
+- 
+** Miscellaneous 
+- LICENCE, Creative commons etc. Any relevance to assement or for personal release?
+- Graduation, grade. Adjusted?
 
 * Abstract :ignore:
 \renewcommand{\abstractname}{Abstract}
@@ -53,6 +61,8 @@ computers as well as our physical health.
 ** Definitions
 *** Computing
 *** keyboard-mouse-monitor model (kmm model) (?)
+*** Cognition
+*** Exocortex
 
 ** Beginning with the Exocortex
 
@@ -67,11 +77,29 @@ cite:Schulte:Davison:Dye:Dominik:2011:JSSOBK:v46i03. It is designed for taking
 notes, producing documents and organising and runs inside of the text editor,
 Emacs. It has the ability to export to different formats such as HTML, LaTeX and
 supports "outlining, note-taking, hyperlinks, spreadsheets, TODO lists, project
-planning, GTD" as well as literate programming
-cite:Schulte:Davison:Dye:Dominik:2011:JSSOBK:v46i03.
+planning, GTD" as well as literate programming, all in plain-text
+cite:Schulte:Davison:Dye:Dominik:2011:JSSOBK:v46i03. (it is incidentally what
+this document is produced with) \\
 
-- org mode
-- nataniev ecosystem
+
+Another point of reference when I was looking at externalised 'artificial
+information-processing systems' was Devine Lu Linvega's Exocortex and personal
+logging system [[https://wiki.xxiivv.com/site/nataniev.html][XXIIV -- nataniev]]. /XXIIV/ is a personal archive and log with
+documentation of Linvega's personal tools and artworks. The site has gone
+through some changes since I first came across it. Originally a static,
+javascript and lisp based website with diaries, blog type posts and categorised
+personal logs. It is now somewhat stripped back in style and has been rewritten
+in [[https://en.wikipedia.org/wiki/C99][C (C99)]]. The work contains a selection of esoteric programming tools
+including a synthetic language, games, software all logged using their own
+/Arvelie calendar/ cite:DevineNataniev. \\
+
+Both these two systems have their own specific use-cases, /Org-mode/ in academia
+and science and /XXIIV/, a personal archive and experimental system. They both
+are exist in the contemporary and prevailing /keyboard-mouse-monitor/ paradigm
+of computer interaction but push the boundaries of cognition in this medium,
+particularly regarding memory and productivity.
+
+
 
 ** Dynamicland
 
@@ -101,40 +129,53 @@ highlights his ideas for the progression of computing and interaction in a
 series of talks (available online) and on his [[http://worrydream.com][website]]. In his talk "Seeing
 Spaces" he talks of a new kind of maker-space which allow makers to see across
 time and possibilities. /Dynamicland/ offers a computational medium which allows
-for full use of the human senses for the exploration with of "[[https://vimeo.com/115154289][humane
-representation[s] of thought]]". cite:VictorKayDynamicLand \\
-
+for full use of the human senses and a more [[https://vimeo.com/115154289][humane representation of thought]]
+cite:VictorKayDynamicLand. \\
 
 #+caption: RealtalkOS, the operating system of Dynamicland
-#+ATTR_LATEX: :width 15cm
-[[file:assets/realtalk-os.jpg]] 
+#+ATTR_LATEX: :width 12cm
+[[file:assets/realtalk-os.jpg]]  
 
-/Dynamicland/ was the inspiration for the main physical and technical model for
+
+/DL/ was the inspiration for the main physical and technical model for
 this project, an /augmented/ workspace either on the floor or a table which is
 projected onto. A camera/s pointing down onto the projection space is the sensor
-for detecting interaction, with the projector as the actuator. This model can be
-seen in the Figure ref:pp-schema .
+for detecting interaction, with the projector as the actuator. This base model can be
+seen in Figures ref:pp-schema and  ref:systemSchema.
 
-#+caption: The initial physical schema, using /Paperprograms/
-#+ATTR_LATEX: :width 15cm
-[[file:assets/pp-diag.png]]
 
 *** Dynamiclands opensource model :noexport:
 
 
 
 ** Paper programs - open source
-...a browser-based partial clone of Dynamicland label:pp-schema  
+
+Looking to find some of the code for /Dynamicland/ and a more detailed
+specification was available online I stumbled across /Paper Programs/
+(/Dynamicland/ has an 'open-source model', but it is only open if you can visit
+it physically as the source code is physically in the space). /Paper Programs/
+is a browser-based partial clone of /Dynamicland/. This was another starting
+point for playing around with but I found that I couldn't set it up and have it
+stable enough to develop on. It also suffers from being quite slow, due to the
+Computer Vision and graphics being done in the browser (it uses a
+version of OpenCv compiled to [[https://webassembly.org/][WebAssembly]]) cite:JpPaperPrograms.
+
 
 ** Sage digital research
 
-** Design of everyday things?
+Ethnomethodology
 
-** Nielsen: augmenting ltm and using ai to augment human-i
+Embodied Cognition
 
-** mental and physical health implications of contemporary computing ? Are they really quite minor?
+Haptic interfaces
 
-** Computational creativity?
+** Design of everyday things? :noexport:
+
+** Nielsen: augmenting ltm and using ai to augment human-i ??????
+
+** mental and physical health implications of contemporary computing ? Are they really quite minor? :noexport:
+
+** Computational creativity? :noexport:
 
 *** Open source
 
@@ -157,12 +198,21 @@ seen in the Figure ref:pp-schema .
 - Augmenting long term memory cite:NielsenMich2018altm 
 
 * Specification and context
+
+#+caption: The initial physical schema: /Paperprograms/ label:pp-schema
+#+ATTR_LATEX: :width 15cm
+[[file:assets/pp-diag.png]]
+
+
 * Project in depth
 
-See system schema Fig.  ref:system-schema
+See system schema Fig.  
 
-#+caption: System schema label:system-schema
+#+caption: System schema label:systemSchema  
+#+ATTR_LATEX: :width 15cm
 [[file:assets/project-schema-final.png]]
+
+
 * Creative process
 * Debugging and problem solving
 * Evaluation and Conclusions
