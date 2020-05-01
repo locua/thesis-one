@@ -22,7 +22,7 @@
 \newpage
 * Questions :noexport:
 ** Main
-- 
+- my i me, first person reference in writing
 ** Miscellaneous 
 - LICENCE, Creative commons etc. Any relevance to assement or for personal release?
 - Graduation, grade. Adjusted?
@@ -97,8 +97,9 @@ Both these two systems have their own specific use-cases, /Org-mode/ in academia
 and science and /XXIIV/, a personal archive and experimental system. They both
 are exist in the contemporary and prevailing /keyboard-mouse-monitor/ paradigm
 of computer interaction but push the boundaries of cognition in this medium,
-particularly regarding memory and productivity.
-
+particularly regarding memory and productivity. These two projects were a birth
+point in thinking about how software systems can be augment thought and
+improve learning ability and computer productivity.
 
 
 ** Dynamicland
