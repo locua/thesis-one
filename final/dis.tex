@@ -1,4 +1,4 @@
-% Created 2020-05-01 Fri 19:02
+% Created 2020-05-01 Fri 23:34
 % Intended LaTeX compiler: pdflatex
 \documentclass[12pt]{report}
 \usepackage[utf8]{inputenc}
@@ -32,12 +32,13 @@
 
 \maketitle
 
-
 \renewcommand{\abstractname}{Acknowledgements}
 \begin{abstract}
  Thanks to my family, Florent, Chudleigh dwellers, Jamie ...
 \end{abstract}
 \newpage
+
+
 \renewcommand{\abstractname}{Abstract}
 \begin{abstract}
 This project\ldots{}
@@ -45,9 +46,9 @@ This project\ldots{}
 \tableofcontents
 \listoffigures
 \chapter{Introduction}
-\label{sec:orgea35e9f}
+\label{sec:org85610d0}
 \chapter{Background}
-\label{sec:org96f72a8}
+\label{sec:org93b1bb4}
 
 The motivation for this project stems in part from a feeling of frustration in
 how working on computers can often be a constricted affair and a pondering over
@@ -57,20 +58,20 @@ computers regarding our own perceptive abilities. How might a spatial and more
 computers as well as our physical health.
 
 \section{Definitions}
-\label{sec:org2af3ec0}
+\label{sec:org2de35ae}
 \begin{enumerate}
 \item Computing
-\label{sec:org3d867a2}
+\label{sec:org33f37f1}
 \item keyboard-mouse-monitor model (kmm model) (?)
-\label{sec:org45210ef}
+\label{sec:orgea8c6c9}
 \item Cognition
-\label{sec:org214fa66}
+\label{sec:org923dbe6}
 \item Exocortex
-\label{sec:org07f9845}
+\label{sec:org082513e}
 \end{enumerate}
 
 \section{Beginning with the Exocortex}
-\label{sec:org33257ea}
+\label{sec:org5e36fa9}
 
 I started off looking at \emph{Exocortexes} and other personal archiving systems.
 Systems that allow the user to externalise thought and memory. This could be via
@@ -89,30 +90,30 @@ this document is produced with) \\
 
 
 Another point of reference when I was looking at externalised 'artificial
-information-processing systems' was Devine Lu Linvega's Exocortex and personal
-logging system \href{https://wiki.xxiivv.com/site/nataniev.html}{XXIIV -- nataniev}. \emph{XXIIV} is a personal archive and log with
-documentation of Linvega's personal tools and artworks. The site has gone
-through some changes since I first came across it. Originally a static,
-javascript and lisp based website with diaries, blog type posts and categorised
-personal logs. It is now somewhat stripped back in style and has been rewritten
-in \href{https://en.wikipedia.org/wiki/C99}{C (C99)} which generates the HTML pages. The work contains a selection of
-esoteric programming tools including a synthetic language, games, software all
-logged using their own \emph{Arvelie calendar} \cite{DevineNataniev}. \\
+information-processing systems' was Devine Lu Linvega's Exocortex \href{https://wiki.xxiivv.com/site/nataniev.html}{XXIIV --
+nataniev}. \emph{XXIIV} is a personal archive and log with documentation of Linvega's
+personal tools and artworks. The site has gone through some changes since I
+first came across it. Originally a static, javascript and lisp based website
+with diaries, blog type posts and categorised personal logs. It is now somewhat
+stripped back in style and has been rewritten in \href{https://en.wikipedia.org/wiki/C99}{C (C99)}. The work contains a
+selection of esoteric programming tools including a synthetic language, games,
+software all logged using their own \emph{Arvelie calendar} \cite{DevineNataniev}. \\
 
 Both these two systems have their own specific use-cases, \emph{Org-mode} in academia
-and science and \emph{XXIIV}, a personal archive and experimental system. They both
+and science and \emph{XXIIV}, a experimental personal archive. They both
 are exist in the contemporary and prevailing \emph{keyboard-mouse-monitor} paradigm
 of computer interaction but push the boundaries of cognition in this medium,
-particularly regarding memory and productivity.
+particularly regarding memory and productivity. These two projects were a birth
+point in thinking about how software systems can be augment thought and
+improve learning ability and computer productivity.
 
 
+\section{A virtual exploration of Dynamicland}
+\label{sec:org451e4df}
 
-\section{Dynamicland}
-\label{sec:org64c773d}
-
-One of my original points of reference was \emph{Dynamicland}, a research project in
-Oakland, USA. The aim of the project is to implement a new more powerful and
-accessible model of computing.
+Another original and critical point of reference was \emph{Dynamicland}, a research
+project in Oakland, USA. The aim of the project is to implement a new more
+powerful and accessible model of computing.
 
 \begin{quote}
 
@@ -142,7 +143,7 @@ for full use of the human senses and a more \href{https://vimeo.com/115154289}{h
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=12cm]{assets/realtalk-os.jpg}
-\caption{RealtalkOS, the operating system of Dynamicland}
+\caption{RealtalkOS, the operating system of \emph{Dynamicland}}
 \end{figure}  
 
 
@@ -152,24 +153,22 @@ projected onto. A camera/s pointing down onto the projection space is the sensor
 for detecting interaction, with the projector as the actuator. This base model can be
 seen in Figures \ref{pp-schema} and  \ref{systemSchema}.
 
-
-
 \section{Paper programs - open source}
-\label{sec:orgedceb46}
+\label{sec:org4e7e53c}
 
 Looking to find some of the code for \emph{Dynamicland} and a more detailed
-specification was available online I stumbled across \emph{Paper Programs}
-(\emph{Dynamicland} has an 'open-source model', but it is only open if you can visit
-it physically as the source code is physically in the space). \emph{Paper Programs}
-is a browser-based partial clone of \emph{Dynamicland}. This was another starting
-point for playing around with but I found that I couldn't set it up and have it
-stable enough to develop on. It also suffers from being quite slow, due to the
-Computer Vision and graphics being done in the browser (it uses a
-version of OpenCv compiled to \href{https://webassembly.org/}{WebAssembly}) \cite{JpPaperPrograms}.
+specification of \textbf{DL} I stumbled across \emph{Paper Programs} (\emph{Dynamicland} has an
+'open-source model', but it is only open if you can visit it physically as the
+source code is physically in the space). \emph{Paper Programs} is a browser-based
+partial clone of \emph{Dynamicland}. This was another starting point for playing
+around with but I found that I couldn't set it up and have it stable enough to
+develop on. It also suffers from being quite slow, due to the Computer Vision
+and graphics being done in the browser (it uses a version of OpenCv compiled to
+\href{https://webassembly.org/}{WebAssembly}) \cite{JpPaperPrograms}.
 
 
 \section{Sage digital research}
-\label{sec:org5258e62}
+\label{sec:orga1259c7}
 
 Ethnomethodology
 
@@ -178,10 +177,16 @@ Embodied Cognition
 Haptic interfaces
 
 \section{Nielsen: augmenting ltm and using ai to augment human-i ??????}
-\label{sec:org6956ad0}
+\label{sec:orgc8b331b}
+
+Other approaches to 
+
+\cite{NielsenMich2018altm}
+
+\cite{carter2017using}  
 
 \chapter{Specification and context}
-\label{sec:org37c65bc}
+\label{sec:org55353b4}
 
 \begin{figure}[htbp]
 \centering
@@ -191,7 +196,7 @@ Haptic interfaces
 
 
 \chapter{Project in depth}
-\label{sec:orgc7b38b2}
+\label{sec:orgf23a754}
 
 See system schema Fig.  
 
@@ -203,11 +208,11 @@ See system schema Fig.
 
 
 \chapter{Creative process}
-\label{sec:org1c7f2b4}
+\label{sec:org69b0546}
 \chapter{Debugging and problem solving}
-\label{sec:org7063455}
+\label{sec:org383323d}
 \chapter{Evaluation and Conclusions}
-\label{sec:org40f93e2}
+\label{sec:org955deed}
 \bibliographystyle{ieeetr} 
 \bibliography{references}
 \end{document}

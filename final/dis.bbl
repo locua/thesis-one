@@ -16,4 +16,13 @@ B.~Victor and A.~Kay, ``Dynamicland,'' 2014, https://dynamicland.org.
 JP, ``Paper programs is a browser-based system for running javascript programs
   on pieces of paper,'' 2018, https://paperprograms.org/.
 
+\bibitem{NielsenMich2018altm}
+M.~A. Nielsen, ``Augmenting long-term memory,'' 2018,
+  http://augmentingcognition.com/ltm.html.
+
+\bibitem{carter2017using}
+S.~Carter and M.~Nielsen, ``Using artificial intelligence to augment human
+  intelligence,'' {\em Distill}, 2017.
+\newblock https://distill.pub/2017/aia.
+
 \end{thebibliography}
