@@ -1,4 +1,4 @@
-% Created 2020-05-08 Fri 15:39
+% Created 2020-05-08 Fri 15:50
 % Intended LaTeX compiler: pdflatex
 \documentclass[12pt]{report}
 \usepackage[utf8]{inputenc}
@@ -20,10 +20,10 @@
 \input{config.tex}
 \author{Louis James}
 \date{\today}
-\title{A system for exploring haptic and spatial interaction}
+\title{Describing systems for exploring tangible and spatial computer interaction}
 \hypersetup{
  pdfauthor={Louis James},
- pdftitle={A system for exploring haptic and spatial interaction},
+ pdftitle={Describing systems for exploring tangible and spatial computer interaction},
  pdfkeywords={},
  pdfsubject={Final year project for Creative Computing},
  pdfcreator={Emacs 26.3 (Org mode 9.3.6)}, 
@@ -41,15 +41,24 @@
 
 \renewcommand{\abstractname}{Abstract}
 \begin{abstract}
-This project\ldots{}
+Presented here is a specification of experimental approaches to computer
+interaction based on spatial and tangible methods. The report describes an
+prototypical implementation of a base system for interaction in space and a
+theoretical API for such a system and similar systems. This utilises computer
+vision techniques to analyse a surface to track objects and project onto the
+space creating a feedback system for interaction. To finish a
+ethnomethodological framework for evaluation and further development is
+proposed???
+
+
 \end{abstract}
 \tableofcontents
 \listoffigures
 \chapter{Introduction}
-\label{sec:org746e86a}
+\label{sec:org0965954}
 
 \section{Project aims}
-\label{sec:org9c633a8}
+\label{sec:orgf1598c6}
 
 \begin{itemize}
 \item open source project for tangible interaction
@@ -58,7 +67,7 @@ This project\ldots{}
 \end{itemize}
 
 \chapter{Background}
-\label{sec:orgd7518c3}
+\label{sec:orgc0202dc}
 
 The motivation for this project stems in part from a feeling of frustration in
  how working on computers can often be a constricted affair and a pondering over
@@ -70,20 +79,20 @@ The motivation for this project stems in part from a feeling of frustration in
  and learning as well as creativity itself?
 
 \section{Definitions}
-\label{sec:orga2707ad}
+\label{sec:orgeb40a5c}
 \begin{enumerate}
 \item Computing
-\label{sec:org26c3090}
+\label{sec:orga728bf0}
 \item keyboard-mouse-monitor model (kmm model) (?)
-\label{sec:orgf9cfedc}
+\label{sec:org367d81e}
 \item Cognition
-\label{sec:org1860a4a}
+\label{sec:orgb312ef3}
 \item Exocortex
-\label{sec:org9f88f79}
+\label{sec:org43507c9}
 \end{enumerate}
 
 \section{Beginning with the Exocortex}
-\label{sec:orga4c59bb}
+\label{sec:org956a0ea}
 
 I started off looking at \emph{Exocortexes} and other personal archiving systems.
 Systems that allow the user to externalise thought and memory. This could be via
@@ -121,7 +130,7 @@ learning ability and computer productivity.
 
 
 \section{A virtual exploration of Dynamicland}
-\label{sec:org8366e29}
+\label{sec:orgc614bd2}
 
 Another original and critical point of reference was \emph{Dynamicland}, a research
 project in Oakland, USA. The aim of the project is to implement a new more
@@ -166,7 +175,7 @@ for detecting interaction, with the projector as the actuator. This base model c
 seen in Figures \ref{pp-schema} and  \ref{systemSchema}.
 
 \section{Paper programs - open source}
-\label{sec:org9cdd54c}
+\label{sec:org905e499}
 
 Looking to find some of the code for \emph{Dynamicland} and a more detailed
 specification of \textbf{DL} I stumbled across \emph{Paper Programs} (\emph{Dynamicland} has an
@@ -180,7 +189,7 @@ and graphics being done in the browser (it uses a version of OpenCv compiled to
 
 
 \section{Sage digital research}
-\label{sec:org39d8518}
+\label{sec:orgfa568bc}
 
 Ethnomethodology
 
@@ -189,10 +198,10 @@ Embodied Cognition
 Haptic interfaces
 
 \section{MIT Prof - tangible media group}
-\label{sec:orgb9d195f}
+\label{sec:orga3e112a}
 \url{http://tangible.media.mit.edu/projects/}
 \section{Nielsen: augmenting ltm and using ai to augment human-i ??????}
-\label{sec:orgb38571f}
+\label{sec:orgf0ca617}
 
 Other approaches to 
 
@@ -201,11 +210,11 @@ Other approaches to
 \cite{carter2017using}  
 
 \section{Tangible bits - Hiroshi Ishii  and  Brygg Ullmer}
-\label{sec:orgf681ac6}
+\label{sec:orgee569e3}
 \cite{IshiiH2002Tbdt}
 
 \chapter{Specification and context}
-\label{sec:orgf827526}
+\label{sec:org6e7f0ef}
 
 \begin{figure}[htbp]
 \centering
@@ -215,7 +224,7 @@ Other approaches to
 
 
 \chapter{Project in depth}
-\label{sec:org94cc4a3}
+\label{sec:orgaf198c3}
 
 See system schema Fig.  
 
@@ -227,11 +236,11 @@ See system schema Fig.
 
 
 \chapter{Creative process}
-\label{sec:orge9d510a}
+\label{sec:orgeba3de9}
 \chapter{Debugging and problem solving}
-\label{sec:orgb4213fb}
+\label{sec:org04b6182}
 \chapter{Evaluation and Conclusions}
-\label{sec:org05b6f4a}
+\label{sec:orgb1ec848}
 \bibliographystyle{ieeetr} 
 \bibliography{references}
 \end{document}
