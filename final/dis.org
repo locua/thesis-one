@@ -1,4 +1,4 @@
-#+title: A system for exploring haptic and spatial interaction 
+#+title: A system for exploring tangible and spatial computer interaction 
 #+author: Louis James
 #+options: h:2 num:t toc:nil \n:nil
 #+description: Final year project for Creative Computing
@@ -85,11 +85,13 @@ academic context for the project.
 * Background
 
 The motivation for this project stems in part from a feeling of frustration in
-how working on computers can often be a constricted affair and a pondering over
-how we might expand the /keyboard-mouse-monitor/ model to improve the utility of
-computers regarding our own perceptive abilities. How might a spatial and more
-/haptic/ environment for interaction create an improved space for thinking with
-computers as well as our physical health.
+ how working on computers can often be a constricted affair and a pondering over
+ how we might expand the /keyboard-mouse-monitor/ model to improve the utility
+ of computers regarding our own perceptive abilities. How might a spatial,
+ haptic and tangible environment for interaction create an improved space for
+ working and thinking with computers as well with our physical health? How might
+ such an environment fundamentally augment our cognitive capabilities; memory
+ and learning as well as creativity itself?
 
 ** Definitions
 *** Computing
@@ -125,13 +127,13 @@ stripped back in style and has been rewritten in [[https://en.wikipedia.org/wiki
 selection of esoteric programming tools including a synthetic language, games,
 software all logged using their own /Arvelie calendar/ cite:DevineNataniev. \\
 
-Both these two systems have their own specific use-cases, /Org-mode/ in academia
-and science and /XXIIV/, a experimental personal archive. They both
-are exist in the contemporary and prevailing /keyboard-mouse-monitor/ paradigm
+Both these two systems have their own specific use-cases, /Org-mode/; in
+academia and science and /XXIIV/; an experimental personal archive. They both
+utilise the contemporary and prevailing /keyboard-mouse-monitor/ paradigm
 of computer interaction but push the boundaries of cognition in this medium,
 particularly regarding memory and productivity. These two projects were a birth
-point in thinking about how software systems can be augment thought and
-improve learning ability and computer productivity.
+point in thinking about how software systems can be augment thought and improve
+learning ability and computer productivity.
 
 
 ** A virtual exploration of Dynamicland
