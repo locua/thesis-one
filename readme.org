@@ -1,4 +1,14 @@
 * Report repo
+** Abstract
+Presented here is a specification of experimental approaches to computer
+interaction based on spatial and tangible methods. The report describes an
+prototypical implementation of a base system for interaction in space and a
+theoretical API for such a system and similar systems. This utilises computer
+vision techniques to analyse a surface to track objects and project onto the
+space creating a feedback system for interaction. To finish a
+ethnomethodological framework for evaluation and further development is
+proposed???
+
 ** Struct
 *** Introduction
 *** Background
