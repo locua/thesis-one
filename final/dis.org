@@ -20,7 +20,6 @@
 \end{abstract}
 \newpage
 
-
 * notes from tutorial 7/5                                          :noexport:
 ** Main
 - my i me, first person reference in writing
@@ -70,19 +69,6 @@ proposed???
 * Toc :ignore:
 \tableofcontents
 #+latex: \listoffigures
-* Group writing session -                                          :noexport:
-
-** Today: 
-Outline background research and
-** So far 
-Only the main structure is in place
-** By the end of the session:
-Have written a good overview of literature sorted out main references and cited
-them
-** First 45 mins
-Identify main references and begin writing. Describing background research and
-academic context for the project.
-
 * Introduction
 
 ** Project aims
@@ -200,7 +186,12 @@ partial clone of /Dynamicland/. This was another starting point for playing
 around with but I found that I couldn't set it up and have it stable enough to
 develop on. It also suffers from being quite slow, due to the Computer Vision
 and graphics being done in the browser (it uses a version of OpenCv compiled to
-[[https://webassembly.org/][WebAssembly]]) cite:JpPaperPrograms.
+[[https://webassembly.org/][WebAssembly]]) cite:JpPaperPrograms. WebAssembly has interesting scope for doing
+high-performance computation in the browser but I found there was still a
+significant lag from detecting papers to projecting back down on to them.
+Another branch which had implemented blob detection on the GPU I also found to
+be slow and unstable ([[https://github.com/janpaul123/paperprograms/pull/28][Link to pull request]]), this may have been due to my
+lighting and camera setup.
 
 
 ** Sage digital research
