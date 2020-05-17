@@ -1,2 +1,9 @@
 references/*
 examples/
+*.tex
+*.bbl
+dis.glsdefs
+dis.ist
+dis.lof
+dis.glo
+
