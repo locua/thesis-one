@@ -127,41 +127,52 @@ ecosystem for collaborative computing and expressive programming. Victor
 highlights his ideas for the progression of computing and interaction in a
 series of talks (available online) and on his [[http://worrydream.com][website]]. In his talk "Seeing
 Spaces" he talks of a new kind of maker-space which allow makers to see across
-time and possibilities. /Dynamicland/ offers a computational medium which allows
-for full use of the human senses and a more [[https://vimeo.com/115154289][humane representation of thought]]
-cite:VictorKayDynamicLand. \\
+time and possibilities. /Dynamicland/ seeks to offer a computational medium
+which allows for full use of the human senses and a more [[https://vimeo.com/115154289][humane representation
+of thought]] cite:VictorKayDynamicLand. \\
 
 #+caption: RealtalkOS, the operating system of /Dynamicland/
 #+ATTR_LATEX: :width 12cm
 [[file:assets/realtalk-os.jpg]]  
 
 
-/DL/ was the inspiration for the main physical and technical model for
-this project, an /augmented/ workspace either on the floor or a table which is
-projected onto. A camera/s pointing down onto the projection space is the sensor
-for detecting interaction, with the projector as the actuator. This base model can be
-seen in Figures ref:pp-schema and  ref:systemSchema.
+/DL/ was a major inspiration for the main technical model for this project, an
+/augmented/ workspace either on the floor or a table which is projected onto. A
+camera/s pointing down onto the projection space is the sensor for detecting
+interaction, with the projector as the actuator. This base model can be seen in
+Figures ref:pp-schema and ref:systemSchema.
 
 
 *** Dynamiclands opensource model :noexport:
 
-** Paper programs - open source
+** Paper Programs 
 
 Looking to find some of the code for /Dynamicland/ and a more detailed
-specification of *DL* I stumbled across /Paper Programs/ (/Dynamicland/ has an
-'open-source model', but it is only open if you can visit it physically as the
-source code is physically in the space). /Paper Programs/ is a browser-based
-partial clone of /Dynamicland/. This was another starting point for playing
-around with but I found that I couldn't set it up and have it stable enough to
-develop on. It also suffers from being quite slow, due to the Computer Vision
-and graphics being done in the browser (it uses a version of OpenCv compiled to
-[[https://webassembly.org/][WebAssembly]]) cite:JpPaperPrograms. While WebAssembly has the scope for doing
-high-performance computation in the browser but I found there was still a
-significant lag from detecting papers to projecting back down on to them.
-Another branch which had implemented blob detection on the GPU I also found to
-be slow and unstable ([[https://github.com/janpaul123/paperprograms/pull/28][Link to pull request]]), this may have been due to my
-lighting and camera setup.
+specification of *DL* I stumbled across /Paper Programs/(PP) (/Dynamicland/ has
+an 'open-source model', but it is only open if you can visit it physically as
+the source code is physically in the space). /Paper Programs/(PP) is a browser-based
+partial clone of /Dynamicland/. PP takes one element of dynamicland, i.e. the
+representation of computer programs in a spatial environment, on pieces of
+paper. Programs are written in Javascript and stored in a Postgresql database.
+This idea of 'physicalizing' some method or element of the computer and allowing
+the direct haptic manipulation of it has further inspired this project. \\
 
+#+ATTR_LATEX: :width 12cm  :float
+#+caption: /Paperprograms/ in action label:pp-users
+[[file:assets/pp_action2.png]]
+
+
+PP aims to facilitate a collaborative programming environment where each anyone
+in the space can write Javascript programs and interact with others. As in DL
+each program has a unique code and a colour encoding. It follows a similar
+hardware model that being a projector and camera on the ceiling and the paper
+"programs" (See Fig. ref:pp-schema.).
+
+
+
+#+caption: The initial physical schema: /Paperprograms/ label:pp-schema
+#+ATTR_LATEX: :width 15cm
+[[file:assets/pp-diag.png]]
 
 
 ** Sage digital research or Moving from implementation to abstraction
@@ -237,15 +248,26 @@ with, for example, magnetised components keeping the objects to a board.
 Alongside this a computer keyboard may be used for additional input such as
 inputting text or selecting something. \\
 
-My original plan was to use the already made /Paperprograms/ system and build on
-top of this. Due to technical issues with PP I decided to implement the system
-myself using openFrameworks, a C++ toolkit for experimental application
-development. I chose this framework as it has straightforward 'out of the box'
-graphics capabilities as well as numerous Add-ons which include /Opencv/
-cite:opencv_library wrappers and GUI libraries as well as an active community of
-users. This combination in one framework seemed suitable for quick
-experimentation and prototyping for the project. The physical setup would
-include a Projector and HD webcam and computer for running the application. \\
+The original plan was to use /Paperprograms/ and build on top of this. With the
+paperprograms system, I planned to build, a program to explore the psychology of
+interaction with such a system. This could take the form of a game-like
+psychology experiment. However for risk of attempting a psychology thesis within
+a computing major this scope was switched to creating and exploring the
+implementation and formalisation of the interaction system itself.
+
+Due to technical issues with PP and the motivation to explore an alternative
+interaction model, I decided to implement the system using openFrameworks, a C++
+toolkit for experimental application development. I chose this framework as it
+has straightforward 'out of the box' graphics capabilities as well as numerous
+Add-ons which include /OpenCV/ cite:opencv_library wrappers and GUI libraries as
+well as an active community of users. This combination in one framework seemed
+suitable for quick experimentation and prototyping for the project. The physical
+setup would include a Projector and HD webcam and computer for running the
+application. \\
+
+#+caption: System schema label:systemSchema  
+#+ATTR_LATEX: :width 15cm
+[[file:assets/project-schema-final.png]]
 
 Another design consideration I had in mind was accessibility. From my research
 into similar projects an aim was to create a similar system that could be open
@@ -258,30 +280,32 @@ most educational institutions; one of the target areas that further development
 was envisioned.
 
 
-
-#+caption: The initial physical schema: /Paperprograms/ label:pp-schema
-#+ATTR_LATEX: :width 15cm
-[[file:assets/pp-diag.png]]
-
-
-
 * Project in depth label:projectindepth
 
-See system schema Fig.  
 
-#+caption: System schema label:systemSchema  
-#+ATTR_LATEX: :width 15cm
-[[file:assets/project-schema-final.png]]
+** Implementation details
+
+
+
+** Final Build
 
 ** Raspberry pi testing
 
-** Build
-
 ** API
 
-** 
-
 * Creative process
+
+As mentioned /Paperprogams/ was a starting point for playing around with but I found that I
+couldn't set it up and have it stable enough to develop on. It also suffers from
+being quite slow, due to the Computer Vision and graphics being done in the
+browser (it uses a version of OpenCv compiled to [[https://webassembly.org/][WebAssembly]])
+cite:JpPaperPrograms. While WebAssembly has the scope for doing high-performance
+computation in the browser but I found there was still a significant lag from
+detecting papers to projecting back down on to them. Another branch which had
+implemented blob detection on the GPU I also found to be slow and unstable ([[https://github.com/janpaul123/paperprograms/pull/28][Link
+to pull request]]), this may have been due to my lighting and camera setup.
+
+
 * Debugging and problem solving
 * Evaluation and Conclusions
 * Research notes :noexport:
