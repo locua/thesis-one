@@ -30,4 +30,8 @@ H.~Ishii, ``Tangible bits: designing the seamless interface between people,
   bits, and atoms,'' in {\em Proceedings. International Symposium on Mixed and
   Augmented Reality}, pp.~199--199, IEEE, 2002.
 
+\bibitem{opencv_library}
+G.~Bradski, ``{The OpenCV Library},'' {\em Dr. Dobb's Journal of Software
+  Tools}, 2000.
+
 \end{thebibliography}

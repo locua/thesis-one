@@ -76,3 +76,35 @@ E.g. transcripts: user interviews etc.
 *** Signposting 
 **** Tell the reader where u are going
 *** Revising and editing
+
+* notes from tutorial 7/5                                          :noexport:
+** Main
+- my i me, first person reference in writing
+- org mode, one file or seperate files for chapters?
+** Miscellaneous 
+- LICENCE, Creative commons etc. Any relevance to assement or for personal release?
+- Graduation, grade. Adjusted?
+** Avoid personal storytelling throughout
+** some personal background in inspiration
+** New scope
+*** finish the vision element to usable
+*** social / interaction 
+*** opencv - static v movement tracking 
+**** shape
+*** Evaluation and context 
+**** Open source base system for tangible interfaces
+***** Dynamicland open source question
+*** opencv
+**** openpose 
+**** optical flow
+*** abstract data type api / specification
+*** swagger api open api spec web based
+*** Charm spec music abstract spec
+*** Oop - handle example
+**** UML diag
+**** return
+**** side
+*** Taxonomy of interaction
+- formalising blob tracking example
+- movement v stillness
+

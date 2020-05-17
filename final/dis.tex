@@ -1,4 +1,4 @@
-% Created 2020-05-10 Sun 15:01
+% Created 2020-05-17 Sun 13:39
 % Intended LaTeX compiler: pdflatex
 \documentclass[12pt]{report}
 \usepackage[utf8]{inputenc}
@@ -54,10 +54,10 @@ proposed???
 \tableofcontents
 \listoffigures
 \chapter{Introduction}
-\label{sec:orgff249a1}
+\label{sec:orgc960828}
 
 \section{Project aims}
-\label{sec:org6797ae6}
+\label{sec:orgde0f111}
 
 \begin{itemize}
 \item open source project for tangible interaction
@@ -66,7 +66,7 @@ proposed???
 \end{itemize}
 
 \chapter{Background}
-\label{sec:org6a8683a}
+\label{sec:org4525a2e}
 
 The motivation for this project stems in part from a feeling of frustration in
  how working on computers can often be a constricted affair and a pondering over
@@ -78,20 +78,20 @@ The motivation for this project stems in part from a feeling of frustration in
  and learning as well as creativity itself?
 
 \section{Definitions}
-\label{sec:orga9bb899}
+\label{sec:org5649234}
 \begin{enumerate}
 \item Computing
-\label{sec:org784941f}
+\label{sec:orgee67d03}
 \item keyboard-mouse-monitor model (kmm model) (?)
-\label{sec:org1928579}
+\label{sec:org8d933b3}
 \item Cognition
-\label{sec:org059152a}
+\label{sec:org2acb25f}
 \item Exocortex
-\label{sec:orge7824b8}
+\label{sec:org73f7ba7}
 \end{enumerate}
 
 \section{Beginning with the Exocortex}
-\label{sec:org81af19e}
+\label{sec:orgecfdd8c}
 
 I started off looking at \emph{Exocortexes} and other personal archiving systems.
 Systems that allow the user to externalise thought and memory. This could be via
@@ -129,7 +129,7 @@ learning ability and computer productivity.
 
 
 \section{A virtual exploration of Dynamicland}
-\label{sec:orgfad32e8}
+\label{sec:org4337574}
 
 Another original and critical point of reference was \emph{Dynamicland}, a research
 project in Oakland, USA. The aim of the project is to implement a new more
@@ -152,7 +152,7 @@ are recognised via the codes and their code, stored in a database is then run,
 it can also \emph{read} code using OCR but generally the code is there \href{https://thenewstack.io/dynamicland-rethinks-computer-interfaces/}{symbolically}.
 Projectors on the ceiling transform the paper and workbenches into whatever the
 programmer decides. This relatively simple model makes for an exciting new
-ecosystem for collaborative computing and expressive programming. Victors,
+ecosystem for collaborative computing and expressive programming. Victor
 highlights his ideas for the progression of computing and interaction in a
 series of talks (available online) and on his \href{http://worrydream.com}{website}. In his talk "Seeing
 Spaces" he talks of a new kind of maker-space which allow makers to see across
@@ -174,7 +174,7 @@ for detecting interaction, with the projector as the actuator. This base model c
 seen in Figures \ref{pp-schema} and  \ref{systemSchema}.
 
 \section{Paper programs - open source}
-\label{sec:org48ccc57}
+\label{sec:org2add96e}
 
 Looking to find some of the code for \emph{Dynamicland} and a more detailed
 specification of \textbf{DL} I stumbled across \emph{Paper Programs} (\emph{Dynamicland} has an
@@ -184,15 +184,19 @@ partial clone of \emph{Dynamicland}. This was another starting point for playing
 around with but I found that I couldn't set it up and have it stable enough to
 develop on. It also suffers from being quite slow, due to the Computer Vision
 and graphics being done in the browser (it uses a version of OpenCv compiled to
-\href{https://webassembly.org/}{WebAssembly}) \cite{JpPaperPrograms}. WebAssembly has interesting scope for doing
-high-performance computation in the browser but PaperPrograms has a significant
-lag from detecting papers to projecting back down on to them. I did checkout a
-branch which had implemented blob detection on the GPU but still found it slow
-and unstable (\href{https://github.com/janpaul123/paperprograms/pull/28}{Link to pull request}).
+\href{https://webassembly.org/}{WebAssembly}) \cite{JpPaperPrograms}. While WebAssembly has the scope for doing
+high-performance computation in the browser but I found there was still a
+significant lag from detecting papers to projecting back down on to them.
+Another branch which had implemented blob detection on the GPU I also found to
+be slow and unstable (\href{https://github.com/janpaul123/paperprograms/pull/28}{Link to pull request}), this may have been due to my
+lighting and camera setup.
 
 
-\section{Sage digital research}
-\label{sec:orgb6eee0d}
+
+\section{Sage digital research or Moving from implementation to abstraction}
+\label{sec:orgaf13c1d}
+
+Moving from implementation to abstraction
 
 Ethnomethodology
 
@@ -201,10 +205,10 @@ Embodied Cognition
 Haptic interfaces
 
 \section{MIT Prof - tangible media group}
-\label{sec:org8fe9bbb}
+\label{sec:org23ad866}
 \url{http://tangible.media.mit.edu/projects/}
 \section{Nielsen: augmenting ltm and using ai to augment human-i ??????}
-\label{sec:org120ccb6}
+\label{sec:org8d8f366}
 
 Other approaches to 
 
@@ -213,11 +217,45 @@ Other approaches to
 \cite{carter2017using}  
 
 \section{Tangible bits - Hiroshi Ishii  and  Brygg Ullmer}
-\label{sec:orgefb7d08}
+\label{sec:org8c86586}
 \cite{IshiiH2002Tbdt}
 
 \chapter{Specification and context}
-\label{sec:org5483e9b}
+\label{sec:org33acc38}
+
+As in my original specification the main aim was to create a system for spatial
+interaction. Initially I imagined it to work on a table top surface (in the end
+it was developed on a floor mat due to considerations in my development
+environment; see Chapter \ref{projectindepth}). The other principle component was
+to that interaction would be based on the placement and movement of objects
+around the work-surface. The position and movements of theses objects would be
+picked up by a camera and actuated by a projector; both situated above the
+surface looking down onto it. It could also be setup in a horizontal direction,
+with, for example, magnetised components keeping the objects to a board.
+Alongside this a computer keyboard may be used for additional input such as
+inputting text or selecting something. \\
+
+My original plan was to use the already made \emph{Paperprograms} system and build on
+top of this. Due to technical issues with PP I decided to implement the system
+myself using openFrameworks, a C++ toolkit for experimental application
+development. I chose this framework as it has straightforward 'out of the box'
+graphics capabilities as well as numerous Add-ons which include \emph{Opencv}
+\cite{opencv_library} wrappers and GUI libraries as well as an active community of
+users. This combination in one framework seemed suitable for quick
+experimentation and prototyping for the project. The physical setup would
+include a Projector and HD webcam and computer for running the application. \\
+
+Another design consideration I had in mind was accessibility. From my research
+into similar projects an aim was to create a similar system that could be open
+source and easily setup so that others could build on top of the system. This
+was another reason for using \href{https://openframeworks.cc/download/}{openFrameworks} which is cross platform (Windows,
+OSx, IOS and Linux). This would mean with minor or no modification of the code,
+it could be run on any all the major desktop platforms. The hardware
+requirements are also the kind which are either cheaply sourced or available in
+most educational institutions: one of the target areas that further development
+was envisioned.
+
+
 
 \begin{figure}[htbp]
 \centering
@@ -226,8 +264,9 @@ Other approaches to
 \end{figure}
 
 
-\chapter{Project in depth}
-\label{sec:orgb3cc7cb}
+
+\chapter{Project in depth \label{projectindepth}}
+\label{sec:org34ac07c}
 
 See system schema Fig.  
 
@@ -237,13 +276,24 @@ See system schema Fig.
 \caption{System schema \label{systemSchema}}
 \end{figure}
 
+\section{Raspberry pi testing}
+\label{sec:orgc3cf169}
+
+\section{Build}
+\label{sec:orgb218202}
+
+\section{API}
+\label{sec:org8660844}
+
+\section{}
+\label{sec:orgec11ad0}
 
 \chapter{Creative process}
-\label{sec:org1056b47}
+\label{sec:org477ac17}
 \chapter{Debugging and problem solving}
-\label{sec:orgc42e5c7}
+\label{sec:org7bf93f5}
 \chapter{Evaluation and Conclusions}
-\label{sec:orgf8be41a}
+\label{sec:orgf7a68da}
 \bibliographystyle{ieeetr} 
 \bibliography{references}
 \end{document}

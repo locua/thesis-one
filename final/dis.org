@@ -20,37 +20,6 @@
 \end{abstract}
 \newpage
 
-* notes from tutorial 7/5                                          :noexport:
-** Main
-- my i me, first person reference in writing
-- org mode, one file or seperate files for chapters?
-** Miscellaneous 
-- LICENCE, Creative commons etc. Any relevance to assement or for personal release?
-- Graduation, grade. Adjusted?
-** Avoid personal storytelling throughout
-** some personal background in inspiration
-** New scope
-*** finish the vision element to usable
-*** social / interaction 
-*** opencv - static v movement tracking 
-**** shape
-*** Evaluation and context 
-**** Open source base system for tangible interfaces
-***** Dynamicland open source question
-*** opencv
-**** openpose 
-**** optical flow
-*** abstract data type api / specification
-*** swagger api open api spec web based
-*** Charm spec music abstract spec
-*** Oop - handle example
-**** UML diag
-**** return
-**** side
-*** Taxonomy of interaction
-- formalising blob tracking example
-- movement v stillness
-
 
 * Abstract :ignore:
 \renewcommand{\abstractname}{Abstract}
@@ -154,7 +123,7 @@ are recognised via the codes and their code, stored in a database is then run,
 it can also /read/ code using OCR but generally the code is there [[https://thenewstack.io/dynamicland-rethinks-computer-interfaces/][symbolically]].
 Projectors on the ceiling transform the paper and workbenches into whatever the
 programmer decides. This relatively simple model makes for an exciting new
-ecosystem for collaborative computing and expressive programming. Victors,
+ecosystem for collaborative computing and expressive programming. Victor
 highlights his ideas for the progression of computing and interaction in a
 series of talks (available online) and on his [[http://worrydream.com][website]]. In his talk "Seeing
 Spaces" he talks of a new kind of maker-space which allow makers to see across
@@ -186,7 +155,7 @@ partial clone of /Dynamicland/. This was another starting point for playing
 around with but I found that I couldn't set it up and have it stable enough to
 develop on. It also suffers from being quite slow, due to the Computer Vision
 and graphics being done in the browser (it uses a version of OpenCv compiled to
-[[https://webassembly.org/][WebAssembly]]) cite:JpPaperPrograms. WebAssembly has interesting scope for doing
+[[https://webassembly.org/][WebAssembly]]) cite:JpPaperPrograms. While WebAssembly has the scope for doing
 high-performance computation in the browser but I found there was still a
 significant lag from detecting papers to projecting back down on to them.
 Another branch which had implemented blob detection on the GPU I also found to
@@ -194,7 +163,10 @@ be slow and unstable ([[https://github.com/janpaul123/paperprograms/pull/28][Lin
 lighting and camera setup.
 
 
-** Sage digital research
+
+** Sage digital research or Moving from implementation to abstraction
+
+Moving from implementation to abstraction
 
 Ethnomethodology
 
@@ -217,8 +189,12 @@ cite:carter2017using
 ** sage haptics :noexport:
 - Touch is bi-directional, percieve and actuate via touch
   - Touch is an input and output tool in HCI
-- Also can be active and passive. Exploration of object vs /passive/ eg vibrotactile actuators in a mobile phone vibrating when phone rings.
-- 
+- Also can be active and passive. Exploration of object vs /passive/ eg
+  vibrotactile actuators in a mobile phone vibrating when phone rings.
+- Standardised keyboard shortcuts
+- In cog sci looking to explore the phenomena on a cognitive level while in HCI
+  approach we are looking to formalise the computational interaction system /
+  schema
 
 ** Tangible bits - Hiroshi Ishii  and  Brygg Ullmer
 cite:IshiiH2002Tbdt
@@ -232,7 +208,6 @@ cite:IshiiH2002Tbdt
 
 *** alex mclean thesis
 
-*** 
 
 ** Main refs :noexport:
 - Interaction design beyond HCI cite:SharpHelen2019IDBH
@@ -250,12 +225,47 @@ cite:IshiiH2002Tbdt
 
 * Specification and context
 
+As in my original specification the main aim was to create a system for spatial
+interaction. Initially I imagined it to work on a table top surface (in the end
+it was developed on a floor mat due to considerations in my development
+environment; see Chapter ref:projectindepth). The other principle component was
+to that interaction would be based on the placement and movement of objects
+around the work-surface. The position and movements of theses objects would be
+picked up by a camera and actuated by a projector; both situated above the
+surface looking down onto it. It could also be setup in a horizontal direction,
+with, for example, magnetised components keeping the objects to a board.
+Alongside this a computer keyboard may be used for additional input such as
+inputting text or selecting something. \\
+
+My original plan was to use the already made /Paperprograms/ system and build on
+top of this. Due to technical issues with PP I decided to implement the system
+myself using openFrameworks, a C++ toolkit for experimental application
+development. I chose this framework as it has straightforward 'out of the box'
+graphics capabilities as well as numerous Add-ons which include /Opencv/
+cite:opencv_library wrappers and GUI libraries as well as an active community of
+users. This combination in one framework seemed suitable for quick
+experimentation and prototyping for the project. The physical setup would
+include a Projector and HD webcam and computer for running the application. \\
+
+Another design consideration I had in mind was accessibility. From my research
+into similar projects an aim was to create a similar system that could be open
+source and easily setup so that others could build on top of the system. This
+was another reason for using [[https://openframeworks.cc/download/][openFrameworks]] which is cross platform (Windows,
+OSx, IOS and Linux). This would mean with minor or no modification of the code,
+it could be run on any all the major desktop platforms. The hardware
+requirements are also the kind which are either cheaply sourced or available in
+most educational institutions; one of the target areas that further development
+was envisioned.
+
+
+
 #+caption: The initial physical schema: /Paperprograms/ label:pp-schema
 #+ATTR_LATEX: :width 15cm
 [[file:assets/pp-diag.png]]
 
 
-* Project in depth
+
+* Project in depth label:projectindepth
 
 See system schema Fig.  
 
@@ -263,6 +273,13 @@ See system schema Fig.
 #+ATTR_LATEX: :width 15cm
 [[file:assets/project-schema-final.png]]
 
+** Raspberry pi testing
+
+** Build
+
+** API
+
+** 
 
 * Creative process
 * Debugging and problem solving
