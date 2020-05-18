@@ -51,24 +51,23 @@ proposed???
 The motivation for this project stems in part from a feeling of frustration in
  how working on computers can often be a constricted affair and a pondering over
  how we might expand the /keyboard-mouse-monitor/ model to improve the utility
- of computers regarding our own perceptive abilities. How might a spatial,
- haptic and tangible environment for interaction create an improved space for
- working and thinking with computers as well with our physical health? How might
- such an environment fundamentally augment our cognitive capabilities; memory
- and learning as well as creativity itself?
+ of computers regarding our physical health, wellbeing and perceptive abilities.
+ How might a spatial, haptic and tangible environment for interaction create an
+ improved space for working and thinking with computers as well with our
+ physical health? How might such an environment fundamentally augment our
+ cognitive capabilities; memory and learning as well as creativity itself?
  
 ** Definitions
-*** Computing
-*** keyboard-mouse-monitor model (kmm model) (?)
-*** Cognition
+*** KMM - keyboard-mouse-monitor model 
+*** HCI - Human Computer Interaction
 *** Exocortex
 
-** Beginning with the Exocortex
+** /Exocortices/ and augmented cognition
 
-I started off looking at /Exocortexes/ and other personal archiving systems.
+I started off looking at /Exocortices/ and other personal archiving systems.
 Systems that allow the user to externalise thought and memory. This could be via
 simply storing and organising work and ideas efficiently and methodically or
-unifying many tasks or different workflows into a singular interface. \\
+unifying many tasks or different workflows into a singular interface. 
 
 Org mode is a good example of such a system. Org mode is a "computing
 environment for authoring mixed natural and computer language documents"
@@ -77,9 +76,8 @@ notes, producing documents and organising and runs inside of the text editor,
 Emacs. It has the ability to export to different formats such as HTML, LaTeX and
 supports "outlining, note-taking, hyperlinks, spreadsheets, TODO lists, project
 planning, GTD" as well as literate programming, all in plain-text
-cite:Schulte:Davison:Dye:Dominik:2011:JSSOBK:v46i03. (it is incidentally what
-this document is produced with) \\
-
+cite:Schulte:Davison:Dye:Dominik:2011:JSSOBK:v46i03 (it is incidentally what
+this document is produced with). \\
 
 Another point of reference when I was looking at externalised 'artificial
 information-processing systems' was Devine Lu Linvega's Exocortex [[https://wiki.xxiivv.com/site/nataniev.html][XXIIV --
@@ -97,10 +95,16 @@ utilise the contemporary and prevailing /keyboard-mouse-monitor/ paradigm
 of computer interaction but push the boundaries of cognition in this medium,
 particularly regarding memory and productivity. These two projects were a birth
 point in thinking about how software systems can be augment thought and improve
-learning ability and computer productivity.
+learning ability and computer productivity. \\
 
+# ** Nielsen: augmenting ltm and using ai to augment human-i ??????
 
-** A virtual exploration of Dynamicland
+Similarly information visualization is a tool for the augmenting and
+externalising cognition that we take for granted. cite:WareColin2013Ivpf
+
+cite:NielsenMich2018altm,carter2017using  
+
+** A virtual exploration of a 'dynamic land'
 
 Another original and critical point of reference was /Dynamicland/, a research
 project in Oakland, USA. The aim of the project is to implement a new more
@@ -148,9 +152,9 @@ Figures ref:pp-schema and ref:systemSchema.
 ** Paper programs 
 
 Looking to find some of the code for /Dynamicland/ and a more detailed
-specification of *DL* I stumbled across /Paper Programs/(PP) (/Dynamicland/ has
+specification of *DL* I stumbled across /Paper Programs/ (PP) ( /Dynamicland/ has
 an 'open-source model', but it is only open if you can visit it physically as
-the source code is physically in the space). /Paper Programs/(PP) is a browser-based
+the source code is physically in the space). /Paper Programs/ (PP) is a browser-based
 partial clone of /Dynamicland/. PP takes one element of dynamicland, i.e. the
 representation of computer programs in a spatial environment, on pieces of
 paper. Programs are written in Javascript and stored in a Postgresql database.
@@ -174,7 +178,7 @@ motivations for creating a...
 #+ATTR_LATEX: :width 15cm :float
 [[file:assets/pp-diag.png]]
 
-** Sage digital research or Moving from implementation to abstraction
+** Implementation and abstraction
 
 In the SAGE Handbook of Digital Technology Research chapter on Haptic interfaces
 specific design parameters are listed:
@@ -190,8 +194,16 @@ specific design parameters are listed:
 - ...
 
 These parameters present considerations for the design of such interfaces but
-also a formalisation of an abstracted version of the interaction.
-cite:HigginsSteve2015TSho
+also a formalisation of haptic interaction in the abstract
+cite:HigginsSteve2015TSho. It takes the possible of elements 'hapticity' and
+lays them out. This motivated a second outcome to the implementation itself, to
+construct a /formal/ specification for spatial and tangible interaction so as to
+describe the elements conceptually. This could then be used for further
+development of similar systems and allow for multi-disciplinary scientific
+experimentation. The benefits of having such a blueprint would be to present
+spatiality and tangibility (in relation to HCI) formally so as to allow for
+identification of elements for use.
+
 
 *** notes 
 Moving from implementation to abstraction
@@ -203,19 +215,6 @@ Embodied Cognition
 Haptic interfaces
 
 
-** MIT Prof - tangible media group
-http://tangible.media.mit.edu/projects/
-** Design of everyday things? :noexport:
-
-** Nielsen: augmenting ltm and using ai to augment human-i ??????
-
-Other approaches to 
-
-cite:NielsenMich2018altm
-
-cite:carter2017using  
-
-** sage haptics :noexport:
 - Touch is bi-directional, percieve and actuate via touch
   - Touch is an input and output tool in HCI
 - Also can be active and passive. Exploration of object vs /passive/ eg
@@ -225,12 +224,13 @@ cite:carter2017using
   approach we are looking to formalise the computational interaction system /
   schema
 
+
 ** Tangible bits - Hiroshi Ishii  and  Brygg Ullmer
 cite:IshiiH2002Tbdt
 
+*** MIT Prof - tangible media group
+http://tangible.media.mit.edu/projects/
 ** mental and physical health implications of contemporary computing ? Are they really quite minor? :noexport:
-
-
 ** Computational creativity? :noexport:
 
 *** Open source
@@ -254,7 +254,7 @@ cite:IshiiH2002Tbdt
   
 * Specification and context
 
-As in my original specification the main aim was to create a system for spatial
+As in the original specification the aim was to create a system for spatial
 interaction. Initially I imagined it to work on a table top surface (in the end
 it was developed on a floor mat due to considerations in my development
 environment; see Chapter ref:projectindepth). The other principle component was
@@ -323,6 +323,9 @@ detecting papers to projecting back down on to them. Another branch which had
 implemented blob detection on the GPU I also found to be slow and unstable ([[https://github.com/janpaul123/paperprograms/pull/28][Link
 to pull request]]), this may have been due to my lighting and camera setup.
 
+** Goverened by 
+*** technical implementability
+*** 
 
 * Debugging and problem solving
 * Evaluation and Conclusions
