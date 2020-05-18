@@ -99,7 +99,7 @@ learning ability and computer productivity. \\
 
 # ** Nielsen: augmenting ltm and using ai to augment human-i ??????
 
-Similarly information visualization is a tool for the augmenting and
+Information visualization is a tool for the augmenting and
 externalising cognition that we take for granted. cite:WareColin2013Ivpf
 
 cite:NielsenMich2018altm,carter2017using  
