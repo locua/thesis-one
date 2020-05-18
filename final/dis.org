@@ -56,7 +56,7 @@ The motivation for this project stems in part from a feeling of frustration in
  working and thinking with computers as well with our physical health? How might
  such an environment fundamentally augment our cognitive capabilities; memory
  and learning as well as creativity itself?
-
+ 
 ** Definitions
 *** Computing
 *** keyboard-mouse-monitor model (kmm model) (?)
@@ -145,7 +145,7 @@ Figures ref:pp-schema and ref:systemSchema.
 
 *** Dynamiclands opensource model :noexport:
 
-** Paper Programs 
+** Paper programs 
 
 Looking to find some of the code for /Dynamicland/ and a more detailed
 specification of *DL* I stumbled across /Paper Programs/(PP) (/Dynamicland/ has
@@ -161,22 +161,39 @@ the direct haptic manipulation of it has further inspired this project. \\
 #+caption: /Paperprograms/ in action label:pp-users
 [[file:assets/pp_action2.png]]
 
-
-PP aims to facilitate a collaborative programming environment where each anyone
-in the space can write Javascript programs and interact with others. As in DL
-each program has a unique code and a colour encoding. It follows a similar
-hardware model that being a projector and camera on the ceiling and the paper
-"programs" (See Fig. ref:pp-schema.).
-
+PP aims, like Dynamicland, to create a collaborative programming environment
+where each anyone in the space can write Javascript programs and interact with
+others. As in DL each program has a unique code and a colour encoding. It
+follows the same basic hardware model. That being a projector and camera on the
+ceiling and the paper "programs" (See Fig. ref:pp-schema.). This new vision of
+collaborative computing and multi-modal interaction is one of the initial
+motivations for creating a...
 
 
 #+caption: The initial physical schema: /Paperprograms/ label:pp-schema
-#+ATTR_LATEX: :width 15cm
+#+ATTR_LATEX: :width 15cm :float
 [[file:assets/pp-diag.png]]
-
 
 ** Sage digital research or Moving from implementation to abstraction
 
+In the SAGE Handbook of Digital Technology Research chapter on Haptic interfaces
+specific design parameters are listed:
+
+- Cutaneous Perception
+- Frequency
+- Duration
+- Rhythm
+- Location
+- Intensity
+- Texture
+- Kinesthetic Perception
+- ...
+
+These parameters present considerations for the design of such interfaces but
+also a formalisation of an abstracted version of the interaction.
+cite:HigginsSteve2015TSho
+
+*** notes 
 Moving from implementation to abstraction
 
 Ethnomethodology
@@ -184,6 +201,7 @@ Ethnomethodology
 Embodied Cognition
 
 Haptic interfaces
+
 
 ** MIT Prof - tangible media group
 http://tangible.media.mit.edu/projects/
@@ -233,7 +251,7 @@ cite:IshiiH2002Tbdt
 - Tidal cycles, Alex mcleans thesis ???
 - Why increases in adolescent depression may be linked to the technological environment cite:TwengeJeanM2020Wiia
 - Augmenting long term memory cite:NielsenMich2018altm 
-
+  
 * Specification and context
 
 As in my original specification the main aim was to create a system for spatial
