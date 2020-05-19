@@ -1,7 +1,9 @@
-#+title: Describing systems for the exploration of tangible and spatial computer interaction 
+#+title: Describing systems for the exploration of tangible and spatial computer interaction  
+#+title: \\ 
 #+author: Louis James
 #+options: h:2 num:t toc:nil \n:nil
-#+description: Final year project for Creative Computing
+#+subtitle: Final year project for Creative Computing Bsc \\
+#+subtitle: Goldsmiths University of London
 #+latex_class: book
 #+latex_header_extra: \input{config.tex}
 #+LATEX_HEADER: \setlength{\parindent}{0pt}
@@ -28,8 +30,9 @@ Presented here is a specification of experimental approaches to computer
 interaction based on spatial and tangible methods. The report describes an
 prototypical implementation of a base system for interaction in space and a
 theoretical API for such a system and similar systems. This utilises computer
-vision techniques to analyse a surface to track objects and project onto the
-space creating a feedback system for interaction. 
+vision techniques to analyse a surface to track objects and the projection of
+graphics onto the space creating a feedback system for interaction. The
+fundamental principle of \\
 
 An ethnomethodological framework for evaluation and further development
 is proposed???
@@ -255,7 +258,7 @@ http://tangible.media.mit.edu/projects/
   
 * Specification and context
 
-To sum up the fundamental principal of the style of interaction that this
+To sum up the fundamental principle of the style of interaction that this
 document aims to describe is summarised in the sentence below.
 
 #+begin_quote
