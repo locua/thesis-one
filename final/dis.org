@@ -26,16 +26,25 @@
 * Abstract :ignore:
 \renewcommand{\abstractname}{Abstract}
 #+LaTeX: \begin{abstract}
-Presented here is a specification of experimental approaches to computer
+Presented here is a specification for experimental approaches to computer
 interaction based on spatial and tangible methods. The report describes an
-prototypical implementation of a base system for interaction in space and a
-theoretical API for such a system and similar systems. This utilises computer
-vision techniques to analyse a surface to track objects and the projection of
-graphics onto the space creating a feedback system for interaction. The
-fundamental principle of \\
+prototypical implementation of a base system for computer interaction using
+physical objects on a surface. A theoretical API for such a system and similar
+systems is proposed. This utilises computer vision techniques to analyse a
+surface to track objects and the projection of graphics onto the space creating
+a feedback system for interaction. An attempt to gather together literature and
+examples of such existing systems is made. The fundamental principle of the
+interaction system here described is summarised in the sentence below:
 
-An ethnomethodological framework for evaluation and further development
-is proposed???
+#+begin_quote
+Physical objects on an /action surface/ have interactive properties, each object
+is both a sensor and actuator.
+#+end_quote
+
+
+
+# ???An ethnomethodological framework for evaluation and further development
+# is proposed???
 
 
 #+LaTeX: \end{abstract}
@@ -62,9 +71,9 @@ The motivation for this project stems in part from a feeling of frustration in
  cognitive capabilities; memory and learning as well as creativity itself?
  
 ** Definitions
-*** KMM - keyboard-mouse-monitor model 
 *** HCI - Human Computer Interaction
-*** Exocortex
+*** KMM - keyboard-mouse-monitor model 
+*** Exocortex - 
 
 ** /Exocortices/ and augmented cognition
 
@@ -232,6 +241,9 @@ Haptic interfaces
 ** Tangible bits - Hiroshi Ishii  and  Brygg Ullmer
 cite:IshiiH2002Tbdt
 
+- Ubiquitous computing
+- IOT
+
 *** MIT Prof - tangible media group
 http://tangible.media.mit.edu/projects/
 ** mental and physical health implications of contemporary computing ? Are they really quite minor? :noexport:
@@ -262,9 +274,14 @@ To sum up the fundamental principle of the style of interaction that this
 document aims to describe is summarised in the sentence below.
 
 #+begin_quote
-Physical objects on an /action surface/ have interactive properties. Each object
+Physical objects on an /action surface/ have interactive properties, each object
 is both a sensor and actuator.
 #+end_quote
+
+I provide this foundation so as to differentiate it between commonly used
+contemporary systems. It highlights that a 'live' surface will act as a space
+where objects are augmented with additional properties i.e. input and output to
+a computer system. \\
 
 As in the original specification the aim was to create a system for spatial
 interaction. Initially I imagined it to work on a table top surface (in the end
@@ -308,6 +325,11 @@ it could be run on any all the major desktop platforms. The hardware
 requirements are also the kind which are either cheaply sourced or available in
 most educational institutions; one of the target areas that further development
 was envisioned.
+
+#+caption: Abstract system schema label:systemSchema  
+#+ATTR_LATEX: :width 15cm
+[[file:assets/abstract-system-schema.png]]
+
 
 
 * Project in depth label:projectindepth
