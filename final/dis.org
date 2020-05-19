@@ -261,7 +261,7 @@ artwork in outlook but formed an initial experiment in designing HCI.
 [[file:assets/multi-modal-proj1.png]]
 
 #+caption: Modal schematic
-#+ATTR_LATEX: :width 15cm
+#+ATTR_LATEX: :width 18cm
 [[file:assets/multi-modal-proj-diag.png]]
 
 
