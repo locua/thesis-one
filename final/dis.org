@@ -29,9 +29,10 @@ interaction based on spatial and tangible methods. The report describes an
 prototypical implementation of a base system for interaction in space and a
 theoretical API for such a system and similar systems. This utilises computer
 vision techniques to analyse a surface to track objects and project onto the
-space creating a feedback system for interaction. To finish a
-ethnomethodological framework for evaluation and further development is
-proposed???
+space creating a feedback system for interaction. 
+
+An ethnomethodological framework for evaluation and further development
+is proposed???
 
 
 #+LaTeX: \end{abstract}
@@ -100,7 +101,7 @@ learning ability and computer productivity. \\
 # ** Nielsen: augmenting ltm and using ai to augment human-i ??????
 
 Information visualization is a tool for the augmenting and
-externalising cognition that we take for granted. cite:WareColin2013Ivpf
+externalising cognition that most take for granted. cite:WareColin2013Ivpf
 
 cite:NielsenMich2018altm,carter2017using  
 
@@ -253,6 +254,14 @@ http://tangible.media.mit.edu/projects/
 - Augmenting long term memory cite:NielsenMich2018altm 
   
 * Specification and context
+
+To sum up the fundamental principal of the style of interaction that this
+document aims to describe is summarised in the sentence below.
+
+#+begin_quote
+Physical objects on an /action surface/ have interactive properties. Each object
+is both a sensor and actuator.
+#+end_quote
 
 As in the original specification the aim was to create a system for spatial
 interaction. Initially I imagined it to work on a table top surface (in the end
