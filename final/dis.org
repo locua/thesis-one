@@ -246,7 +246,27 @@ cite:IshiiH2002Tbdt
 *** MIT Prof - tangible media group
 http://tangible.media.mit.edu/projects/
 
-** Multi-modal installation project first year
+** Multi-modal installation project 
+
+An experimental [[https://locua.github.io/posts/install-y1.html][project]] I produced in 2017 has also informed the direction of
+this project. This work was a multi-modal paint program where different hand
+movements and facial expressions controlled different parameters of a paint
+program. This included colour, size and position of the stroke. Additionally the
+different modes of input were also controlling parameters on a looping
+synthesizer. The installation was multi-modal in input and output. It was an
+artwork in outlook but formed an initial experiment in designing HCI.
+
+#+caption: Multi-modal painting
+#+ATTR_LATEX: :width 11cm
+[[file:assets/multi-modal-proj1.png]]
+
+#+caption: Modal schematic
+#+ATTR_LATEX: :width 15cm
+[[file:assets/multi-modal-proj-diag.png]]
+
+
+
+
 ** mental and physical health implications of contemporary computing ? Are they really quite minor? :noexport:
 ** Computational creativity? :noexport:
 
@@ -332,8 +352,7 @@ Due to the limited scope of this project in both time and academic context a
 secondary theoretical component is conceived. This is in the form of a
 theoretical specification and API for this project and similar systems. As
 discussed previously (ref:implement_and_abstraction) a set of parameters and
-variables can form a useful part of a conceptual illustration and formalisation
-of a system.
+variables can form a useful part of a conceptual illustration and formalisation.
 
 #+caption: Abstract system schema label:systemSchema  
 #+ATTR_LATEX: :width 11cm
@@ -366,8 +385,8 @@ implemented blob detection on the GPU I also found to be slow and unstable ([[ht
 to pull request]]), this may have been due to my lighting and camera setup.
 
 ** Goverened by 
-*** technical implementability
-*** 
+*** ...technical implementability
+*** ...research and experience
 
 * Debugging and problem solving
 * Evaluation and Conclusions
