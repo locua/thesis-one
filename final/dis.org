@@ -22,7 +22,6 @@
 \end{abstract}
 \newpage
 
-
 * Abstract :ignore:
 \renewcommand{\abstractname}{Abstract}
 #+LaTeX: \begin{abstract}
@@ -59,7 +58,7 @@ is both a sensor and actuator.
 - Prototypical
 - ethnomethodological frameworks for evaluation
 
-* Background
+* Background label:background
 
 The motivation for this project stems in part from a feeling of frustration in
  how working on computers can often be a constricted affair and a pondering over
@@ -188,13 +187,13 @@ motivations for creating a...
 
 
 #+caption: The initial physical schema: /Paperprograms/ label:pp-schema
-#+ATTR_LATEX: :width 15cm :float
+#+ATTR_LATEX: :width 10cm :float
 [[file:assets/pp-diag.png]]
 
-** Implementation and abstraction
+** Implementation and abstraction label:implement_and_abstraction
 
-In the SAGE Handbook of Digital Technology Research chapter on Haptic interfaces
-specific design parameters are listed:
+In the SAGE Handbook of Digital Technology Research's chapter on Haptic
+interfaces design parameters are listed:
 
 - Cutaneous Perception
 - Frequency
@@ -246,6 +245,8 @@ cite:IshiiH2002Tbdt
 
 *** MIT Prof - tangible media group
 http://tangible.media.mit.edu/projects/
+
+** Multi-modal installation project first year
 ** mental and physical health implications of contemporary computing ? Are they really quite minor? :noexport:
 ** Computational creativity? :noexport:
 
@@ -310,10 +311,11 @@ Add-ons which include /OpenCV/ cite:opencv_library wrappers and GUI libraries as
 well as an active community of users. This combination in one framework seemed
 suitable for quick experimentation and prototyping for the project. The physical
 setup would include a Projector and HD webcam and computer for running the
-application. \\
+application. See Fig. ref:systemSchema for the software and hardware schematic
+for this technical conception. \\
 
 #+caption: System schema label:systemSchema  
-#+ATTR_LATEX: :width 15cm
+#+ATTR_LATEX: :width 10cm
 [[file:assets/project-schema-final.png]]
 
 Another design consideration I had in mind was accessibility. From my research
@@ -322,26 +324,32 @@ source and easily setup so that others could build on top of the system. This
 was another reason for using [[https://openframeworks.cc/download/][openFrameworks]] which is cross platform (Windows,
 OSx, IOS and Linux). This would mean with minor or no modification of the code,
 it could be run on any all the major desktop platforms. The hardware
-requirements are also the kind which are either cheaply sourced or available in
-most educational institutions; one of the target areas that further development
-was envisioned.
+requirements are also the kind which are either cheaply (relatively) sourced or
+commonly available in educational institutions; one of the target areas that
+further development was envisioned. \\
+
+Due to the limited scope of this project in both time and academic context a
+secondary theoretical component is conceived. This is in the form of a
+theoretical specification and API for this project and similar systems. As
+discussed previously (ref:implement_and_abstraction) a set of parameters and
+variables can form a useful part of a conceptual illustration and formalisation
+of a system.
 
 #+caption: Abstract system schema label:systemSchema  
-#+ATTR_LATEX: :width 15cm
+#+ATTR_LATEX: :width 11cm
 [[file:assets/abstract-system-schema.png]]
 
 
 
 * Project in depth label:projectindepth
 
-
 ** Implementation details
-
-
 
 ** Final Build
 
 ** Raspberry pi testing
+
+** Abstract Spec
 
 ** API
 
