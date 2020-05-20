@@ -119,7 +119,7 @@ our abilities cite:WareColin2013Ivpf. Scientist Michael Nielsen also offers some
 approaches to increasing long term memory through the use of simple flash card
 software that orders things you want to memorise by how well you know them. He
 suggests this and the process of creating question / answer flashcards of an
-idea you want to remember improves memory capacity, understanding and out
+idea you want to remember improves memory capacity, understanding and our
 ability to do deep readings of a subject cite:NielsenMich2018altm,carter2017using.
 
 ** A virtual exploration of a 'dynamic land'
