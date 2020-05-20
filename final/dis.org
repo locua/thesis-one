@@ -9,6 +9,8 @@
 #+LATEX_HEADER: \setlength{\parindent}{0pt}
 #+LATEX_HEADER: \usepackage[margin=1in]{geometry}
 #+LATEX_HEADER: \usepackage{emptypage}
+#+LATEX_HEADER: \usepackage{enumitem}
+
 
 * other title ideas :noexport:
 # #+title: Spatial memory, embodied thinking, computer vision projection application \\
@@ -66,8 +68,9 @@ The motivation for this project stems in part from a feeling of frustration in
  of computers regarding our physical health, wellbeing and perceptive abilities.
  How might a spatial, haptic and tangible environment for interaction create an
  improved space for working and thinking with computers as well with our
- physical health? How might such an environment fundamentally augment our
- cognitive capabilities; memory and learning as well as creativity itself?
+ physical health cite:TwengeJeanM2020Wiia? How might such an environment
+ fundamentally augment our cognitive capabilities; memory and learning as well
+ as creativity itself?
  
 ** Definitions
 *** HCI - Human Computer Interaction
@@ -97,9 +100,7 @@ nataniev]]. /XXIIV/ is a personal archive and log with documentation of Linvega'
 personal tools and artworks. The site has gone through some changes since I
 first came across it. Originally a static, javascript and lisp based website
 with diaries, blog type posts and categorised personal logs. It is now somewhat
-stripped back in style and has been rewritten in [[https://en.wikipedia.org/wiki/C99][C (C99)]]. The work contains a
-selection of esoteric programming tools including a synthetic language, games,
-software all logged using their own /Arvelie calendar/ cite:DevineNataniev. \\
+stripped back in style and has been rewritten in [[https://en.wikipedia.org/wiki/C99][C (C99)]] cite:DevineNataniev. \\
 
 Both these two systems have their own specific use-cases, /Org-mode/; in
 academia and science and /XXIIV/; an experimental personal archive. They both
@@ -111,10 +112,15 @@ learning ability and computer productivity. \\
 
 # ** Nielsen: augmenting ltm and using ai to augment human-i ??????
 
-Information visualization is a tool for the augmenting and
-externalising cognition that most take for granted. cite:WareColin2013Ivpf
-
-cite:NielsenMich2018altm,carter2017using  
+Information visualization is a tool for the augmenting and externalising
+cognition that most take for granted. Utilising visualisation for tasks memory
+tasks by organising attention and concept mapping are useful ways to increase
+our abilities cite:WareColin2013Ivpf. Scientist Michael Nielsen also offers some
+approaches to increasing long term memory through the use of simple flash card
+software that orders things you want to memorise by how well you know them. He
+suggests this and the process of creating question / answer flashcards of an
+idea you want to remember improves memory capacity, understanding and out
+ability to do deep readings of a subject cite:NielsenMich2018altm,carter2017using.
 
 ** A virtual exploration of a 'dynamic land'
 
@@ -144,8 +150,8 @@ highlights his ideas for the progression of computing and interaction in a
 series of talks (available online) and on his [[http://worrydream.com][website]]. In his talk "Seeing
 Spaces" he talks of a new kind of maker-space which allow makers to see across
 time and possibilities. /Dynamicland/ seeks to offer a computational medium
-which allows for full use of the human senses and a more [[https://vimeo.com/115154289][humane representation
-of thought]] cite:VictorKayDynamicLand. \\
+which allows for full use of the human senses; a more [[https://vimeo.com/115154289][humane representation of
+thought]] cite:VictorKayDynamicLand. \\
 
 #+caption: RealtalkOS, the operating system of /Dynamicland/
 #+ATTR_LATEX: :width 12cm
@@ -157,7 +163,6 @@ of thought]] cite:VictorKayDynamicLand. \\
 camera/s pointing down onto the projection space is the sensor for detecting
 interaction, with the projector as the actuator. This base model can be seen in
 Figures ref:pp-schema and ref:systemSchema.
-
 
 *** Dynamiclands opensource model :noexport:
 
@@ -182,19 +187,33 @@ where each anyone in the space can write Javascript programs and interact with
 others. As in DL each program has a unique code and a colour encoding. It
 follows the same basic hardware model. That being a projector and camera on the
 ceiling and the paper "programs" (See Fig. ref:pp-schema.). This new vision of
-collaborative computing and multi-modal interaction is one of the initial
-motivations for creating a...
+collaborative computing and somewhat "multi-modal" interaction is one of the
+initial inspirations and an important reference for this project.
 
 
 #+caption: The initial physical schema: /Paperprograms/ label:pp-schema
 #+ATTR_LATEX: :width 10cm :float
 [[file:assets/pp-diag.png]]
 
+** Tangible bits - Ishii and Ullmer
+
+Another significant reference exploring novel approaches to interaction
+involving physical objects was the paper: /Tangible bits: towards seamless
+interfaces between people, bits and atoms/ (1997). It describes the motivation
+to for users to be able to "grasp and manipulate" bits, making them "tangible".
+The paper also presents three prototypes, – the /metaDESK/, /transBOARD/ and
+/ambientROOM/ and establish a new HCI approach "Tangible user interface[s]"
+(TUI) with equivalence to Graphical user interfaces (GUI's) cite:IshiiH2002Tbdt.
+It is an academic precursor to Dynamicland and is a starting point for tangible
+interaction, merging /ubiquitous computing/, /augmented reality/ and
+psychological approaches to HCI.
+
 ** Implementation and abstraction label:implement_and_abstraction
 
 In the SAGE Handbook of Digital Technology Research's chapter on Haptic
 interfaces design parameters are listed:
 
+#+ATTR_LATEX: :options [noitemsep]
 - Cutaneous Perception
 - Frequency
 - Duration
@@ -216,8 +235,7 @@ experimentation. The benefits of having such a blueprint would be to present
 spatiality and tangibility (in relation to HCI) formally so as to allow for
 identification of elements for use.
 
-
-*** notes 
+*** notes :noexport:
 Moving from implementation to abstraction
 
 Ethnomethodology
@@ -235,59 +253,34 @@ Haptic interfaces
 - In cog sci looking to explore the phenomena on a cognitive level while in HCI
   approach we are looking to formalise the computational interaction system /
   schema
-
-
-** Tangible bits - Hiroshi Ishii  and  Brygg Ullmer
-cite:IshiiH2002Tbdt
-
-- Ubiquitous computing
-- IOT
-
-*** MIT Prof - tangible media group
-http://tangible.media.mit.edu/projects/
-
-** Multi-modal installation project 
-
-An experimental [[https://locua.github.io/posts/install-y1.html][project]] I produced in 2017 has also informed the direction of
-this project. This work was a multi-modal paint program where different hand
-movements and facial expressions controlled different parameters of a paint
-program. This included colour, size and position of the stroke. Additionally the
-different modes of input were also controlling parameters on a looping
-synthesizer. The installation was multi-modal in input and output. It was an
-artwork in outlook but formed an initial experiment in designing HCI.
+  
+** Multi-modal interaction
 
 #+caption: Multi-modal painting
-#+ATTR_LATEX: :width 11cm
+#+ATTR_LATEX: :width 11cm :float
 [[file:assets/multi-modal-proj1.png]]
 
+An experimental [[https://locua.github.io/posts/install-y1.html][project]] I produced in 2017 has also informed the direction of
+this project. This work was a multi-modal paint program where hand movements and
+facial expressions controlled different parameters of a paint program. This
+included colour, size and position of the stroke. Additionally the different
+modes of input were also controlling parameters on a looping synthesizer. The
+installation was multi-modal in input and output. It was an artwork in outlook
+but formed an initial experiment in designing interaction. The work was
+particularly successful with children, who quickly got the hang of the controls.
+It also included the combination of a variety of inputs to interaction with a
+variety of outputs. Thought not necessarily the most effective or widely
+applicable it explored the capabilities of some more unusual interactive modes.
+
 #+caption: Modal schematic
-#+ATTR_LATEX: :width 18cm
+#+ATTR_LATEX: :width 15cm
 [[file:assets/multi-modal-proj-diag.png]]
 
 
+** MIT Prof - tangible media group                                :noexport:
+http://tangible.media.mit.edu/projects/
 
-
-** mental and physical health implications of contemporary computing ? Are they really quite minor? :noexport:
 ** Computational creativity? :noexport:
-
-*** Open source
-
-*** alex mclean thesis
-
-
-** Main refs :noexport:
-- Interaction design beyond HCI cite:SharpHelen2019IDBH
-- Sage handbook of digital technology research cite:HigginsSteve2015TSho
-  - Embodied cognition
-  - Haptic interfaces
-    - Augmented planning workbench cite:IshiiH2002Aupw 
-  - Ethnomethodology
-    - As an evaluative framework cite:HigginsSteve2015TSho
-- Dynamicland cite:VictorKayDynamicLand
-- The design of everyday things cite:TennerEdward2015TDoE
-- Tidal cycles, Alex mcleans thesis ???
-- Why increases in adolescent depression may be linked to the technological environment cite:TwengeJeanM2020Wiia
-- Augmenting long term memory cite:NielsenMich2018altm 
   
 * Specification and context
 
@@ -354,7 +347,7 @@ theoretical specification and API for this project and similar systems. As
 discussed previously (ref:implement_and_abstraction) a set of parameters and
 variables can form a useful part of a conceptual illustration and formalisation.
 
-#+caption: Abstract system schema label:systemSchema  
+#+caption: Abstract system schema label:abstractSystemSchema  
 #+ATTR_LATEX: :width 11cm
 [[file:assets/abstract-system-schema.png]]
 
