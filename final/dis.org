@@ -2,8 +2,8 @@
 #+title: \\ 
 #+author: Louis James
 #+options: h:2 num:t toc:nil \n:nil
-#+subtitle: Final year project for Creative Computing Bsc \\
-#+subtitle: Goldsmiths University of London
+#+subtitle:  \\
+#+subtitle: Final year project for Creative Computing Bsc, Goldsmiths University of London \\
 #+latex_class: book
 #+latex_header_extra: \input{config.tex}
 #+LATEX_HEADER: \setlength{\parindent}{0pt}
@@ -76,7 +76,6 @@ The motivation for this project stems in part from a feeling of frustration in
 *** HCI - Human Computer Interaction
 *** KMM - keyboard-mouse-monitor model 
 *** Exocortex - 
-
 ** /Exocortices/ and augmented cognition
 
 I started off looking at /Exocortices/ and other personal archiving systems.
@@ -89,7 +88,7 @@ environment for authoring mixed natural and computer language documents"
 cite:Schulte:Davison:Dye:Dominik:2011:JSSOBK:v46i03. It is designed for taking
 notes, producing documents and organising and runs inside of the text editor,
 Emacs. It has the ability to export to different formats such as HTML, LaTeX and
-supports "outlining, note-taking, hyperlinks, spreadsheets, TODO lists, project
+supports "outlining, note-taking, hyperlinks, spreadsheets, to-do lists, project
 planning, GTD" as well as literate programming, all in plain-text
 cite:Schulte:Davison:Dye:Dominik:2011:JSSOBK:v46i03 (it is incidentally what
 this document is produced with). \\
@@ -226,7 +225,7 @@ interfaces design parameters are listed:
 
 These parameters present considerations for the design of such interfaces but
 also a formalisation of haptic interaction in the abstract
-cite:HigginsSteve2015TSho. It takes the possible of elements 'hapticity' and
+cite:HigginsSteve2015TSho. It takes the possible elements of 'hapticity' and
 lays them out. This motivated a second outcome to the implementation itself, to
 construct a /formal/ specification for spatial and tangible interaction so as to
 describe the elements conceptually. This could then be used for further
@@ -257,7 +256,7 @@ Haptic interfaces
 ** Multi-modal interaction
 
 #+caption: Multi-modal painting
-#+ATTR_LATEX: :width 11cm :float
+#+ATTR_LATEX: :width 11cm 
 [[file:assets/multi-modal-proj1.png]]
 
 An experimental [[https://locua.github.io/posts/install-y1.html][project]] I produced in 2017 has also informed the direction of
@@ -283,9 +282,9 @@ http://tangible.media.mit.edu/projects/
 ** Computational creativity? :noexport:
   
 * Specification and context
-
+** Brief
 To sum up the fundamental principle of the style of interaction that this
-document aims to describe is summarised in the sentence below.
+document aims to describe is summarised in the following sentence:
 
 #+begin_quote
 Physical objects on an /action surface/ have interactive properties, each object
@@ -297,40 +296,40 @@ contemporary systems. It highlights that a 'live' surface will act as a space
 where objects are augmented with additional properties i.e. input and output to
 a computer system. \\
 
+** Technical options
 As in the original specification the aim was to create a system for spatial
 interaction. Initially I imagined it to work on a table top surface (in the end
 it was developed on a floor mat due to considerations in my development
 environment; see Chapter ref:projectindepth). The other principle component was
-to that interaction would be based on the placement and movement of objects
-around the work-surface. The position and movements of theses objects would be
-picked up by a camera and actuated by a projector; both situated above the
-surface looking down onto it. It could also be setup in a horizontal direction,
-with, for example, magnetised components keeping the objects to a board.
-Alongside this a computer keyboard may be used for additional input such as
-inputting text or selecting something. \\
+that interaction would be based on the placement and movement of objects around
+the work-surface. The position and movements of these objects would be picked up
+by a camera and actuated by a projector; both situated above the surface looking
+down onto it. A horizontal setup would also be possible, with for example,
+magnetised components keeping the objects to a board. Alongside the spatial
+objects a computer keyboard may be used for additional input such as inputting
+text or formatting. \\
 
-The original plan was to use /Paperprograms/ and build on top of this. With the
-paperprograms system, I planned to build, a program to explore the psychology of
-interaction with such a system. This could take the form of a game-like
-psychology experiment. However for risk of attempting a psychology thesis within
-a computing major this scope was switched to creating and exploring the
-implementation and formalisation of the interaction system itself.
-
-Due to technical issues with PP and the motivation to explore an alternative
-interaction model, I decided to implement the system using openFrameworks, a C++
-toolkit for experimental application development. I chose this framework as it
-has straightforward 'out of the box' graphics capabilities as well as numerous
-Add-ons which include /OpenCV/ cite:opencv_library wrappers and GUI libraries as
-well as an active community of users. This combination in one framework seemed
-suitable for quick experimentation and prototyping for the project. The physical
-setup would include a Projector and HD webcam and computer for running the
-application. See Fig. ref:systemSchema for the software and hardware schematic
-for this technical conception. \\
+The original specification involved using /Paper Programs/ and build on top of
+this. With the /PP/ system, I planned to write a program/s to explore the
+psychology of interaction with such a system. This could take the form of a
+game-like psychology experiment. However, for risk of attempting a psychology
+thesis within a computing project focus has been put on creating and exploring
+the implementation and formalisation of the interaction system itself. Due to
+technical issues with /PP/ and the motivation to explore an alternative
+interaction model, I decided to implement the system using [[https://openframeworks.cc/download/][*openFrameworks*]], a
+C++ toolkit for experimental application development. I chose this framework as
+it has straightforward 'out of the box' graphics capabilities as well as
+numerous add-ons. These include /OpenCV/ cite:opencv_library wrappers and GUI
+libraries as well as an active community of users. This combination in one
+framework seemed suitable for quick experimentation and prototyping for this
+project. Other C++ libraries were to be considered; Cinder and just OpenCv. The
+physical setup would include a Projector and HD webcam and computer for running
+the application. See Fig. ref:systemSchema for the software and hardware
+schematic for this technical conception. \\
 
 #+caption: System schema label:systemSchema  
 #+ATTR_LATEX: :width 10cm
-[[file:assets/project-schema-final.png]]
-
+** Design considerations
 Another design consideration I had in mind was accessibility. From my research
 into similar projects an aim was to create a similar system that could be open
 source and easily setup so that others could build on top of the system. This
@@ -341,17 +340,23 @@ requirements are also the kind which are either cheaply (relatively) sourced or
 commonly available in educational institutions; one of the target areas that
 further development was envisioned. \\
 
+** Abstract model
 Due to the limited scope of this project in both time and academic context a
-secondary theoretical component is conceived. This is in the form of a
+secondary theoretical component is conceived[fn:1]. This is in the form of a
 theoretical specification and API for this project and similar systems. As
 discussed previously (ref:implement_and_abstraction) a set of parameters and
 variables can form a useful part of a conceptual illustration and formalisation.
+This would include diagrammatic illustrations of different classes representing
+elements of the system, such as input and output and transformable objects.
 
 #+caption: Abstract system schema label:abstractSystemSchema  
 #+ATTR_LATEX: :width 11cm
 [[file:assets/abstract-system-schema.png]]
 
 
+
+** footnotes :ignore:
+[fn:1] Due in part to the ongoing Coronavirus pandemic.
 
 * Project in depth label:projectindepth
 
