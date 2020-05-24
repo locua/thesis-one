@@ -1,6 +1,6 @@
 references/*
 examples/
-*.tex
+# *.tex
 *.bbl
 dis.glsdefs
 dis.ist

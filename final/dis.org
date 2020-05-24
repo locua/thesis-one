@@ -1,11 +1,13 @@
-#+title: Describing systems for the exploration of tangible and spatial computer interaction  
-#+title: \\ 
-#+author: Louis James
+# #+title: Describing systems for the exploration of tangible and spatial computer interaction  
+# #+title: \\ 
+# #+author: Louis James
 #+options: h:2 num:t toc:nil \n:nil
-#+subtitle:  \\
-#+subtitle: Final year project for Creative Computing Bsc, Goldsmiths University of London \\
+# #+subtitle:  \\
+# #+subtitle: Final year project for Creative Computing Bsc, Goldsmiths University of London \\
+# #+latex_header: \affil{Goldsmiths University of London}
 #+latex_class: book
 #+latex_header_extra: \input{config.tex}
+#+latex_header: \input{mytitle}
 #+LATEX_HEADER: \setlength{\parindent}{0pt}
 #+LATEX_HEADER: \usepackage[margin=1in]{geometry}
 #+LATEX_HEADER: \usepackage{emptypage}
@@ -49,7 +51,7 @@ is both a sensor and actuator.
 
 
 #+LaTeX: \end{abstract}
-* Toc :ignore:
+* TOC and figures                                                    :ignore:
 \tableofcontents
 #+latex: \listoffigures
 * Introduction
@@ -284,7 +286,7 @@ http://tangible.media.mit.edu/projects/
 * Specification and context
 ** Brief
 To sum up the fundamental principle of the style of interaction that this
-document aims to describe is summarised in the following sentence:
+document aims to describe is summarised in the sentence below.
 
 #+begin_quote
 Physical objects on an /action surface/ have interactive properties, each object
@@ -327,8 +329,10 @@ physical setup would include a Projector and HD webcam and computer for running
 the application. See Fig. ref:systemSchema for the software and hardware
 schematic for this technical conception. \\
 
-#+caption: System schema label:systemSchema  
+#+caption: Finalised system schema label:systemSchema  
 #+ATTR_LATEX: :width 10cm
+[[file:assets/project-schema-final.png]]
+
 ** Design considerations
 Another design consideration I had in mind was accessibility. From my research
 into similar projects an aim was to create a similar system that could be open
@@ -340,7 +344,6 @@ requirements are also the kind which are either cheaply (relatively) sourced or
 commonly available in educational institutions; one of the target areas that
 further development was envisioned. \\
 
-** Abstract model
 Due to the limited scope of this project in both time and academic context a
 secondary theoretical component is conceived[fn:1]. This is in the form of a
 theoretical specification and API for this project and similar systems. As
