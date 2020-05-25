@@ -298,7 +298,7 @@ contemporary systems. It highlights that a 'live' surface will act as a space
 where objects are augmented with additional properties i.e. input and output to
 a computer system. \\
 
-** Technical options
+** Technical 
 As in the original specification the aim was to create a system for spatial
 interaction. Initially I imagined it to work on a table top surface (in the end
 it was developed on a floor mat due to considerations in my development
@@ -329,11 +329,8 @@ physical setup would include a Projector and HD webcam and computer for running
 the application. See Fig. ref:systemSchema for the software and hardware
 schematic for this technical conception. \\
 
-#+caption: Finalised system schema label:systemSchema  
-#+ATTR_LATEX: :width 10cm
-[[file:assets/project-schema-final.png]]
-
 ** Design considerations
+
 Another design consideration I had in mind was accessibility. From my research
 into similar projects an aim was to create a similar system that could be open
 source and easily setup so that others could build on top of the system. This
@@ -354,26 +351,67 @@ elements of the system, such as input and output and transformable objects.
 
 #+caption: Abstract system schema label:abstractSystemSchema  
 #+ATTR_LATEX: :width 11cm
-[[file:assets/abstract-system-schema.png]]
+[[file:assets/abstract-system-schema.png]] 
 
-
+The formalisation will address how specific various aspects of this interaction
+model can distribute and externalise cognitive work. /Annotating/ (such as
+crossing out or underlining) and /Cogntive tracing/ (manipulating items into
+different orders or structures) are two methods for externalising cognition.
+These two methods and others methods will be connected to
+elements of the interaction model. cite:SharpHelen2019IDBH
 
 ** footnotes :ignore:
 [fn:1] Due in part to the ongoing Coronavirus pandemic.
+
 
 * Project in depth label:projectindepth
 
 ** Implementation details
 
-** Final Build
+*** Initial experiments and tests :ignore:
 
-** Raspberry pi testing
+The first essential component to get working was the computer vision. The core
+of this involves for each colour calling its corresponding ~contourFinder~. Five
+different colours were chosen as it is the same as in /PP/. Given its identical
+hardware setup it seemed a good number. Having more colours means thresholds
+will be lower so as to distinguish between less distinct colours; for example
+pink and red.
+
+#+begin_src c++
+// Check new frame 
+if(cam.isFrameNew()) {
+    // Loop for number of colours and track target colours
+    for(int i = 0; i < num_colours; i++){
+        // if finding: find // cv on / off
+        if(ss->find) ss->contourFinders[i].findContours(camPix);
+    }
+}
+#+end_src
+
+- two apps / windows
+  - gui control panel
+  - projector window
+- five colours
+- shared state.
+- settings
+
+*** Finalised design
+
+#+caption: Finalised system schema label:systemSchema  
+#+ATTR_LATEX: :width 10cm
+[[file:assets/project-schema-final.png]]
+
+*** Development
+
+** Final outcome
+
 
 ** Abstract Spec
 
 ** API
 
-* Creative process
+* Creative process and software testing.
+
 
 As mentioned /Paperprogams/ was a starting point for playing around with but I found that I
 couldn't set it up and have it stable enough to develop on. It also suffers from
@@ -385,9 +423,21 @@ detecting papers to projecting back down on to them. Another branch which had
 implemented blob detection on the GPU I also found to be slow and unstable ([[https://github.com/janpaul123/paperprograms/pull/28][Link
 to pull request]]), this may have been due to my lighting and camera setup.
 
+After testing with /PP/ and finding it to be unstable and difficult to develop
+on Cinder and OpenCV were considered. Another reason for moving away from /PP/
+was it already being a fully fledged system in itself. It has potential for
+developing some interesting tools collaboratively but for this solo project
+working alone the social aspect would not be utilised.
+
+** pimapper, projection mapping issue.
+
+
 ** Goverened by 
 *** ...technical implementability
 *** ...research and experience
+
+
+** Raspberry pi testing
 
 * Debugging and problem solving
 * Evaluation and Conclusions
