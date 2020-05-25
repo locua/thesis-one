@@ -258,7 +258,7 @@ Haptic interfaces
 ** Multi-modal interaction
 
 #+caption: Multi-modal painting
-#+ATTR_LATEX: :width 11cm 
+#+ATTR_LATEX: :width 14cm 
 [[file:assets/multi-modal-proj1.png]]
 
 An experimental [[https://locua.github.io/posts/install-y1.html][project]] I produced in 2017 has also informed the direction of
@@ -368,16 +368,16 @@ elements of the interaction model. cite:SharpHelen2019IDBH
 
 ** Implementation details
 
-*** Initial experiments and tests :ignore:
+*** Initial experiments and tests                             :ignore:
 
 The first essential component to get working was the computer vision. The core
-of this involves for each colour calling its corresponding ~contourFinder~. Five
-different colours were chosen as it is the same as in /PP/. Given its identical
-hardware setup it seemed a good number. Having more colours means thresholds
-will be lower so as to distinguish between less distinct colours; for example
-pink and red.
+of this involves doing blob tracking for each colour in the ~targetColours~
+array using the corresponding ~contourFinder~ object. Therefore we loop five
+times calling ~findContours~ passing in (by reference) the ~camPix~ an
+~ofPixels~ object containing the camera pixel data for the active detection
+region.
 
-#+begin_src c++
+#+begin_src cpp 
 // Check new frame 
 if(cam.isFrameNew()) {
     // Loop for number of colours and track target colours
@@ -388,6 +388,43 @@ if(cam.isFrameNew()) {
 }
 #+end_src
 
+Five different colours were chosen as it is the same as in /PP/. Given its
+identical hardware setup it seemed a good number. Having more colours means
+thresholds will be lower so as to distinguish between less distinct colours; for
+example pink and red. The contour finder has a number of parameters which allow
+for fine grained control over the tracking. They are listed below:
+
+#+ATTR_LATEX: :options [noitemsep]
+- ~TargetColor~
+- ~Threshold~
+- ~MinArea~
+- ~MaxArea~
+- ~MinAreaRadius~
+- ~MaxAreaRadius~
+  
+Architecturally the application is comprised of two windows the *GUI* and
+*Projector*, represented in two classes ~ofApp~ and ~Projector~. The *GUI*
+window is a control panel or the computer vision tracking. Controls for the
+parameters are available in the *GUI* window as well handles to crop the active
+region part of the camera frame were the computer vision happens. In the
+screenshot (Fig. ref:guiwindow) the tracking parameters are seen on the left and
+the target colours are on the right. In the center the rectangle with the pink
+circles on upper left and bottom right corners is the active detection region.
+
+#+caption: GUI window. label:guiwindow 
+#+ATTR_LATEX: :width 15cm
+[[file:assets/gui-window2.png]] 
+
+The other main window used is in the *Projector* class. This deals with the
+display of on the reaction surface.
+
+
+#+begin_src cpp 
+
+
+#+end_src
+
+*** #include :noexport:
 - two apps / windows
   - gui control panel
   - projector window
@@ -409,7 +446,7 @@ if(cam.isFrameNew()) {
 ** Abstract Spec
 
 ** API
-
+Currently in the API is in its most rudimentary state. Colour blobs, location , id
 * Creative process and software testing.
 
 
