@@ -1,4 +1,5 @@
-# #+title: Describing systems for the exploration of tangible and spatial computer interaction  
+* Title and document setup                                           :ignore:
+# #+title:w Describing systems for the exploration of tangible and spatial computer interaction  
 # #+title: \\ 
 # #+author: Louis James
 #+options: h:2 num:t toc:nil \n:nil
@@ -12,7 +13,6 @@
 #+LATEX_HEADER: \usepackage[margin=1in]{geometry}
 #+LATEX_HEADER: \usepackage{emptypage}
 #+LATEX_HEADER: \usepackage{enumitem}
-
 
 * other title ideas :noexport:
 # #+title: Spatial memory, embodied thinking, computer vision projection application \\
@@ -366,7 +366,6 @@ elements of the interaction model. cite:SharpHelen2019IDBH
 ** footnotes :ignore:
 [fn:1] Due in part to the ongoing Coronavirus pandemic.
 
-
 * Project in depth label:projectindepth
 
 ** Implementation details
@@ -499,10 +498,10 @@ create completely new touch sensations."
   - haptic interfaces
   - ethnomethodology 
 
+* Appendix :ignore:
 * Bibliography :ignore:
 
 bibliographystyle:apalike 
 bibliography:references.bib
 
-* Appendix :ignore:
 
