@@ -104,7 +104,7 @@ with diaries, blog type posts and categorised personal logs. It is now somewhat
 stripped back in style and has been rewritten in [[https://en.wikipedia.org/wiki/C99][C (C99)]] cite:DevineNataniev. \\
 
 Both these two systems have their own specific use-cases, /Org-mode/; in
-academia and science and /XXIIV/; an experimental personal archive. They both
+academia and /XXIIV/; an experimental personal archive. They both
 utilise the contemporary and prevailing /keyboard-mouse-monitor/ paradigm
 of computer interaction but push the boundaries of cognition in this medium,
 particularly regarding memory and productivity. These two projects were a birth
@@ -125,9 +125,9 @@ ability to do deep readings of a subject cite:NielsenMich2018altm,carter2017usin
 
 ** A virtual exploration of a 'dynamic land'
 
-Another original and critical point of reference was /Dynamicland/, a research
-project in Oakland, USA. The aim of the project is to implement a new more
-powerful and accessible model of computing.
+Another principal point of reference was /Dynamicland/, a research project in
+Oakland, USA. The aim of the project is to implement a new more powerful and
+accessible model of computing.
 
 #+begin_quote
 
@@ -236,6 +236,9 @@ experimentation. The benefits of having such a blueprint would be to present
 spatiality and tangibility (in relation to HCI) formally so as to allow for
 identification of elements for use.
 
+Future researchability potential.
+cite:LazarJonathan2017RMiH
+
 *** notes :noexport:
 Moving from implementation to abstraction
 
@@ -316,7 +319,7 @@ this. With the /PP/ system, I planned to write a program/s to explore the
 psychology of interaction with such a system. This could take the form of a
 game-like psychology experiment. However, for risk of attempting a psychology
 thesis within a computing project focus has been put on creating and exploring
-the implementation and formalisation of the interaction system itself. Due to
+the implementation and formalisation of the interaction model itself. Due to
 technical issues with /PP/ and the motivation to explore an alternative
 interaction model, I decided to implement the system using [[https://openframeworks.cc/download/][*openFrameworks*]], a
 C++ toolkit for experimental application development. I chose this framework as
@@ -498,7 +501,7 @@ create completely new touch sensations."
 
 * Bibliography :ignore:
 
-bibliographystyle:ieeetr 
+bibliographystyle:apalike 
 bibliography:references.bib
 
 * Appendix :ignore:
