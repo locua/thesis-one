@@ -87,13 +87,12 @@ unifying many tasks or different workflows into a singular interface.
 
 Org mode is a good example of such a system. Org mode is a "computing
 environment for authoring mixed natural and computer language documents"
-cite:Schulte:Davison:Dye:Dominik:2011:JSSOBK:v46i03. It is designed for taking
-notes, producing documents and organising and runs inside of the text editor,
-Emacs. It has the ability to export to different formats such as HTML, LaTeX and
-supports "outlining, note-taking, hyperlinks, spreadsheets, to-do lists, project
+cite:Schulte:Davison:Dye:Dominik:2011:JSSOBK:v46i03. Designed for taking notes,
+producing documents and organising, it runs inside of the text editor, Emacs. It
+has the ability to export to different formats such as HTML, LaTeX and supports
+"outlining, note-taking, hyperlinks, spreadsheets, to-do lists, project
 planning, GTD" as well as literate programming, all in plain-text
-cite:Schulte:Davison:Dye:Dominik:2011:JSSOBK:v46i03 (it is incidentally what
-this document is produced with). \\
+cite:Schulte:Davison:Dye:Dominik:2011:JSSOBK:v46i03 [fn:2]. \\
 
 Another point of reference when I was looking at externalised 'artificial
 information-processing systems' was Devine Lu Linvega's Exocortex [[https://wiki.xxiivv.com/site/nataniev.html][XXIIV --
@@ -363,8 +362,6 @@ different orders or structures) are two methods for externalising cognition.
 These two methods and others methods will be connected to
 elements of the interaction model. cite:SharpHelen2019IDBH
 
-** footnotes :ignore:
-[fn:1] Due in part to the ongoing Coronavirus pandemic.
 
 * Project in depth label:projectindepth
 
@@ -501,7 +498,10 @@ create completely new touch sensations."
 * Appendix :ignore:
 * Bibliography :ignore:
 
-bibliographystyle:apalike 
+bibliographystyle:ieeetr
 bibliography:references.bib
 
+* Footnotes
 
+[fn:1] Due in part to the ongoing Coronavirus pandemic.
+[fn:2] It is incidentally what this document is produced with.
