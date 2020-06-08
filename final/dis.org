@@ -280,7 +280,7 @@ controls. It also included the combination of a variety of inputs to interaction
 with a variety of outputs. Thought not necessarily the most effective or widely
 applicable it explored the capabilities of some more unusual interactive modes.
 
-#+caption: Modal schematic
+#+caption: Multi modal schematic
 #+ATTR_LATEX: :width 15cm
 [[file:assets/multi-modal-proj-diag.png]]
 
@@ -353,10 +353,10 @@ theoretical specification and API for this project and similar systems. As
 discussed previously (ref:implement_and_abstraction) a set of parameters and
 variables can form a useful part of a conceptual illustration and formalisation.
 This would include diagrammatic illustrations of different classes representing
-elements of the system, such as I/O and transformable objects.
+elements of the system, such as I/O and transformable objects. \\ 
 
 #+caption: Abstract system schema label:abstractSystemSchema  
-#+ATTR_LATEX: :width 11cm
+#+ATTR_LATEX: :width 11cm :float 
 [[file:assets/abstract-system-schema.png]] 
 
 The formalisation will address how various aspects of this interaction model can
@@ -473,6 +473,10 @@ for (auto j = 0; j < ss->contourFinders[i].getBoundingRects().size(); j++) {
   blobs.push_back(p__);
 #+end_src
 
+An example of detection and a corresponding projection can be seen in Appendix I
+(Figure ref:serve_project).
+
+
 *** Shared State.
 
 *** #include :noexport:
@@ -482,8 +486,7 @@ for (auto j = 0; j < ss->contourFinders[i].getBoundingRects().size(); j++) {
 - five colours
 - shared state.
 - settings
-
-
+  
 *** Development
 
 ** Final outcome
@@ -544,7 +547,14 @@ create completely new touch sensations."
   - haptic interfaces
   - ethnomethodology 
 
-* Appendix :ignore:
+* Appendices
+
+** Appendix I: Additional images
+#+caption: Detection and Corresponding projection. label:serve_project
+#+ATTR_LATEX: :width 14cm :float t
+[[file:assets/serve_project.png]]
+
+
 * Bibliography :ignore:
 
 bibliographystyle:ieeetr
