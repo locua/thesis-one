@@ -30,14 +30,15 @@
 \renewcommand{\abstractname}{Abstract}
 #+LaTeX: \begin{abstract}
 Presented here is a specification for experimental approaches to computer
-interaction based on spatial and tangible methods. The report describes an
+interaction based on spatial and tangible methods. The report describes a
 prototypical implementation of a base system for computer interaction using
 physical objects on a surface. A theoretical API for such a system and similar
 systems is proposed. This utilises computer vision techniques to analyse a
-surface to track objects and the projection of graphics onto the space creating
-a feedback system for interaction. An attempt to gather together literature and
-examples of such existing systems is made. The fundamental principle of the
-interaction system here described is summarised in the sentence below:
+surface to track objects and the subsequent projection of graphics back onto the
+space creating a feedback system for interaction. An attempt to gather together
+literature and examples of such existing systems is made. The fundamental
+principle of the interaction model described is summarised in the sentence
+below:
 
 #+begin_quote
 Physical objects on an /action surface/ have interactive properties, each object
@@ -53,7 +54,7 @@ is both a sensor and actuator.
 #+LaTeX: \end{abstract}
 * TOC and figures                                                    :ignore:
 \tableofcontents
-#+latex: \listoffigures
+#+latex: \listoflistings \listoffigures
 * Introduction
 
 ** Project aims
@@ -65,14 +66,14 @@ is both a sensor and actuator.
 * Background label:background
 
 The motivation for this project stems in part from a feeling of frustration in
- how working on computers can often be a constricted affair and a pondering over
- how we might expand the /keyboard-mouse-monitor/ model to improve the utility
- of computers regarding our physical health, wellbeing and perceptive abilities.
- How might a spatial, haptic and tangible environment for interaction create an
- improved space for working and thinking with computers as well with our
- physical health cite:TwengeJeanM2020Wiia? How might such an environment
- fundamentally augment our cognitive capabilities; memory and learning as well
- as creativity itself?
+ how working on computers can often be a constricted and static affair. From
+ this came a pondering of how one might expand, and move away from, the
+ /keyboard-mouse-monitor/ model to improve the utility of computers regarding
+ our physical health, wellbeing and perceptive abilities. How might a spatial,
+ haptic and tangible environment for interaction create an improved space for
+ working and thinking with computers as well with our physical health
+ cite:TwengeJeanM2020Wiia? How might such an environment fundamentally augment
+ our cognitive capabilities; memory and learning as well as creativity itself?
  
 ** Definitions
 *** HCI - Human Computer Interaction
@@ -97,36 +98,40 @@ cite:Schulte:Davison:Dye:Dominik:2011:JSSOBK:v46i03 [fn:2]. \\
 Another point of reference when I was looking at externalised 'artificial
 information-processing systems' was Devine Lu Linvega's Exocortex [[https://wiki.xxiivv.com/site/nataniev.html][XXIIV --
 nataniev]]. /XXIIV/ is a personal archive and log with documentation of Linvega's
-personal tools and artworks. The site has gone through some changes since I
-first came across it. Originally a static, javascript and lisp based website
-with diaries, blog type posts and categorised personal logs. It is now somewhat
-stripped back in style and has been rewritten in [[https://en.wikipedia.org/wiki/C99][C (C99)]] cite:DevineNataniev. \\
+personal tools and artworks. Originally a static, javascript and lisp based
+website with diaries, blog type posts and categorised personal logs, it is now
+somewhat stripped back in style and has been rewritten in [[https://en.wikipedia.org/wiki/C99][C (C99)]]
+cite:DevineNataniev. \\
 
 Both these two systems have their own specific use-cases, /Org-mode/; in
-academia and /XXIIV/; an experimental personal archive. They both
-utilise the contemporary and prevailing /keyboard-mouse-monitor/ paradigm
-of computer interaction but push the boundaries of cognition in this medium,
-particularly regarding memory and productivity. These two projects were a birth
-point in thinking about how software systems can be augment thought and improve
-learning ability and computer productivity. \\
+academia and /XXIIV/; an experimental personal archive. They both utilise the
+contemporary and prevailing /keyboard-mouse-monitor/ paradigm of computer
+interaction to push the boundaries of cognition in this medium, particularly
+regarding memory and productivity. These two projects were a birth point in
+thinking about how software systems can augment thought and improve learning
+ability and productivity. \\
 
 # ** Nielsen: augmenting ltm and using ai to augment human-i ??????
 
-Information visualization is a tool for the augmenting and externalising
-cognition that most take for granted. Utilising visualisation for tasks memory
-tasks by organising attention and concept mapping are useful ways to increase
-our abilities cite:WareColin2013Ivpf. Scientist Michael Nielsen also offers some
-approaches to increasing long term memory through the use of simple flash card
-software that orders things you want to memorise by how well you know them. He
-suggests this and the process of creating question / answer flashcards of an
-idea you want to remember improves memory capacity, understanding and our
-ability to do deep readings of a subject cite:NielsenMich2018altm,carter2017using.
+Information visualisation is another tool for the amplifying cognition that most
+take for granted. The externalisation and translation of data into shape and
+colour allows us to see patterns not easily seen in listed data. Furthermore
+utilising visualisation for memory tasks by organising attention and concept
+mapping are useful ways to increase our abilities cite:WareColin2013Ivpf.
+
+
+Scientist Michael Nielsen also offers some approaches to increasing long term
+memory through the use of simple flash card software that orders things as you
+review them by how well you know them. He suggests this and the process itself
+of creating question/answer flashcards improves memory capacity, understanding
+and our ability to do deep readings of a subject
+cite:NielsenMich2018altm,carter2017using.
 
 ** A virtual exploration of a 'dynamic land'
 
 Another principal point of reference was /Dynamicland/, a research project in
-Oakland, USA. The aim of the project is to implement a new more powerful and
-accessible model of computing.
+Oakland, USA. The aim of the project is to implement and research a new more
+powerful and accessible model of computing.
 
 #+begin_quote
 
@@ -148,10 +153,10 @@ programmer decides. This relatively simple model makes for an exciting new
 ecosystem for collaborative computing and expressive programming. Victor
 highlights his ideas for the progression of computing and interaction in a
 series of talks (available online) and on his [[http://worrydream.com][website]]. In his talk "Seeing
-Spaces" he talks of a new kind of maker-space which allow makers to see across
-time and possibilities. /Dynamicland/ seeks to offer a computational medium
-which allows for full use of the human senses; a more [[https://vimeo.com/115154289][humane representation of
-thought]] cite:VictorKayDynamicLand. \\
+Spaces" he describes of a new kind of maker-space which allow makers to see
+across time and possibilities. /Dynamicland/ seeks to offer a computational
+medium which allows for full use of the human senses; a more [[https://vimeo.com/115154289][humane
+representation of thought]] cite:VictorKayDynamicLand. \\
 
 #+caption: RealtalkOS, the operating system of /Dynamicland/
 #+ATTR_LATEX: :width 12cm
@@ -264,27 +269,26 @@ Haptic interfaces
 [[file:assets/multi-modal-proj1.png]]
 
 An experimental [[https://locua.github.io/posts/install-y1.html][project]] I produced in 2017 has also informed the direction of
-this project. This work was a multi-modal paint program where hand movements and
-facial expressions controlled different parameters of a paint program. This
+this project. This work was a multi-modal paint program; where hand movements
+and facial expressions controlled different parameters of a paint program. This
 included colour, size and position of the stroke. Additionally the different
 modes of input were also controlling parameters on a looping synthesizer. The
 installation was multi-modal in input and output. It was an artwork in outlook
-but formed an initial experiment in designing interaction. The work was
-particularly successful with children, who quickly got the hang of the controls.
-It also included the combination of a variety of inputs to interaction with a
-variety of outputs. Thought not necessarily the most effective or widely
+and formed an initial experiment in designing interaction. The work was
+particularly successful with children, who seemed to quickly get the hang of the
+controls. It also included the combination of a variety of inputs to interaction
+with a variety of outputs. Thought not necessarily the most effective or widely
 applicable it explored the capabilities of some more unusual interactive modes.
 
 #+caption: Modal schematic
 #+ATTR_LATEX: :width 15cm
 [[file:assets/multi-modal-proj-diag.png]]
 
-
 ** MIT Prof - tangible media group                                :noexport:
 http://tangible.media.mit.edu/projects/
 
 ** Computational creativity? :noexport:
-  
+
 * Specification and context
 ** Brief
 To sum up the fundamental principle of the style of interaction that this
@@ -326,22 +330,22 @@ it has straightforward 'out of the box' graphics capabilities as well as
 numerous add-ons. These include /OpenCV/ cite:opencv_library wrappers and GUI
 libraries as well as an active community of users. This combination in one
 framework seemed suitable for quick experimentation and prototyping for this
-project. Other C++ libraries were to be considered; Cinder and just OpenCv. The
-physical setup would include a Projector and HD webcam and computer for running
-the application. See Fig. ref:systemSchema for the software and hardware
-schematic for this technical conception. \\
+project. Other C++ libraries were to be considered; Cinder and OpenCv as well as
+just OpenCv. The physical setup would include a Projector and HD webcam and
+computer for running the application. See Fig. ref:systemSchema for the software
+and hardware schematic for this technical conception. \\
 
 ** Design considerations
 
-Another design consideration I had in mind was accessibility. From my research
-into similar projects an aim was to create a similar system that could be open
-source and easily setup so that others could build on top of the system. This
-was another reason for using [[https://openframeworks.cc/download/][openFrameworks]] which is cross platform (Windows,
-OSx, IOS and Linux). This would mean with minor or no modification of the code,
-it could be run on any all the major desktop platforms. The hardware
-requirements are also the kind which are either cheaply (relatively) sourced or
-commonly available in educational institutions; one of the target areas that
-further development was envisioned. \\
+An important design consideration that drove that has driven this project is
+accessibility. From my research into similar projects an aim was to create a
+platform that would be open source and easily setup so that others could easily
+run and further develop. This was another reason for using [[https://openframeworks.cc/download/][openFrameworks]] which
+is cross platform (Windows, OSx, IOS and Linux). This would mean with minor or
+no modification of the code, it could be run on any all the major desktop
+platforms. The hardware requirements are also the kind which are either cheaply
+(relatively) sourced or commonly available in educational institutions (one of
+the target areas that further development was envisioned). \\
 
 Due to the limited scope of this project in both time and academic context a
 secondary theoretical component is conceived[fn:1]. This is in the form of a
@@ -349,33 +353,63 @@ theoretical specification and API for this project and similar systems. As
 discussed previously (ref:implement_and_abstraction) a set of parameters and
 variables can form a useful part of a conceptual illustration and formalisation.
 This would include diagrammatic illustrations of different classes representing
-elements of the system, such as input and output and transformable objects.
+elements of the system, such as I/O and transformable objects.
 
 #+caption: Abstract system schema label:abstractSystemSchema  
 #+ATTR_LATEX: :width 11cm
 [[file:assets/abstract-system-schema.png]] 
 
-The formalisation will address how specific various aspects of this interaction
-model can distribute and externalise cognitive work. /Annotating/ (such as
-crossing out or underlining) and /Cogntive tracing/ (manipulating items into
-different orders or structures) are two methods for externalising cognition.
-These two methods and others methods will be connected to
-elements of the interaction model. cite:SharpHelen2019IDBH
+The formalisation will address how various aspects of this interaction model can
+distribute and externalise cognitive work. /Annotating/ (such as crossing out or
+underlining) and /Cogntive tracing/ (manipulating items into different orders or
+structures) are two methods for externalising cognition. These two methods and
+others methods will be connected to elements of the interaction model.
+cite:SharpHelen2019IDBH
 
+** Users
+
+As an academic and open-source software design project the intended audience for
+the work can be split into two categories. This would be open-source developers
+and technologists and academics working in the fields of HCI and other related
+disciplines such as Cognitive Science and Psychology. \\
+
+As an open-source project this project aims to attract programmers interested in
+exploring new models for interaction. How can a desk or room be transformed into
+a new interactive medium. Those with specialisations in different areas of
+computing and beyond could contribute to different branches of advancement. To
+present outcome as an open project gives scope for further development which the
+scope and context of this thesis has not allowed for.
+
+With the theoretical outcome an academic audience is intended. Scientific
+exploration of the ideas in this report could allow for optimisation of the
+purported benefits and modelling of interaction. Cross over between these two
+above distinctions is also likely and this project hopes to sit at the
+intersection of the two.
 
 * Project in depth label:projectindepth
 
+** Finalised Design
+
+After testing of different software and approaches (detailed in Chapter
+ref:creativeproc) the setup for the software outcome was decided. This is
+illustrated in Fig. ref:systemSchema.
+
+#+caption: Finalised system schema label:systemSchema  
+#+ATTR_LATEX: :width 10cm
+[[file:assets/project-schema-final.png]]
+
 ** Implementation details
 
-*** Initial experiments and tests                             :ignore:
+*** Computer vision and fundamentals :ignore:
 
 The first essential component to get working was the computer vision. The core
 of this involves doing blob tracking for each colour in the ~targetColours~
 array using the corresponding ~contourFinder~ object. Therefore we loop five
 times calling ~findContours~ passing in (by reference) the ~camPix~ an
 ~ofPixels~ object containing the camera pixel data for the active detection
-region.
+region. 
 
+#+caption: Computer Vision with ofxCv  label:ofxCvCv
 #+begin_src cpp 
 // Check new frame 
 if(cam.isFrameNew()) {
@@ -386,6 +420,8 @@ if(cam.isFrameNew()) {
     }
 }
 #+end_src
+\\ 
+
 
 Five different colours were chosen as it is the same as in /PP/. Given its
 identical hardware setup it seemed a good number. Having more colours means
@@ -402,26 +438,42 @@ for fine grained control over the tracking. They are listed below:
 - ~MaxAreaRadius~
   
 Architecturally the application is comprised of two windows the *GUI* and
-*Projector*, represented in two classes ~ofApp~ and ~Projector~. The *GUI*
-window is a control panel or the computer vision tracking. Controls for the
-parameters are available in the *GUI* window as well handles to crop the active
-region part of the camera frame were the computer vision happens. In the
+*Projector*, represented in two classes ~ofApp~ and ~Projector~ respectively.
+The *GUI* window is a control panel or the computer vision tracking. Controls
+for the parameters are available in the *GUI* window as well handles to crop the
+active region part of the camera frame were the computer vision happens. In the
 screenshot (Fig. ref:guiwindow) the tracking parameters are seen on the left and
 the target colours are on the right. In the center the rectangle with the pink
-circles on upper left and bottom right corners is the active detection region.
+circles on upper left and bottom right corners is the active detection region. \\
 
 #+caption: GUI window. label:guiwindow 
 #+ATTR_LATEX: :width 15cm
 [[file:assets/gui-window2.png]] 
 
 The other main window used is in the *Projector* class. This deals with the
-display of on the reaction surface.
+display of on the reaction surface. The crux of what this class achieves is in
+the mapping and locating of the various colour blobs detected by the
+~ContourFinder~'s. This is shown in the code block ref:pf. The ~contourFinders~
+are accessed via the ~State~ class [fn:3]. All of the areas of interest are
+looped over and their /centroids/ accessed. The locations are mapped to the
+projector window size and this and the colour index is stored.
 
-
+#+caption: Crucial projector code. label:pf
 #+begin_src cpp 
-
-
+for (auto j = 0; j < ss->contourFinders[i].getBoundingRects().size(); j++) {
+  cv::Point2f p_;
+  cv::Point3f p__;
+  // Get centre of blob
+  p_ = ss->contourFinders[i].getCenter(j);
+  // map cropped camera to window
+  p__.x = ofMap(p_.x, 0, ss->width_height.x, 0, mw);
+  p__.y = ofMap(p_.y, 0, ss->width_height.y, 0, mh);
+  // Store location and colour index
+  p__.z=i;
+  blobs.push_back(p__);
 #+end_src
+
+*** Shared State.
 
 *** #include :noexport:
 - two apps / windows
@@ -431,11 +483,6 @@ display of on the reaction surface.
 - shared state.
 - settings
 
-*** Finalised design
-
-#+caption: Finalised system schema label:systemSchema  
-#+ATTR_LATEX: :width 10cm
-[[file:assets/project-schema-final.png]]
 
 *** Development
 
@@ -446,7 +493,7 @@ display of on the reaction surface.
 
 ** API
 Currently in the API is in its most rudimentary state. Colour blobs, location , id
-* Creative process and software testing.
+* Creative process and software testing. label:creativeproc
 
 
 As mentioned /Paperprogams/ was a starting point for playing around with but I found that I
@@ -472,8 +519,10 @@ working alone the social aspect would not be utilised.
 *** ...technical implementability
 *** ...research and experience
 
-
 ** Raspberry pi testing
+
+** Practicality of current setup
+
 
 * Debugging and problem solving
 * Evaluation and Conclusions
@@ -503,5 +552,14 @@ bibliography:references.bib
 
 * Footnotes
 
+[fn:3] This is the third class which allows for the sharing of variables and
+objects between the ~GUI~ and ~Projector~ classes. It is consists of a Shared
+Pointer to the State class, ~shared_ptr<State>~, which is passed as an argument
+to the ~GUI~ and ~Projector~ classes.
+
+
 [fn:1] Due in part to the ongoing Coronavirus pandemic.
 [fn:2] It is incidentally what this document is produced with.
+
+
+
