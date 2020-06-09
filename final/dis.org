@@ -266,7 +266,7 @@ Haptic interfaces
 
 #+caption: Multi-modal painting
 #+ATTR_LATEX: :width 14cm 
-[[file:assets/multi-modal-proj1.png]]
+file:assets/multi-modal-proj.jpg
 
 An experimental [[https://locua.github.io/posts/install-y1.html][project]] I produced in 2017 has also informed the direction of
 this project. This work was a multi-modal paint program; where hand movements
@@ -450,7 +450,7 @@ circles on upper left and bottom right corners is the active detection region. \
 
 #+caption: GUI window. label:guiwindow 
 #+ATTR_LATEX: :width 15cm
-[[file:assets/gui-window2.png]] 
+[[file:assets/gui-window2.jpg]] 
 
 The other main window used is in the *Projector* class. This deals with the
 display of the reaction surface. The crux of what this class achieves is in the
@@ -479,6 +479,7 @@ An example of detection and a corresponding projection can be seen in Appendix I
 (Figure ref:serve_project).
 
 *** Settings
+
 *** #include :noexport:
 - two apps / windows
   - gui control panel
@@ -637,7 +638,7 @@ create completely new touch sensations."
 
 #+caption: Detection and Corresponding projection. label:serve_project
 #+ATTR_LATEX: :width 15cm :float t
-[[file:assets/serve_project.png]]
+[[file:assets/serve_project.jpg]]
 
 
 * Bibliography :ignore:
