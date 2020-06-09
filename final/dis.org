@@ -121,16 +121,15 @@ The motivation for this project stems in part from a feeling of frustration in
 - CV - Computer vision
 - HCI - Human Computer Interaction
 - KMM - keyboard-mouse-monitor
-- Exocortex -
+- Exocortex - A software extension of a cognitive task.
 ** /Exocortices/ and augmented cognition
 
 I started off looking at /Exocortices/ and other personal archiving systems.
 Systems that allow the user to externalise thought and memory. This could be via
 simply storing and organising work and ideas efficiently and methodically or
-unifying many tasks or different workflows into a singular interface. 
-
-Org mode is a good example of such a system. Org mode is a "computing
-environment for authoring mixed natural and computer language documents"
+unifying many tasks or different workflows into a singular interface. Org mode
+is a good example of such a system. Org mode is a "computing environment for
+authoring mixed natural and computer language documents"
 cite:Schulte:Davison:Dye:Dominik:2011:JSSOBK:v46i03. Designed for taking notes,
 producing documents and organising, it runs inside of the text editor, Emacs. It
 has the ability to export to different formats such as HTML, LaTeX and supports
@@ -625,14 +624,14 @@ setup in the Colour Locator. Here we use a camera for detection but other kinds
 of sensors would be equally useful. A depth sensor would be great for stability
 only tracking colour that is beyond a certain depth.
 
-** Relative point mapping
+** Relative point mapping label:relpointalgo
 
 Another element of the software outcome is this elementary algorithm for finding
 pairs of points. It looks for pairs of points that are less than some distance
 away from each other and then collects them and stores them in an array. This
 algorithm is currently very slow, with a worst case algorithmic complexity of
-roughly $O(k*n^3)$, where $n$ is the number of points (blobs) and $k$ is the
-number of pairs [fn:4].
+roughly $O(k^2*n^2)$, where $n$ is the number of points (blobs) and $k$ is the
+number of pairs [fn:4]. See Listing. ref:mapAlgo for the code.  cite:CormenThomas2009Ita 
 
 #+caption: Algorithm for mapping and connecting points. label:mapAlgo
 #+begin_src cpp
@@ -726,6 +725,101 @@ working alone the social aspect would not be utilised.
 *** ...research and experience
 
 ** Raspberry pi testing
+
+** BUGS:
+- Natural light versus synthetic.
+- Colour and disruption from users.
+- Unstable
+- Slow algorithms
+* Creative process and software testing. label:creativeproc
+
+** Insipration
+
+The project has been heavily inspired by other software and research as previously acknowledged. The basic idea behind this project is to describe and implement an open-source version in openFrameworks. The projects that inspired this one were physically unavailable, being in the uk. Paperprograms was available to download but as described below it was not suitable for this idea. The objective was to aim for something lower level in both language and theory. Create a ground system with which to build many different types of software on top of, all utilising the spatial model of interaction. \\
+
+** Paperprograms testing
+
+As mentioned /Paperprogams/ was a starting point for playing around with but I
+found that I couldn't set it up and have it stable enough to develop on. It also
+suffers from being quite slow, due to the Computer Vision and graphics being
+done in the browser (it uses a version of OpenCv compiled to [[https://webassembly.org/][WebAssembly]])
+cite:JpPaperPrograms. While WebAssembly has the scope for doing high-performance
+computation in the browser but I found there was still a significant lag from
+detecting papers to projecting back down on to them. Another branch which had
+implemented blob detection on the GPU I also found to be slow and unstable
+([[https://github.com/janpaul123/paperprograms/pull/28][Linkto pull request]]), this may have been due to my lighting and camera setup.
+\\
+
+After testing with /PP/ and finding it to be unstable and difficult to develop
+on Cinder and OpenCV were considered. Another reason for moving away from /PP/
+was it already being a fully fledged system in itself. It has potential for
+developing some interesting tools collaboratively but for this solo project
+working alone the social aspect would not be utilised. It is intended, like
+Dynamicland as a tool for computing, but the goal of this project is to abstract
+the model and open it to use beyond doing computing itself. Again DL and PP also
+have this in spirit too but this aimed to be lower level. \\
+
+** ofxPiMapper, projection mapping issue.
+
+There is an open branch for called [[https://gitlab.doc.gold.ac.uk/ljame002/dynamic-cognition/-/tree/pimapper][pimapper]] which is where it is intended to
+remerge some earlier commits. This early work was changing around the projector
+setup to include [[https://ofxpimapper.com/][ofxPiMapper]] for doing some projection mapping. For the final
+outcome no projection mapping is implemented as such, other that the controls
+for the detection/projectoin area (See the GUI window in Fig. ref:guiwindow).
+This only has controls for the controlling the size and position of the active
+area, not the orientation or exact corners. Using the homography avaiable in
+ofxPiMapper would mean for more control when changing this active region as well
+as precise and simple mapping to it. In the current setup keystone calibration
+on the projector is required which works fine but can be awkward to achieve (see
+video evidence ref) for this.
+
+** Design and development
+
+Creative processes of this project has been goverened by technical compelxity in
+the given timeframe and
+
+*** Prototyping
+The project is itself in prototypical form. More prototyping of actuation reponses would have been useful ideation, as this has happened as the project has developed rather than in a more structured manner. Before further development further prototyping would be done, particularly of projection reponses.
+
+** Raspberry pi testing
+
+** Other testing:
+
+***  Natural light versus synthetic.
+
+As seen in Fig. ref:projncam. The camea and projector were setup next to a
+hanging light. This was an important component for stability in tracking. At
+night the light is obviously needed for lighting the space, but in the daytime
+it is also necessary for creating a stability of light. If the natural light was
+used only the colour tracking would be much less stable. If a body disrupted the
+natural light source for a moment the tracking would struggle to pick up the
+same colours after the disruption. With the hanging light turned on this was not
+a problem. \\
+
+A future design consideration relating to tracking and stability would be to
+consider a sensor capable of tracking depth, such as a Kinect. This would allow
+for detection objects at a certain range and would mean there would be less
+disruption to the tracking. This was used in the MultiModal project
+(ref:multimodalpro). In this project a higher resolution camera was chosen to do
+the tracking without any depth sensing cabailities. This trade off could be
+explored in further development. \\
+
+Another design consideration relating to light ???
+
+*** Slow algorithms
+As discussed in briefly in ref:relpointalgo there is issues with the complexity
+of algorithm for finding pairs of points of a certain distance from eachother.
+This could be improved fairly quickly with further development and insight.
+
+
+*** Unstable
+** OpenCv testing
+- lack of graphics
+- new library
+
+** Goverened by 	
+*** ...technical implementability
+*** ...research and experience
 
 
 * Debugging and problem solving
