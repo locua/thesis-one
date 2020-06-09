@@ -387,11 +387,19 @@ intersection of the two.
 
 After testing of different software and approaches (detailed in Chapter
 ref:creativeproc) the setup for the software outcome was decided. This is
-illustrated in Fig. ref:systemSchema. The hardware used was an Epson EH-TW650
-3LCD, Logitech C920 HD Webcam and a laptop running Ubuntu Linux (18.04 LTS). The
-projector was secured to the ceiling with a mount and all cables were extended
-to the floor. The projector setup can be seen in Appendix I, Fig ref:projncam.
-All the source code can be found at the following: [[https://gitlab.doc.gold.ac.uk/ljame002/dynamic-cognition][Gitlab link]].
+illustrated in Fig. ref:systemSchema. The hardware used was an *Epson EH-TW650*
+*3LCD*, a *Logitech C920* HD Webcam and a laptop running Ubuntu Linux (18.04
+LTS). The projector was secured to the ceiling with a mount and all cables were
+extended to the floor. The projector setup can be seen in Appendix I, Fig
+ref:projncam. All the source code can be found at the following: [[https://gitlab.doc.gold.ac.uk/ljame002/dynamic-cognition][Gitlab link]]. \\
+
+The software architecture consists of three classes:
+#+ATTR_LATEX: :options [noitemsep]
+- ~ofApp~, creates the GUI interface window with controls for tweaking CV
+  settings and input parameters
+- ~Projector~, this class creates the projector window.
+- ~State~, this class stores variables that can be shared between the
+  ~Projector~ and ~ofApp~ classes.
 
 #+caption: Finalised system schema label:systemSchema  
 #+ATTR_LATEX: :width 10cm
@@ -399,7 +407,7 @@ All the source code can be found at the following: [[https://gitlab.doc.gold.ac.
 
 ** Implementation details
 
-*** Computer vision and fundamentals :ignore:
+*** Computer vision and fundamentals
 
 The first essential component to get working was the computer vision. The core
 of this involves doing blob tracking for each colour in the ~targetColours~
@@ -474,16 +482,45 @@ for (auto j = 0; j < ss->contourFinders[i].getBoundingRects().size(); j++) {
 An example of detection and a corresponding projection can be seen in Appendix I
 (Figure ref:serve_project).
 
-** Settings
-** Abstract Spec
+*** Settings
+To allow for tweaking and debugging during further development there is the
+ability to save the settings of the computer vision parameters. This uses the
+ofxXmlsettings addon. In the ~setup()~ method of the ~ofApp~ class we load and
+loop over the settings. There is also a function, ~saveSettings()~, which allows
+one to save settings at any time. This is assigned to the =s= key.
 
-Here I will discuss the theoretical segment. I have split it into three parts:
-data structures, physical elements and Sensory devices. This offers three
-different perspectives on the abstraction and formalisation of the interaction
-model we are looking at.
+*** GUI keyboard shortcuts
+The GUI interface has the a bit more that it is relevant to quickly describe.
+The keyboard shortcuts allow for various controls of the interface. A
+chequerboard and corner markers can be toggled on the projector window. A simple
+zoom mode can be enabled but is not very functional. There is also some
+interfacing for v4l2-ctl, a CLI application for controlling the settings on the
+camera. This allows for quick and dynamic controlling exposure and other
+settings, which can be useful when getting an optimal image for colour and blob
+detection. The full list of shortcuts is listed below.
+
+#+ATTR_LATEX: :options [noitemsep]
+- Toggle keyboard shortcuts with =k=
+- Toggle tracking with =t=
+- Toggle corners on projection window with =c= key
+- Toggle chequerboard on projection window with =C= key
+  - Useful for keystone calibration
+- Reset camera settings to default with =r=
+- Toggle zoom mode with =z=
+  - Doesn't work in a useful way
+- Increment and decrement exposure with =+= and =-=
+  - Only works if v4l2-ctl is installed 
+- Toggle fullscreen with =f=
+- Save settings with =s=
+** Abstract Specification
+
+Here I will discuss the theoretical segment. This is brief speculative look at
+how we can and might further model the elements of interaction in a formal way. I
+have split it into three parts: data structures, physical elements and Sensory
+devices. This offers three different perspectives on the abstraction and
+formalisation process.
 
 *** Sensory devices
-
 Identified here are four main parameters that one can think of as input or
 sensor categories to the camera and processing algorithms. They are listed
 below. These parameters can be variously tweaked and manipulated to interact
@@ -504,7 +541,6 @@ For example, as in the Colour Locator prototype different arrangements of
 coloured shapes can act as marker points for location in the space. Different
 combinations of these shapes can become symbolic for objects or images that the
 program associates with them.
-
 
 *** Data structures
 
@@ -539,7 +575,7 @@ When building the Colour Locator system was using felt circles of five different
 colours were used.This model could also be expanded beyond the scope of the
 setup in the Colour Locator. Here we use a camera for detection but other kinds
 of sensors would be equally useful. A depth sensor would be great for stability
-only tracking colour that is beyond a certain depth. Also
+only tracking colour that is beyond a certain depth.
 
 ** Relative point mapping
 
@@ -582,7 +618,6 @@ vector<vector<int>> Projector::findPairs(vector<cv::Point3f> &blobs) {
 }
 #+end_src
 
-
 ** API
 
 In the software outcome there is only a rudimentary "API" which is to access the
@@ -590,17 +625,21 @@ colour points. If can currently only be accessed inside the program at the
 current time. There is no networking or connectivity. For each detected blob you
 have its colour id (a number from 1 to 5 corresponding to each of the tracked
 colours), location (x and y coordinates). These active points form the basis
-with which to build other augmentation on top of. A simple proposed class for
-each blob is below. In the current version of the software these values are
-stored in a simple 3 dimensional vector from the *openCv* library
-(~cv::Point3f~).
+with which to build other augmentation on top of. In the current version of the
+software these values are stored in a simple 3 dimensional vector from the
+*openCv* library (~cv::Point3f~) (see Fig. ref:pseudoapi). \\
 
-#+caption: Accessing the the parameters for point 'n' label:psuedoapi
+#+caption: Accessing the the parameters for point 'n' label:pseudoapi
 #+begin_src cpp
 ss->blobs[n].x // X position
 ss->blobs[n].y // Y position
 ss->blobs[n].z // Colour id
 #+end_src
+
+A simple proposed class for each blob seen in Fig. ref:pointClass. Having this
+as a class would important for extensibility. It may remain a relatively simple
+class as other more of the processing could be done on top of the colour
+point detection.
 
 #+caption: Proposed point class. label:pointClass
 #+begin_src cpp
@@ -615,11 +654,6 @@ class colourPoint {
 }
 #+end_src
 
-** #include                                                       :noexport:
-- five colours
-- shared state.
-- settings
-  
 * Creative process and software testing. label:creativeproc
 
 
