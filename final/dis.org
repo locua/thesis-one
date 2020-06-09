@@ -52,7 +52,6 @@ is both a sensor and actuator.
 #+latex: \listoflistings \listoffigures
 * Introduction
 
-** Project aims
 A project for the discussion and development of a comptuer vision based
 interaction systems. Originally I (maybe ambitiously) aimed at creating a full
 blow, novel interaction model to explore the psychological aspects of
@@ -60,13 +59,16 @@ interacting with computers by moving objects around in a space. Motivated by
 years spent in some space or another, hunched in front of a screen in all manner
 of contortions it is the aim of this work to challenge this composition and
 contribute to something new. It is an attempt to further expand interaction and
-assimilate computing into space.
+assimilate computing into space. \\
 
 Presented here is a report on a open-source software prototype. A spatial
 interaction system where coloured objects (in this case felt shapes), are
 detected and located by camera projected back onto. This model of spatial
 objects on an interaction surface is the proposed departure from the
-keyboard-monitor paradigm. The floor (or table) becomes
+keyboard-monitor paradigm. The floor (or table) becomes the monitor and objects
+in the space the mouse. The potential for the use of a keyboard for text input
+is also envisaged, and beyond any kind of controller that could be used in this
+environment. \\
 
 In no way an original idea, this project presents an open-source rendition of
 this model using OpenFrameworks (a C++ toolkit for “creative coding”)(OF). This
@@ -74,16 +76,16 @@ library allowed for speedy assembly with out-of-the-box consolidation of various
 graphics, computer-vision and GUI libraries. In this case ofxCv, ofxXmlSettings
 and ofxGui alongside the built-in graphics functionality of OF. Due to the large
 number of additional libraries and active community it seemed a positive
-environment for future expansion and collaboration
+environment for future expansion and collaboration. \\
 
-Alongside the software an abstract formalisation is described, for considering
-the this interaction model in a conceptual manner, so that it might be
-approached from a multi-discplinary scientific perspective. This could allow for
-an interesting development of this model. Human-Computer Interaction, as a
+Alongside the software an abstract formalisation is briefly described, for
+considering the this interaction model in a conceptual manner, so that it might
+be approached from a multi-discplinary scientific perspective. This could allow
+for an interesting development of this model. Human-Computer Interaction, as a
 discipline, lives at the cross roads of diverse fields such as computing, design
 and behavioural science. Although the scope and context of this project has not
 allowed for extra-disciplinary collaboration through the presentation of this
-secondary component it aims to keep itself open to this future possibility.
+secondary component it aims to keep itself open to this future possibility. \\
 
 Originally further prototyping and development was planned in addition to
 thorough user-testing. An ethno-methodoligical framework is briefly discussed
@@ -96,9 +98,9 @@ user. A critical reference that I would like to put special note to here is the
 work of Bret Victor and Alan Kay, particulary in rather elusive project
 Dynamicland (based in the US) and Victors other writing and design. This was a
 cornerstone of the contextual research and an vital point of reference and
-inspiration for the project which I think it important to take note of here.
+inspiration for the project which I think it important to take note of here. \\
 
-A contextual and historical N.B.
+A contextual and historical N.B. \\
 
 The original aims of the project were partly affected by the restrictions
 brought about on daily life due to the Novel coronavirus pandemic.
@@ -115,10 +117,11 @@ The motivation for this project stems in part from a feeling of frustration in
  cite:TwengeJeanM2020Wiia? How might such an environment fundamentally augment
  our cognitive capabilities; memory and learning as well as creativity itself?
  
-** Definitions
-*** HCI - Human Computer Interaction
-*** KMM - keyboard-mouse-monitor model 
-*** Exocortex - 
+** Acronyms / definitions.
+- CV - Computer vision
+- HCI - Human Computer Interaction
+- KMM - keyboard-mouse-monitor
+- Exocortex -
 ** /Exocortices/ and augmented cognition
 
 I started off looking at /Exocortices/ and other personal archiving systems.
@@ -701,11 +704,10 @@ class colourPoint {
 
 * Creative process and software testing. label:creativeproc
 
-
-As mentioned /Paperprogams/ was a starting point for playing around with but I found that I
-couldn't set it up and have it stable enough to develop on. It also suffers from
-being quite slow, due to the Computer Vision and graphics being done in the
-browser (it uses a version of OpenCv compiled to [[https://webassembly.org/][WebAssembly]])
+As mentioned /Paperprogams/ was a starting point for playing around with but I
+found that I couldn't set it up and have it stable enough to develop on. It also
+suffers from being quite slow, due to the Computer Vision and graphics being
+done in the browser (it uses a version of OpenCv compiled to [[https://webassembly.org/][WebAssembly]])
 cite:JpPaperPrograms. While WebAssembly has the scope for doing high-performance
 computation in the browser but I found there was still a significant lag from
 detecting papers to projecting back down on to them. Another branch which had
@@ -725,14 +727,12 @@ working alone the social aspect would not be utilised.
 
 ** Raspberry pi testing
 
-** Practicality of current setup
-
-** 
 
 * Debugging and problem solving
 ** Main technical issues
 ** Problem solving
 * Evaluation and Conclusions
+** Practicality of current setup
 ** Scope
 ** Theoretical 
 ** Social aspects. Proposed social evaluation
