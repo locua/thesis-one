@@ -1,11 +1,5 @@
 * Title and document setup                                           :ignore:
-# #+title:w Describing systems for the exploration of tangible and spatial computer interaction  
-# #+title: \\ 
-# #+author: Louis James
-#+options: h:2 num:t toc:nil \n:nil
-# #+subtitle:  \\
-# #+subtitle: Final year project for Creative Computing Bsc, Goldsmiths University of London \\
-# #+latex_header: \affil{Goldsmiths University of London}
+#+options: h:3 num:t toc:nil \n:nil
 #+latex_class: book
 #+latex_header_extra: \input{config.tex}
 #+latex_header: \input{mytitle}
@@ -13,9 +7,10 @@
 #+LATEX_HEADER: \usepackage[margin=1in]{geometry}
 #+LATEX_HEADER: \usepackage{emptypage}
 #+LATEX_HEADER: \usepackage{enumitem}
-#+LATEX_HEADER: \usepackage[draft]{graphicx}
+# #+LATEX_HEADER: \usepackage[draft]{graphicx}
 
 * other title ideas :noexport:
+# #+title:w Describing systems for the exploration of tangible and spatial computer interaction  
 # #+title: Spatial memory, embodied thinking, computer vision projection application \\
 # #+title: or \\
 # #+title: Exploring cognition and interaction in a spatial and physicalised computer environment. \\
@@ -238,7 +233,7 @@ describe the elements conceptually. This could then be used for further
 development of similar systems and allow for multi-disciplinary scientific
 experimentation. The benefits of having such a blueprint would be to present
 spatiality and tangibility (in relation to HCI) formally so as to allow for
-identification of elements for use.
+identification of elements for use. \\
 
 Future researchability potential.
 cite:LazarJonathan2017RMiH
@@ -396,6 +391,7 @@ illustrated in Fig. ref:systemSchema. The hardware used was an Epson EH-TW650
 3LCD, Logitech C920 HD Webcam and a laptop running Ubuntu Linux (18.04 LTS). The
 projector was secured to the ceiling with a mount and all cables were extended
 to the floor. The projector setup can be seen in Appendix I, Fig ref:projncam.
+All the source code can be found at the following: [[https://gitlab.doc.gold.ac.uk/ljame002/dynamic-cognition][Gitlab link]].
 
 #+caption: Finalised system schema label:systemSchema  
 #+ATTR_LATEX: :width 10cm
@@ -407,8 +403,8 @@ to the floor. The projector setup can be seen in Appendix I, Fig ref:projncam.
 
 The first essential component to get working was the computer vision. The core
 of this involves doing blob tracking for each colour in the ~targetColours~
-array using the corresponding ~contourFinder~ object. Therefore, we loop five
 times calling ~findContours~ and passing in (by reference) the cropped pixel
+array using the corresponding ~contourFinder~ object. Therefore, we loop five
 array, an ~ofPixels~ object containing the camera pixel data for the active
 detection region.
 
@@ -478,23 +474,72 @@ for (auto j = 0; j < ss->contourFinders[i].getBoundingRects().size(); j++) {
 An example of detection and a corresponding projection can be seen in Appendix I
 (Figure ref:serve_project).
 
-*** Settings
-
-*** #include :noexport:
-- two apps / windows
-  - gui control panel
-  - projector window
-- five colours
-- shared state.
-- settings
-  
-*** Development
-
-** Final software outcome
-*** Links to repository on gitlab:
-- [[https://gitlab.doc.gold.ac.uk/ljame002/dynamic-cognition][Gitlab link]]
-
+** Settings
 ** Abstract Spec
+
+Here I will discuss the theoretical segment. I have split it into three parts:
+data structures, physical elements and Sensory devices. This offers three
+different perspectives on the abstraction and formalisation of the interaction
+model we are looking at.
+
+*** Sensory devices
+
+Identified here are four main parameters that one can think of as input or
+sensor categories to the camera and processing algorithms. They are listed
+below. These parameters can be variously tweaked and manipulated to interact
+with a program. There is cross over between, such as with pattern and shape
+where patterns can be combinations of shapes which forms shapes in themselves.
+They can also be combined in various ways so as to produce interaction. In fact
+they will likely be most useful when combined as it stretches the possible
+arrrangements and states that can be created.
+
+#+ATTR_LATEX: :options [noitemsep]
+- Colour
+- Shape
+- Location
+- Relative position and arrangement
+- Pattern
+
+For example, as in the Colour Locator prototype different arrangements of
+coloured shapes can act as marker points for location in the space. Different
+combinations of these shapes can become symbolic for objects or images that the
+program associates with them.
+
+
+*** Data structures
+
+Here are the theoretical data structures. These can focus arround the sensory
+parameters described above.
+
+#+begin_src cpp
+Template Colour {
+	vector<int> HSB_VALUE || RGB_VALUE;
+	int ALPHA_VALUE;
+}
+Template Shape {
+	int SIDES;
+	vector<int> ANGLES;
+}
+Template Location {
+	int X;
+	int Y;
+}
+Template Pattern {
+	vector<int> VALUES;
+}
+#+end_src
+	
+It can also be useful to think about what the data structures or higher order
+combinations of the data structures might represent. What analogues of Gui
+elements or other digital structures could they correspond to.
+
+*** Physical elements
+
+When building the Colour Locator system was using felt circles of five different
+colours were used.This model could also be expanded beyond the scope of the
+setup in the Colour Locator. Here we use a camera for detection but other kinds
+of sensors would be equally useful. A depth sensor would be great for stability
+only tracking colour that is beyond a certain depth. Also
 
 ** Relative point mapping
 
@@ -550,7 +595,6 @@ each blob is below. In the current version of the software these values are
 stored in a simple 3 dimensional vector from the *openCv* library
 (~cv::Point3f~).
 
-
 #+caption: Accessing the the parameters for point 'n' label:psuedoapi
 #+begin_src cpp
 ss->blobs[n].x // X position
@@ -571,6 +615,11 @@ class colourPoint {
 }
 #+end_src
 
+** #include                                                       :noexport:
+- five colours
+- shared state.
+- settings
+  
 * Creative process and software testing. label:creativeproc
 
 
