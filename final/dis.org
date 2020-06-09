@@ -53,10 +53,55 @@ is both a sensor and actuator.
 * Introduction
 
 ** Project aims
+A project for the discussion and development of a comptuer vision based
+interaction systems. Originally I (maybe ambitiously) aimed at creating a full
+blow, novel interaction model to explore the psychological aspects of
+interacting with computers by moving objects around in a space. Motivated by
+years spent in some space or another, hunched in front of a screen in all manner
+of contortions it is the aim of this work to challenge this composition and
+contribute to something new. It is an attempt to further expand interaction and
+assimilate computing into space.
 
-- open source project for tangible interaction
-- Prototypical
-- ethnomethodological frameworks for evaluation
+Presented here is a report on a open-source software prototype. A spatial
+interaction system where coloured objects (in this case felt shapes), are
+detected and located by camera projected back onto. This model of spatial
+objects on an interaction surface is the proposed departure from the
+keyboard-monitor paradigm. The floor (or table) becomes
+
+In no way an original idea, this project presents an open-source rendition of
+this model using OpenFrameworks (a C++ toolkit for “creative coding”)(OF). This
+library allowed for speedy assembly with out-of-the-box consolidation of various
+graphics, computer-vision and GUI libraries. In this case ofxCv, ofxXmlSettings
+and ofxGui alongside the built-in graphics functionality of OF. Due to the large
+number of additional libraries and active community it seemed a positive
+environment for future expansion and collaboration
+
+Alongside the software an abstract formalisation is described, for considering
+the this interaction model in a conceptual manner, so that it might be
+approached from a multi-discplinary scientific perspective. This could allow for
+an interesting development of this model. Human-Computer Interaction, as a
+discipline, lives at the cross roads of diverse fields such as computing, design
+and behavioural science. Although the scope and context of this project has not
+allowed for extra-disciplinary collaboration through the presentation of this
+secondary component it aims to keep itself open to this future possibility.
+
+Originally further prototyping and development was planned in addition to
+thorough user-testing. An ethno-methodoligical framework is briefly discussed
+for evaluation. This was proposed for evaluating end user interaction, such as
+users themselves. In its current form the potential userbase would be the author
+and other software developers, interested in pursuing and developing this
+research in an open-source way. The further reaching end goal of prototyping
+usable systems diverse and non-techinal users, essentially for anyone computer
+user. A critical reference that I would like to put special note to here is the
+work of Bret Victor and Alan Kay, particulary in rather elusive project
+Dynamicland (based in the US) and Victors other writing and design. This was a
+cornerstone of the contextual research and an vital point of reference and
+inspiration for the project which I think it important to take note of here.
+
+A contextual and historical N.B.
+
+The original aims of the project were partly affected by the restrictions
+brought about on daily life due to the Novel coronavirus pandemic.
 
 * Background label:background
 
@@ -515,8 +560,8 @@ detection. The full list of shortcuts is listed below.
 ** Abstract Specification
 
 Here I will discuss the theoretical segment. This is brief speculative look at
-how we can and might further model the elements of interaction in a formal way. I
-have split it into three parts: data structures, physical elements and Sensory
+how we can and might further model the elements of interaction in a formal way.
+It is split into three parts: data structures, physical elements and Sensory
 devices. This offers three different perspectives on the abstraction and
 formalisation process.
 
@@ -544,7 +589,7 @@ program associates with them.
 
 *** Data structures
 
-Here are the theoretical data structures. These can focus arround the sensory
+Here are the theoretical data structures. These focus arround the sensory
 parameters described above.
 
 #+begin_src cpp
@@ -572,7 +617,7 @@ elements or other digital structures could they correspond to.
 *** Physical elements
 
 When building the Colour Locator system was using felt circles of five different
-colours were used.This model could also be expanded beyond the scope of the
+colours were used. This model could also be expanded beyond the scope of the
 setup in the Colour Locator. Here we use a camera for detection but other kinds
 of sensors would be equally useful. A depth sensor would be great for stability
 only tracking colour that is beyond a certain depth.
