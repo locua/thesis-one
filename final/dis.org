@@ -282,7 +282,7 @@ applicable it explored the capabilities of some more unusual interactive modes.
 
 #+caption: Multi modal schematic
 #+ATTR_LATEX: :width 15cm
-[[file:assets/multi-modal-proj-diag.png]]
+[[file:assets/multi-modal-proj-diag.jpg]]
 
 ** MIT Prof - tangible media group                                :noexport:
 http://tangible.media.mit.edu/projects/
