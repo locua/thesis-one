@@ -87,9 +87,9 @@ and behavioural science. Although the scope and context of this project has not
 allowed for extra-disciplinary collaboration through the presentation of this
 secondary component it aims to keep itself open to this future possibility. \\
 
-Originally further prototyping and development was planned in addition to
+Originally further prototyping and development was planned in addition to for
+evaluation. This was proposed for evaluating end user interaction, such as
 thorough user-testing. An ethno-methodoligical framework is briefly discussed
-for evaluation. This was proposed for evaluating end user interaction, such as
 users themselves. In its current form the potential userbase would be the author
 and other software developers, interested in pursuing and developing this
 research in an open-source way. The further reaching end goal of prototyping
@@ -559,7 +559,7 @@ detection. The full list of shortcuts is listed below.
   - Only works if v4l2-ctl is installed 
 - Toggle fullscreen with =f=
 - Save settings with =s=
-** Abstract Specification
+** Abstract Specification label:abstractspec
 
 Here I will discuss the theoretical segment. This is brief speculative look at
 how we can and might further model the elements of interaction in a formal way.
@@ -572,7 +572,7 @@ Identified here are four main parameters that one can think of as input or
 sensor categories to the camera and processing algorithms. They are listed
 below. These parameters can be variously tweaked and manipulated to interact
 with a program. There is cross over between, such as with pattern and shape
-where patterns can be combinations of shapes which forms shapes in themselves.
+where patterns can be combinations of shapes and shapes which make up patterns.
 They can also be combined in various ways so as to produce interaction. In fact
 they will likely be most useful when combined as it stretches the possible
 arrrangements and states that can be created.
@@ -630,8 +630,10 @@ Another element of the software outcome is this elementary algorithm for finding
 pairs of points. It looks for pairs of points that are less than some distance
 away from each other and then collects them and stores them in an array. This
 algorithm is currently very slow, with a worst case algorithmic complexity of
-roughly $O(k^2*n^2)$, where $n$ is the number of points (blobs) and $k$ is the
+roughly $O(k*n^2)$, where $n$ is the number of points (blobs) and $k$ is the
 number of pairs [fn:4]. See Listing. ref:mapAlgo for the code.  cite:CormenThomas2009Ita 
+
+
 
 #+caption: Algorithm for mapping and connecting points. label:mapAlgo
 #+begin_src cpp
@@ -703,12 +705,16 @@ class colourPoint {
 
 * Creative process and software testing. label:creativeproc
 
-** BUGS:
-- Unstable
-- Slow algorithms
 ** Insipration
 
-The project has been heavily inspired by other software and research as previously acknowledged. The basic idea behind this project is to describe and implement an open-source version in openFrameworks. The projects that inspired this one were physically unavailable, being in the uk. Paperprograms was available to download but as described below it was not suitable for this idea. The objective was to aim for something lower level in both language and theory. Create a ground system with which to build many different types of software on top of, all utilising the spatial model of interaction. \\
+The project has been heavily inspired by other software and research as
+previously acknowledged. The basic idea behind this project is to describe and
+implement an open-source version in openFrameworks (OF). The projects that
+inspired this one were physically unavailable, being in the uk. Paperprograms
+was available to download but as described below it was not suitable for this
+idea. The objective was to aim for something lower level in both language and
+theory. Create a ground system with which to build many different types of
+software on top of, all utilising the spatial model of interaction. \\
 
 ** Paperprograms testing
 
@@ -719,7 +725,7 @@ done in the browser (it uses a version of OpenCv compiled to [[https://webassemb
 cite:JpPaperPrograms. While WebAssembly has the scope for doing high-performance
 computation in the browser but I found there was still a significant lag from
 detecting papers to projecting back down on to them. Another branch which had
-implemented blob detection on the GPU I also found to be slow and unstable
+implemented bl ob detection on the GPU I also found to be slow and unstable
 ([[https://github.com/janpaul123/paperprograms/pull/28][Linkto pull request]]), this may have been due to my lighting and camera setup.
 \\
 
@@ -730,7 +736,15 @@ developing some interesting tools collaboratively but for this solo project
 working alone the social aspect would not be utilised. It is intended, like
 Dynamicland as a tool for computing, but the goal of this project is to abstract
 the model and open it to use beyond doing computing itself. Again DL and PP also
-have this in spirit too but this aimed to be lower level. \\
+have this in spirit too but this aimed to be lower level.
+
+** OpenCv and Cinder
+
+Some early testing in vanilla c++ and the OpenCv library was also done. See [[https://gitlab.doc.gold.ac.uk/ljame002/dynamic-cognition/-/tree/master/opencv_testing][this
+link]] for these files. This involved using OpenCv without another framework but
+found OF had more available in close reach. Cinder (a similar c++ framework) was
+also considered but certain libraries for graphics didn’t seem to be working so
+stuff with OF.
 
 ** ofxPiMapper, projection mapping issue.
 
@@ -744,19 +758,24 @@ area, not the orientation or exact corners. Using the homography avaiable in
 ofxPiMapper would mean for more control when changing this active region as well
 as precise and simple mapping to it. In the current setup keystone calibration
 on the projector is required which works fine but can be awkward to achieve (see
-video evidence ref) for this.
+ref:videokeystone) for this.
+
 
 ** Design and development
 
-Creative processes of this project has been goverened by technical compelxity in
-the given timeframe and
+Creative processes of this project has been goverened by building on the
+principles originating in the background research and the specification. It was
+also influenced as the project developed by technical compelxity in the given
+timeframe and the outcome was refactored to include this.
 
 *** Prototyping
-The project is itself in prototypical form. More prototyping of actuation reponses would have been useful ideation, as this has happened as the project has developed rather than in a more structured manner. Before further development further prototyping would be done, particularly of projection reponses.
+The project is itself in prototypical form. More prototyping of actuation
+reponses would have been useful ideation, as this has happened as the project
+has developed rather than in a more structured manner. Before further
+development further prototyping would be done, particularly of projection
+reponses.
 
-** Raspberry pi testing
-
-** Other testing:
+** Other testing
 
 ***  Natural light versus synthetic.
 
@@ -777,27 +796,22 @@ disruption to the tracking. This was used in the MultiModal project
 the tracking without any depth sensing cabailities. This trade off could be
 explored in further development. \\
 
-Another design consideration relating to light ???
-
 *** Slow algorithms
 As discussed in briefly in ref:relpointalgo there is issues with the complexity
 of algorithm for finding pairs of points of a certain distance from eachother.
 This could be improved fairly quickly with further development and insight.
 
+** Raspberry pi testing label:pitesting
+Some testing on the raspberry pi has also been carrried out (see Fig.
+ref:pitest). This was on a Raspberry pi 4 running Raspbian and openFrameworks
+(armv6). There are points for accessibility here as it ran out of the box
+without configuration. Speed was an issue though. There was a big delay in
+framerate on the camera and the reponse on the projector window was lagging. An
+interesting experiement this shows there is a good deal of effciency
+improvements that could be made. It could be that it would always struggle on
+the relatively slow processing capability of the pi but currently, it is
+unusable on that platform.
 
-*** Unstable
-** OpenCv testing
-- lack of graphics
-- new library
-
-** Goverened by 	
-*** ...technical implementability
-*** ...research and experience
-
-
-* Debugging and problem solving
-** Main technical issues
-** Problem solving
 * Evaluation and Conclusions
 ** Practicality of current setup
 ** Scope
@@ -806,6 +820,8 @@ This could be improved fairly quickly with further development and insight.
 ** Future scope for software development
 *** Improvements
 ** Survey?
+* Debugging and problem solving ** Main technical issues ** Problem solving
+
 * Research notes :noexport:
 ** SAGE GUIDEBOOK for digital technology research
 *** Theories of embodiment in HCI
@@ -835,6 +851,9 @@ create completely new touch sensations."
 #+ATTR_LATEX: :width 15cm :float t
 [[file:assets/serve_project.jpg]]
 
+#+caption: Testing on Raspberry Pi 4. label:pitest
+#+ATTR_LATEX: :width 17cm :float 
+[[file:assets/pitest.jpg]]
 
 * Bibliography :ignore:
 
