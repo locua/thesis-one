@@ -703,36 +703,9 @@ class colourPoint {
 
 * Creative process and software testing. label:creativeproc
 
-As mentioned /Paperprogams/ was a starting point for playing around with but I
-found that I couldn't set it up and have it stable enough to develop on. It also
-suffers from being quite slow, due to the Computer Vision and graphics being
-done in the browser (it uses a version of OpenCv compiled to [[https://webassembly.org/][WebAssembly]])
-cite:JpPaperPrograms. While WebAssembly has the scope for doing high-performance
-computation in the browser but I found there was still a significant lag from
-detecting papers to projecting back down on to them. Another branch which had
-implemented blob detection on the GPU I also found to be slow and unstable ([[https://github.com/janpaul123/paperprograms/pull/28][Link
-to pull request]]), this may have been due to my lighting and camera setup.
-
-After testing with /PP/ and finding it to be unstable and difficult to develop
-on Cinder and OpenCV were considered. Another reason for moving away from /PP/
-was it already being a fully fledged system in itself. It has potential for
-developing some interesting tools collaboratively but for this solo project
-working alone the social aspect would not be utilised.
-
-** pimapper, projection mapping issue.
-** Goverened by 
-*** ...technical implementability
-*** ...research and experience
-
-** Raspberry pi testing
-
 ** BUGS:
-- Natural light versus synthetic.
-- Colour and disruption from users.
 - Unstable
 - Slow algorithms
-* Creative process and software testing. label:creativeproc
-
 ** Insipration
 
 The project has been heavily inspired by other software and research as previously acknowledged. The basic idea behind this project is to describe and implement an open-source version in openFrameworks. The projects that inspired this one were physically unavailable, being in the uk. Paperprograms was available to download but as described below it was not suitable for this idea. The objective was to aim for something lower level in both language and theory. Create a ground system with which to build many different types of software on top of, all utilising the spatial model of interaction. \\
