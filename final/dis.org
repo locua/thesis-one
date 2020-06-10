@@ -705,7 +705,7 @@ class colourPoint {
 
 * Creative process and software testing. label:creativeproc
 
-** Insipration
+** Inspiration
 
 The project has been heavily inspired by other software and research as
 previously acknowledged. The basic idea behind this project is to describe and
@@ -812,15 +812,82 @@ improvements that could be made. It could be that it would always struggle on
 the relatively slow processing capability of the pi but currently, it is
 unusable on that platform.
 
-* Evaluation and Conclusions
+* Debugging and problem solving 
+** Main technical issues 
+** Problem solving
+
+* Evaluation and Conclusions label:evaluation
+In conclusion a solid prototype is for spatial and tangible interaction is
+presented. There is extensive scope for future development and various
+strategies are detailed in the sections below.
+
 ** Practicality of current setup
-** Scope
-** Theoretical 
+
+*** Algorithms
+
+Elements of the current software do pose some important points for further
+devlopment. Efficient algorithms for identifying clusters of points are an
+essential for more advanced combinations of the sensory parameters. These will
+be needed for a more stable system. As mentioned previously
+(ref:debuggingcolourtracking) currently single blobs are can easily be disrupted
+by noise and interaction from the user. Algorithmically locating higher level
+patterns amongst the coloured blobs will solve this issue. In Paperprogams and
+Dynamicland sheets of paper are lined with dots and the patterns of these
+colours encode an indentity for each program. Similarly another algorithm could
+use some sort of pattern recognition to identify such encodings. When tested on
+the Raspberry pi there it was unusably slow (ref:pitesting) so there is plenty
+of room for improvement. \\
+
+Envisaged in the Colour Locator were to have different encodings to represent
+corresponding “TUI (tangible user interface)” elements cite:IshiiH2002Tbdt. For
+example a combination of three red points and two green in a row instantiate a
+*handle clas* which could be used to display a block of text. Another pattern
+might represent an *image class* which displays an image. This could lead to one
+development of the in itself would be way of creating user interfaces, on top of
+this spatial model.
+
+*** Depth camera
+
+A depth sensor could be useful as discussed (ref:lightissues) for a more stable
+system. However there would be a trade between potential use and the
+accessibility of the system, as this would add the need for more equipment and
+cost. Some testing could be done with different and easily sourced sensors to
+final a practical solution.
+
+** Branch ideas
+In the original aims there was some hope to build some simple tools with CL. One
+idea from was for a tool for memory, taking inspiration from Anki, a program for
+doing spaced-repetition of flash cards. A couple of sources purport good results
+for increasing memeory capacity cite:brownhanson,NielsenMich2018altm and it
+seemed a good candiate translating into CL’s model.
+
+** Psychological aspects
+
+The psychological aspects that were originally discussed and speculated on in
+Chapter ref:background, have not been explored in detail. Apart from the overall
+design being aimed at the psychological modes of interaction, this has been left
+out of scope due to focus on computing. Some relevant points for evaluation and
+development of the project from a psychological persepective are discussed
+below.
+
+*** Memory :noexport:
+
+** Secondary outcome
+The theoretical outcome (ref:abstractspec) was a brief addition to the software
+Colour Locator (CL). Intended as a formal conceptual summary of the design and
+developmental aims of CL it aims for to better describe these points.
+
 ** Social aspects. Proposed social evaluation
+
+Originally social surveying was to be used in evaluation. This would involve
+surveys and conversation analysis cite:SharpHelen2019IDBH to assess various
+aspects of the system. This would regard usability, any benefits and difficults
+with use. This was not carried out as CL will only be of interest to developers
+in its current state.
+
 ** Future scope for software development
-*** Improvements
+
 ** Survey?
-* Debugging and problem solving ** Main technical issues ** Problem solving
 
 * Research notes :noexport:
 ** SAGE GUIDEBOOK for digital technology research
