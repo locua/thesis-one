@@ -857,6 +857,7 @@ improvements that could be made. It could be that it would always struggle on
 the relatively slow processing capability of the pi but currently, it is
 unusable on that platform.
 
+# ** TODO Improvements to creative process
 
 * TODO Debugging and problem solving
 ** Main technical issues label:technicaldebug
@@ -903,10 +904,7 @@ another useful part of this to quickly get the system working. An algorithm that
 adjusts colours every so often could be useful to find the optimum values and
 calibrate over time would be a useful solution. This is in the scope of future
 development.
-*** String sanitisation for memory prototype
-** Reflection on process
-*** Simplicity of prototype and large room for development
-*** Needs improvement to become significant
+*** 
 * Evaluation and conclusions label:evaluation
 In conclusion a software prototype for spatial and tangible interaction is
 presented. There is extensive scope for future development and various
@@ -958,11 +956,17 @@ final a practical solution.
 The psychological aspects that were originally discussed and speculated on in
 Chapter ref:background, have not been explored in detail. Apart from the overall
 design being aimed at the psychological modes of interaction, this has been left
-out of scope due to a focus on software engineering. Some relevant points for
-evaluation and development of the project from a psychological persepective are
-discussed below.
+out of scope due to a focus on software engineering. Memory is one area that
+this software could work well with. Due to our 3 dimensional lives, memory is
+something that could benefit from interacting with a computer around a room as
+opposed to a 2 dimensional monitor. While obviously not beneficial for all tasks
+there is room for enquiry and application in this regard. \\
 
-*** Memory :noexport:
+In the original aims there was some hope to build some simple tools with CL. One
+idea was for a tool for improving memory, taking inspiration from Anki, a
+program for spaced-repetition of flash cards. A couple of sources purport good
+results for increasing memory capacity cite:BrownHanson,NielsenMich2018altm and
+it seemed a good candidate translating into CL’s model.
 ** Secondary outcome
 
 The theoretical outcome (ref:abstractspec) was a brief addition to the software
@@ -1009,15 +1013,10 @@ interaction-design.
 
 ** TODO Future scope for software development
 Here are some finalised discussion points for progression of the project.
-*** Branch ideas
-In the original aims there was some hope to build some simple tools with CL. One
-idea was for a tool for improving memory, taking inspiration from Anki, a
-program for spaced-repetition of flash cards. A couple of sources purport good
-results for increasing memory capacity cite:BrownHanson,NielsenMich2018altm and
-it seemed a good candidate translating into CL’s model.
-** TODO Improvements to creative process
 
-** TODO Personal notes / expectations
+** Reflection on process
+*** Simplicity of prototype and large room for development
+*** Needs improvement to become significant
 * Research notes :noexport:
 ** SAGE GUIDEBOOK for digital technology research
 *** Theories of embodiment in HCI
