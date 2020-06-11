@@ -441,7 +441,8 @@ illustrated in Fig. ref:systemSchema. The hardware used was an *Epson EH-TW650*
 *3LCD*, a *Logitech C920* HD Webcam and a laptop running Ubuntu Linux (18.04
 LTS). The projector was secured to the ceiling with a mount and all cables were
 extended to the floor. The projector setup can be seen in Appendix I, Fig
-ref:projncam. All the source code can be found at the following: [[https://gitlab.doc.gold.ac.uk/ljame002/dynamic-cognition][Gitlab link]]. \\
+ref:projncam. All the source code can be found by following links in Appendix
+II (ref:codelinks). \\
 
 The software architecture consists of three classes:
 #+ATTR_LATEX: :options [noitemsep]
@@ -671,6 +672,8 @@ vector<vector<int>> Projector::findPairs(vector<cv::Point3f> &blobs) {
 }
 #+end_src
 
+** TODO Memory mapping prototype
+
 ** API
 
 In the software outcome there is only a rudimentary "API" which is to access the
@@ -728,7 +731,7 @@ and graphics being done in the browser (it uses a version of OpenCv compiled to
 high-performance computation in the browser but I found there was still a
 significant lag from detecting papers to projecting back down on to them.
 Another branch which had implemented bl ob detection on the GPU I also found to
-be slow and unstable ([[https://github.com/janpaul123/paperprograms/pull/28][Linkto pull request]]), this may have been due to my
+be slow and unstable ([[https://github.com/janpaul123/paperprograms/pull/28][Link to pull request]]), this may have been due to my
 lighting and camera setup. \\
 
 After testing with /PP/ and finding it to be unstable and difficult to develop
@@ -761,7 +764,6 @@ ofxPiMapper would mean for more control when changing this active region as well
 as precise and simple mapping to it. In the current setup keystone calibration
 on the projector is required which works fine but can be awkward to achieve (see
 ref:videokeystone) for this.
-
 
 ** Design and development
 
@@ -814,26 +816,26 @@ improvements that could be made. It could be that it would always struggle on
 the relatively slow processing capability of the pi but currently, it is
 unusable on that platform.
 
-* Debugging and problem solving 
+** TODO Improvements to creative process
+* TODO Debugging and problem solving 
 ** Main technical issues 
-** Problem solving
-
-* Research notes :noexport:
-** SAGE GUIDEBOOK for digital technology research
-*** Theories of embodiment in HCI
-*** Haptic interfaces
-"the widgets cannot provide the haptic response that physical objects do when
-touched or clicked. By adding haptic feedback to user interfaces, we can
-recreate the physical sensation of pressing a button, holding a ball or even
-create completely new touch sensations."
-
-*** ethno methodology
-- Propose and trial ethnomethodological framework for project evaluation
+*** Projection mapping
+An original 
+**** Simple Aspect mapping solution
+*** Algorithmics
+*** Lighting issues
+*** String sanitization for memory prototype
+*** Optimisation
+*** Calibration while using
+** Reflection on process
+*** Simplicity of prototype and large room for development
+*** Needs improvement to become significant
 * Evaluation and conclusions label:evaluation
 In conclusion a software prototype for spatial and tangible interaction is
 presented. There is extensive scope for future development and various
 strategies are detailed in the sections below.
 
+** TODO Design progression
 ** Practicality of current setup
 Elements of the current software do pose some important points for further
 development.
@@ -885,10 +887,13 @@ discussed below.
 *** Memory :noexport:
 
 ** Secondary outcome
+
 The theoretical outcome (ref:abstractspec) was a brief addition to the software
 Colour Locator (CL). Intended as a formal conceptual summary of the design and
 developmental aims of CL it aims for to better describe the model, for the
-discussion of it's potential use cases.
+discussion of it's potential use cases. It also offers a description of the
+problems this project aims to address; attempting to add a more robust
+specification for development of the prototype.
 
 ** Social aspects. Proposed social evaluation
 
@@ -898,20 +903,28 @@ aspects of the system. This would regard usability, any benefits and difficults
 with use. This was not carried out as CL will only be of interest to developers
 in its current state.
 
+*** TODO Have you done methodical user testing? Collected audience responses to your work?
+*** Survey? Proposed survey Questions
+** Overall durability
+*** TODO Have you tested your implementation / interaction thoroughly to make sure it is robust?
 ** Future scope for software development
+** Personal notes / expectations
 
-** Survey?
+* Research notes :noexport:
+** SAGE GUIDEBOOK for digital technology research
+*** Theories of embodiment in HCI
+*** Haptic interfaces
+"the widgets cannot provide the haptic response that physical objects do when
+touched or clicked. By adding haptic feedback to user interfaces, we can
+recreate the physical sensation of pressing a button, holding a ball or even
+create completely new touch sensations."
 
+*** ethno methodology
+- Propose and trial ethnomethodological framework for project evaluation
 * Links :noexport:
 - http://web.mit.edu/ebj/www/JPER.pdf - similar project - urban planning workbench
-- Sage digital tech research handbook
-  - embodied interaction
-  - haptic interfaces
-  - ethnomethodology 
-
 * Appendices
-
-** Appendix I: Additional images
+** Appendix I: Additional images label:additionalimages
 #+caption: Camera and projector secured on ceiling. label:projncam
 #+ATTR_LATEX: :width 15cm :float
 [[file:assets/camproj.jpg]]
@@ -923,12 +936,14 @@ in its current state.
 #+caption: Testing on Raspberry Pi 4. label:pitest
 #+ATTR_LATEX: :width 17cm :float 
 [[file:assets/pitest.jpg]]
+** Appendix II: Code repository links label:codelinks
+*** Code repository on [[https://gitlab.doc.gold.ac.uk/ljame002/dynamic-cognition][Gitlab]]. 
+*** Code repository on [[https://github.com/locua/spatial-memoriser][Github.]]
 
+** Appendix III: Links to video documentation label:videodoc
 * Bibliography :ignore:
-
 bibliographystyle:ieeetr
 bibliography:references.bib
-
 * Footnotes
 
 [fn:4] This may not be precise but the main takeaway is that is not scalable. It
