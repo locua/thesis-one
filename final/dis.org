@@ -122,6 +122,7 @@ The motivation for this project stems in part from a feeling of frustration in
 - HCI - Human Computer Interaction
 - KMM - keyboard-mouse-monitor
 - Exocortex - A software extension of a cognitive task.
+- GUI - Graphical User Interface
 ** /Exocortices/ and augmented cognition
 
 I started off looking at /Exocortices/ and other personal archiving systems.
@@ -430,10 +431,10 @@ intersection of the two.
 
 * Project in depth label:projectindepth
 
-** Finalised Design
+** Finalised design
 
-After testing of different software and approaches (detailed in Chapter
-ref:creativeproc) the setup for the software outcome was decided. This is
+After the testing of different software and approaches (detailed in Chapter
+ref:creativeproc) the setup for the software outcome was chosen. This is
 illustrated in Fig. ref:systemSchema. The hardware used was an *Epson EH-TW650*
 *3LCD*, a *Logitech C920* HD Webcam and a laptop running Ubuntu Linux (18.04
 LTS). The projector was secured to the ceiling with a mount and all cables were
@@ -458,7 +459,7 @@ The software architecture consists of three classes:
 
 The first essential component to get working was the computer vision. The core
 of this involves doing blob tracking for each colour in the ~targetColours~
-times calling ~findContours~ and passing in (by reference) the cropped pixel
+and calling ~findContours~, passing in (by reference) the cropped pixel
 array using the corresponding ~contourFinder~ object. Therefore, we loop five
 array, an ~ofPixels~ object containing the camera pixel data for the active
 detection region.
@@ -492,12 +493,13 @@ for fine grained control over the tracking. They are listed below:
   
 Architecturally the application is comprised of two windows the *GUI* and
 *Projector*, represented in two classes ~ofApp~ and ~Projector~ respectively.
-The *GUI* window is a control panel or the computer vision tracking. Controls
-for the parameters are available in the *GUI* window as well to crop the
-active region part of the camera frame were the computer vision happens. In the
+The *GUI* window is a control panel for the computer vision (CV) tracking.
+Controls for the CV parameters are available in the *GUI* window, as handles to
+crop the active region of the camera frame were the CV happens. In the
 screenshot (Fig. ref:guiwindow) the tracking parameters are seen on the left and
-the target colours are on the right. In the center the rectangle with the pink
-circles on upper left and bottom right corners is the active detection region. \\
+the target colours are on the right. In the centre the rectangle with the pink
+circles on upper left and bottom right corners is the active detection region.
+\\
 
 #+caption: GUI window. label:guiwindow 
 #+ATTR_LATEX: :width 15cm
@@ -509,7 +511,7 @@ mapping and locating of the various colour blobs detected by the
 ~ContourFinder~'s. This is shown in the code block ref:pf. The ~contourFinders~
 are accessed via the ~State~ class [fn:3]. All of the areas of interest are
 looped over and their /centroids/ accessed. The locations are mapped to the
-projector window size and this and the colour index is stored.
+projector window size and aspect ratio and the colour index is stored. \\
 
 #+caption: Crucial projector code. label:pf
 #+begin_src cpp
@@ -537,8 +539,8 @@ loop over the settings. There is also a function, ~saveSettings()~, which allows
 one to save settings at any time. This is assigned to the =s= key.
 
 *** GUI keyboard shortcuts
-The GUI interface has the a bit more that it is relevant to quickly describe.
-The keyboard shortcuts allow for various controls of the interface. A
+The GUI interface some other functionality that it is relevant to briefly
+describe. The keyboard shortcuts allow for various controls of the interface. A
 chequerboard and corner markers can be toggled on the projector window. A simple
 zoom mode can be enabled but is not very functional. There is also some
 interfacing for v4l2-ctl, a CLI application for controlling the settings on the
@@ -549,8 +551,8 @@ detection. The full list of shortcuts is listed below.
 #+ATTR_LATEX: :options [noitemsep]
 - Toggle keyboard shortcuts with =k=
 - Toggle tracking with =t=
-- Toggle corners on projection window with =c= key
-- Toggle chequerboard on projection window with =C= key
+- Toggle corners on projection window with =c= 
+- Toggle chequerboard on projection window with =C=
   - Useful for keystone calibration
 - Reset camera settings to default with =r=
 - Toggle zoom mode with =z=
@@ -559,11 +561,11 @@ detection. The full list of shortcuts is listed below.
   - Only works if v4l2-ctl is installed 
 - Toggle fullscreen with =f=
 - Save settings with =s=
-** Abstract Specification label:abstractspec
+** Abstract specification label:abstractspec
 
 Here I will discuss the theoretical segment. This is brief speculative look at
 how we can and might further model the elements of interaction in a formal way.
-It is split into three parts: data structures, physical elements and Sensory
+It is split into three parts: data structures, physical elements and sensory
 devices. This offers three different perspectives on the abstraction and
 formalisation process.
 
@@ -571,11 +573,11 @@ formalisation process.
 Identified here are four main parameters that one can think of as input or
 sensor categories to the camera and processing algorithms. They are listed
 below. These parameters can be variously tweaked and manipulated to interact
-with a program. There is cross over between, such as with pattern and shape
-where patterns can be combinations of shapes and shapes which make up patterns.
-They can also be combined in various ways so as to produce interaction. In fact
-they will likely be most useful when combined as it stretches the possible
-arrrangements and states that can be created.
+with a program. There can be cross over between these categories, such as with
+pattern and shape, where patterns can be combinations of shapes and shapes which
+make up patterns. They can also be combined in various ways so as to produce
+interaction. In fact they will likely be most useful when combined as it
+stretches the possible arrrangements and states that can be created.
 
 #+ATTR_LATEX: :options [noitemsep]
 - Colour
@@ -591,7 +593,7 @@ program associates with them.
 
 *** Data structures
 
-Here are the theoretical data structures. These focus arround the sensory
+Here are the theoretical data structures. These focus around the sensory
 parameters described above.
 
 #+begin_src cpp
@@ -612,17 +614,17 @@ Template Pattern {
 }
 #+end_src
 	
-It can also be useful to think about what the data structures or higher order
-combinations of the data structures might represent. What analogues of Gui
-elements or other digital structures could they correspond to.
+It can also be useful to think about what the data structures or higher level
+combinations of the data structures might represent. What analogues of GUI
+elements or other digital structures could they correspond to?
 
 *** Physical elements
 
-When building the Colour Locator system was using felt circles of five different
+When building the Colour Locator system felt circles in five different
 colours were used. This model could also be expanded beyond the scope of the
 setup in the Colour Locator. Here we use a camera for detection but other kinds
 of sensors would be equally useful. A depth sensor would be great for stability
-only tracking colour that is beyond a certain depth.
+only tracking colour that is at a specific distance from the sensor.
 
 ** Relative point mapping label:relpointalgo
 
@@ -670,13 +672,13 @@ vector<vector<int>> Projector::findPairs(vector<cv::Point3f> &blobs) {
 ** API
 
 In the software outcome there is only a rudimentary "API" which is to access the
-colour points. If can currently only be accessed inside the program at the
-current time. There is no networking or connectivity. For each detected blob you
-have its colour id (a number from 1 to 5 corresponding to each of the tracked
-colours), location (x and y coordinates). These active points form the basis
-with which to build other augmentation on top of. In the current version of the
-software these values are stored in a simple 3 dimensional vector from the
-*openCv* library (~cv::Point3f~) (see Fig. ref:pseudoapi). \\
+colour points. It can only be accessed inside the program itself at the current
+time; there is no external API. There is no networking or connectivity. For each
+detected blob you have its colour-id (a number from 1 to 5 corresponding to each
+of the tracked colours), location (x and y coordinates). These active points
+form the basis with which to build other augmentation on top of. In the current
+version of the software these values are stored in a simple 3 dimensional vector
+from the *openCv* library (~cv::Point3f~) (see Fig. ref:pseudoapi). \\
 
 #+caption: Accessing the the parameters for point 'n' label:pseudoapi
 #+begin_src cpp
@@ -686,9 +688,8 @@ ss->blobs[n].z // Colour id
 #+end_src
 
 A simple proposed class for each blob seen in Fig. ref:pointClass. Having this
-as a class would important for extensibility. It may remain a relatively simple
-class as other more of the processing could be done on top of the colour
-point detection.
+as a class would be useful for extensibility. It may remain a relatively simple
+class as other processing could be done on top of the colour point detection.
 
 #+caption: Proposed point class. label:pointClass
 #+begin_src cpp
@@ -703,31 +704,30 @@ class colourPoint {
 }
 #+end_src
 
-* Creative process and software testing. label:creativeproc
+* Creative process and software testing label:creativeproc
 
 ** Inspiration
 
 The project has been heavily inspired by other software and research as
 previously acknowledged. The basic idea behind this project is to describe and
-implement an open-source version in openFrameworks (OF). The projects that
-inspired this one were physically unavailable, being in the uk. Paperprograms
-was available to download but as described below it was not suitable for this
-idea. The objective was to aim for something lower level in both language and
-theory. Create a ground system with which to build many different types of
+implement an open-source version in /openFrameworks/ (OF). The projects that
+inspired this one were physically unavailable; being in the US. /Paperprograms/
+(PP) was available to download but as described below it was not suitable for
+this idea. The objective was to aim for lower level architecture, in both language
+and theory. Create a ground system with which to build many different types of
 software on top of, all utilising the spatial model of interaction. \\
 
 ** Paperprograms testing
 
-As mentioned /Paperprogams/ was a starting point for playing around with but I
-found that I couldn't set it up and have it stable enough to develop on. It also
-suffers from being quite slow, due to the Computer Vision and graphics being
-done in the browser (it uses a version of OpenCv compiled to [[https://webassembly.org/][WebAssembly]])
-cite:JpPaperPrograms. While WebAssembly has the scope for doing high-performance
-computation in the browser but I found there was still a significant lag from
-detecting papers to projecting back down on to them. Another branch which had
-implemented bl ob detection on the GPU I also found to be slow and unstable
-([[https://github.com/janpaul123/paperprograms/pull/28][Linkto pull request]]), this may have been due to my lighting and camera setup.
-\\
+As mentioned, /PP/ was a starting point for testing but it was stable enough to
+develop on. It also suffers from being quite slow, due to the Computer Vision
+and graphics being done in the browser (it uses a version of OpenCv compiled to
+[[https://webassembly.org/][WebAssembly]]) cite:JpPaperPrograms. While WebAssembly has the scope for doing
+high-performance computation in the browser but I found there was still a
+significant lag from detecting papers to projecting back down on to them.
+Another branch which had implemented bl ob detection on the GPU I also found to
+be slow and unstable ([[https://github.com/janpaul123/paperprograms/pull/28][Linkto pull request]]), this may have been due to my
+lighting and camera setup. \\
 
 After testing with /PP/ and finding it to be unstable and difficult to develop
 on Cinder and OpenCV were considered. Another reason for moving away from /PP/
@@ -929,8 +929,8 @@ bibliography:references.bib
 
 * Footnotes
 
-[fn:4] This may not be precise but the main takeaway is it is not scalable. It
-runs ok with a few points and tight thresholds but it becomes very slow if there
+[fn:4] This may not be precise but the main takeaway is that is not scalable. It
+runs well with a few points and tight thresholds but it becomes very slow if there
 is many points of interest.
 
 [fn:3] This is the third class which allows for the sharing of variables and
