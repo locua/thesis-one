@@ -53,22 +53,22 @@ is both a sensor and actuator.
 * Introduction
 
 A project for the discussion and development of a comptuer vision based
-interaction systems. Originally I (maybe ambitiously) aimed at creating a full
-blow, novel interaction model to explore the psychological aspects of
-interacting with computers by moving objects around in a space. Motivated by
-years spent in some space or another, hunched in front of a screen in all manner
-of contortions it is the aim of this work to challenge this composition and
-contribute to something new. It is an attempt to further expand interaction and
-assimilate computing into space. \\
+interaction systems. Originally I (maybe ambitiously) aimed at creating a fully
+, to explore the psychological aspects of interacting with computers
+by moving objects around in a space. Motivated by years spent in some space or
+another, hunched in front of a screen in all manner of contortions it is the aim
+of this work to challenge this composition and contribute to something new. It
+is an attempt to further expand interaction and assimilate computing into space.
+\\
 
-Presented here is a report on a open-source software prototype. A spatial
+Presented here is a report on a open-source software prototype, a spatial
 interaction system where coloured objects (in this case felt shapes), are
-detected and located by camera projected back onto. This model of spatial
+detected and located by a camera and projected back onto. This model of spatial
 objects on an interaction surface is the proposed departure from the
 keyboard-monitor paradigm. The floor (or table) becomes the monitor and objects
 in the space the mouse. The potential for the use of a keyboard for text input
-is also envisaged, and beyond any kind of controller that could be used in this
-environment. \\
+is also envisaged, and beyond that, any kind of controller that could be used in
+this environment. \\
 
 In no way an original idea, this project presents an open-source rendition of
 this model using OpenFrameworks (a C++ toolkit for “creative coding”)(OF). This
@@ -78,33 +78,35 @@ and ofxGui alongside the built-in graphics functionality of OF. Due to the large
 number of additional libraries and active community it seemed a positive
 environment for future expansion and collaboration. \\
 
-Alongside the software an abstract formalisation is briefly described, for
-considering the this interaction model in a conceptual manner, so that it might
-be approached from a multi-discplinary scientific perspective. This could allow
-for an interesting development of this model. Human-Computer Interaction, as a
-discipline, lives at the cross roads of diverse fields such as computing, design
-and behavioural science. Although the scope and context of this project has not
-allowed for extra-disciplinary collaboration through the presentation of this
-secondary component it aims to keep itself open to this future possibility. \\
+Alongside the software, an abstract formalisation is briefly described. This
+considers this interaction model in a conceptual manner, so that it might be
+approached from a multi-discplinary scientific perspective. Human-Computer
+Interaction, as a discipline, lives at the cross roads of diverse fields such as
+computing, design and behavioural science. Although the scope and context of
+this project has not allowed for extra-disciplinary collaboration through the
+presentation of this secondary component it aims to keep itself open to this
+future possibility. \\
 
-Originally further prototyping and development was planned in addition to for
+Originally further prototyping and development was planned in addition to
 evaluation. This was proposed for evaluating end user interaction, such as
-thorough user-testing. An ethno-methodoligical framework is briefly discussed
-users themselves. In its current form the potential userbase would be the author
-and other software developers, interested in pursuing and developing this
-research in an open-source way. The further reaching end goal of prototyping
-usable systems diverse and non-techinal users, essentially for anyone computer
-user. A critical reference that I would like to put special note to here is the
-work of Bret Victor and Alan Kay, particulary in rather elusive project
-Dynamicland (based in the US) and Victors other writing and design. This was a
-cornerstone of the contextual research and an vital point of reference and
-inspiration for the project which I think it important to take note of here. \\
+thorough user-testing. In its current form the potential userbase would be the
+author and other software developers, interested in pursuing and developing this
+research in an open-source way. The further reaching end goal is one of
+prototyping software for diverse and non-technical users, essentially for any
+computer user. A critical reference that I would like to put special note to
+here is the work of Bret Victor and Alan Kay, particulary in the rather elusive
+project Dynamicland (based in the US) and Victor's other writing and design.
+This was a cornerstone of the contextual research, a vital point of reference
+and inspiration for the project. \\
 
 A contextual and historical N.B. \\
 
 The original aims of the project were partly affected by the restrictions
 brought about on daily life due to the Novel coronavirus pandemic.
 
+** Other stuff :noexport:
+An ethno-methodoligical framework is briefly discussed
+users themselves.
 * Background label:background
 
 The motivation for this project stems in part from a feeling of frustration in
@@ -458,11 +460,11 @@ The software architecture consists of three classes:
 *** Computer vision and fundamentals
 
 The first essential component to get working was the computer vision. The core
-of this involves doing blob tracking for each colour in the ~targetColours~
-and calling ~findContours~, passing in (by reference) the cropped pixel
-array using the corresponding ~contourFinder~ object. Therefore, we loop five
-array, an ~ofPixels~ object containing the camera pixel data for the active
-detection region.
+of this involves blob tracking for each colour in the ~targetColours~ and
+calling ~findContours~, passing in (by reference) the cropped pixel array using
+the corresponding ~contourFinder~ object. Therefore, we loop five array, an
+~ofPixels~ object containing the camera pixel data for the active detection
+region.
 
 #+caption: Computer Vision with ofxCv  label:ofxCvCv
 #+begin_src cpp
@@ -816,66 +818,77 @@ unusable on that platform.
 ** Main technical issues 
 ** Problem solving
 
-* Evaluation and Conclusions label:evaluation
-In conclusion a solid prototype is for spatial and tangible interaction is
+* Research notes :noexport:
+** SAGE GUIDEBOOK for digital technology research
+*** Theories of embodiment in HCI
+*** Haptic interfaces
+"the widgets cannot provide the haptic response that physical objects do when
+touched or clicked. By adding haptic feedback to user interfaces, we can
+recreate the physical sensation of pressing a button, holding a ball or even
+create completely new touch sensations."
+
+*** ethno methodology
+- Propose and trial ethnomethodological framework for project evaluation
+* Evaluation and conclusions label:evaluation
+In conclusion a software prototype for spatial and tangible interaction is
 presented. There is extensive scope for future development and various
 strategies are detailed in the sections below.
 
 ** Practicality of current setup
-
+Elements of the current software do pose some important points for further
+development.
 *** Algorithms
 
-Elements of the current software do pose some important points for further
-devlopment. Efficient algorithms for identifying clusters of points are an
-essential for more advanced combinations of the sensory parameters. These will
-be needed for a more stable system. As mentioned previously
-(ref:debuggingcolourtracking) currently single blobs are can easily be disrupted
-by noise and interaction from the user. Algorithmically locating higher level
-patterns amongst the coloured blobs will solve this issue. In Paperprogams and
-Dynamicland sheets of paper are lined with dots and the patterns of these
-colours encode an indentity for each program. Similarly another algorithm could
-use some sort of pattern recognition to identify such encodings. When tested on
-the Raspberry pi there it was unusably slow (ref:pitesting) so there is plenty
-of room for improvement. \\
+Efficient algorithms for identifying clusters of points are an essential for
+more advanced combinations of the sensory parameters. These will be needed for a
+more stable system. As mentioned previously (ref:debuggingcolourtracking)
+currently single blobs are can easily be disrupted by noise and interaction from
+the user. Algorithmically locating higher level patterns amongst the coloured
+blobs will solve this issue. In Paperprogams and Dynamicland sheets of paper are
+lined with dots and the patterns of these colours encode an indentity for each
+program. Similarly another algorithm could use some sort of pattern recognition
+to identify such encodings. When tested on the Raspberry pi there it was
+unusably slow (ref:pitesting) so there is plenty of room for improvement. \\
 
-Envisaged in the Colour Locator were to have different encodings to represent
-corresponding “TUI (tangible user interface)” elements cite:IshiiH2002Tbdt. For
-example a combination of three red points and two green in a row instantiate a
-*handle clas* which could be used to display a block of text. Another pattern
-might represent an *image class* which displays an image. This could lead to one
-development of the in itself would be way of creating user interfaces, on top of
-this spatial model.
+Envisaged in the Colour Locator different patterns of /colour points/ were to
+represent corresponding “TUI (tangible user interface)”-like elements
+cite:IshiiH2002Tbdt. For example a combination of three red points and two green
+in a row instantiate a *handle class* which could be used to display a block of
+text. Another pattern might represent an *image class* which displays an image.
+This could lead to one development of the software, as a tool to create user
+interfaces, on top of this spatial model.
 
 *** Depth camera
 
 A depth sensor could be useful as discussed (ref:lightissues) for a more stable
-system. However there would be a trade between potential use and the
+system. However, there would be a trade off between potential use and the
 accessibility of the system, as this would add the need for more equipment and
 cost. Some testing could be done with different and easily sourced sensors to
 final a practical solution.
 
 ** Branch ideas
 In the original aims there was some hope to build some simple tools with CL. One
-idea from was for a tool for memory, taking inspiration from Anki, a program for
-doing spaced-repetition of flash cards. A couple of sources purport good results
-for increasing memeory capacity cite:brownhanson,NielsenMich2018altm and it
-seemed a good candiate translating into CL’s model.
+idea was for a tool for improving memory, taking inspiration from Anki, a
+program for spaced-repetition of flash cards. A couple of sources purport good
+results for increasing memory capacity cite:brownhanson,NielsenMich2018altm and
+it seemed a good candidate translating into CL’s model.
 
 ** Psychological aspects
 
 The psychological aspects that were originally discussed and speculated on in
 Chapter ref:background, have not been explored in detail. Apart from the overall
 design being aimed at the psychological modes of interaction, this has been left
-out of scope due to focus on computing. Some relevant points for evaluation and
-development of the project from a psychological persepective are discussed
-below.
+out of scope due to a focus on software engineering. Some relevant points for
+evaluation and development of the project from a psychological persepective are
+discussed below.
 
 *** Memory :noexport:
 
 ** Secondary outcome
 The theoretical outcome (ref:abstractspec) was a brief addition to the software
 Colour Locator (CL). Intended as a formal conceptual summary of the design and
-developmental aims of CL it aims for to better describe these points.
+developmental aims of CL it aims for to better describe the model, for the
+discussion of it's potential use cases.
 
 ** Social aspects. Proposed social evaluation
 
@@ -889,17 +902,6 @@ in its current state.
 
 ** Survey?
 
-* Research notes :noexport:
-** SAGE GUIDEBOOK for digital technology research
-*** Theories of embodiment in HCI
-*** Haptic interfaces
-"the widgets cannot provide the haptic response that physical objects do when
-touched or clicked. By adding haptic feedback to user interfaces, we can
-recreate the physical sensation of pressing a button, holding a ball or even
-create completely new touch sensations."
-
-*** ethno methodology
-- Propose and trial ethnomethodological framework for project evaluation
 * Links :noexport:
 - http://web.mit.edu/ebj/www/JPER.pdf - similar project - urban planning workbench
 - Sage digital tech research handbook
