@@ -18,7 +18,12 @@
 * Acknowledgements :ignore:
 \renewcommand{\abstractname}{Acknowledgements}
 \begin{abstract}
- Thanks to my family, Florent, Chudleigh dwellers, Jamie...
+
+In no particular order thanks to Florent, Liz, Andrew, as well all my fellow
+living companions in Ladywell who've come together in this unusual time. Special
+thanks Jamie Forth for humoring the exprimental direction of this project and
+offering diverse reference and support.
+
 \end{abstract}
 \newpage
 
@@ -671,7 +676,7 @@ vector<vector<int>> Projector::findPairs(vector<cv::Point3f> &blobs) {
 }
 #+end_src
 
-** Memory mapping prototype label:protomem
+** TODO Memory mapping prototype label:protomem
 A prototypical experiment using the *CL* system has also been added. This is a
 rudimentary interface for inputting text and assigning it to blobs in space.
 When the =t= key is pressed two dialogue boxes are triggered. The first takes
@@ -710,7 +715,7 @@ if(key=='t'){
     }
 }
 #+end_src
-** TODO API label:api
+** API label:api
 
 In the software outcome there is only a rudimentary "API" which is to access the
 colour points. It can only be accessed inside the program itself at the current
@@ -745,7 +750,7 @@ class colourPoint {
 }
 #+end_src
 
-* Creative process and software testing label:creativeproc
+* TODO Creative process and software testing label:creativeproc
 
 ** Inspiration
 
@@ -760,9 +765,9 @@ software on top of, all utilising the spatial model of interaction. \\
 
 ** Paperprograms testing
 
-As mentioned, /PP/ was a starting point for testing but it was stable enough to
+Paperprograms (PP) was a starting point for testing but it was stable enough to
 develop on. It also suffers from being quite slow, due to the Computer Vision
-and graphics being done in the browser (it uses a version of OpenCv compiled to
+and graphics being done in the browser (using a version of OpenCv compiled to
 [[https://webassembly.org/][WebAssembly]]) cite:JpPaperPrograms. While WebAssembly has the scope for doing
 high-performance computation in the browser but I found there was still a
 significant lag from detecting papers to projecting back down on to them.
@@ -812,12 +817,11 @@ timeframe and the outcome was refactored to include this.
 The project is itself in prototypical form. More prototyping of actuation
 reponses would have been useful ideation, as this has happened as the project
 has developed rather than in a more structured manner. Before further
-development further prototyping would be done, particularly of projection
-reponses.
+development further prototyping would be done, particularly of projection code.
 
 ** Other testing
 
-***  Natural light versus synthetic.
+*** Natural light versus synthetic.
 
 As seen in Fig. ref:projncam. The camea and projector were setup next to a
 hanging light. This was an important component for stability in tracking. At
@@ -839,21 +843,21 @@ explored in further development. \\
 *** Slow algorithms
 As discussed in briefly in ref:relpointalgo there is issues with the complexity
 of algorithm for finding pairs of points of a certain distance from eachother.
-This could be improved fairly quickly with further development and insight.
+This could be improved fairly quickly with further development and insight. More
+on algorithmic debugging and improvements are detailed in section ref:algoopt.
 
 ** Raspberry pi testing label:pitesting
 Some testing on the raspberry pi has also been carrried out (see Fig.
 ref:pitest). This was on a Raspberry pi 4 running Raspbian and openFrameworks
 (armv6). There are points for accessibility here as it ran out of the box
 without configuration. Speed was an issue though. There was a big delay in
-frame-rate on the camera and the response on the projector window was lagging. An
-interesting experiment this shows there is a good deal of effciency
+frame-rate on the camera and the response on the projector window was lagging.
+An interesting experiment this shows there is a good deal of effciency
 improvements that could be made. It could be that it would always struggle on
 the relatively slow processing capability of the pi but currently, it is
 unusable on that platform.
 
-** TODO Improvements to creative process
-*** Prototyping
+
 * TODO Debugging and problem solving
 ** Main technical issues label:technicaldebug
 This chapter will deal with debugging and problem solving processes and how they
@@ -874,7 +878,7 @@ ref:mappingfail, linked in Appendix III, to see the issue. This was an
 interesting and confusing bug, but the combination of internal location mapping
 and the projector's mapping was the solution.
 
-*** Algorithms and optimisation
+*** Algorithms and optimisation label:algoopt
 The prototype is currently slower than it could be. Some optimisation in the
 algorithms will be necessary for it to be more useful and extensible. As
 discussed in section ref:relpointalgo, it's complexity means while it may run
@@ -899,9 +903,7 @@ another useful part of this to quickly get the system working. An algorithm that
 adjusts colours every so often could be useful to find the optimum values and
 calibrate over time would be a useful solution. This is in the scope of future
 development.
-*** String sanitization for memory prototype
-*** Optimisation
-*** Calibration while using
+*** String sanitisation for memory prototype
 ** Reflection on process
 *** Simplicity of prototype and large room for development
 *** Needs improvement to become significant
@@ -910,10 +912,18 @@ In conclusion a software prototype for spatial and tangible interaction is
 presented. There is extensive scope for future development and various
 strategies are detailed in the sections below.
 
-** TODO Design progression
+** TODO Design iteration
+The design of this project has iterated changed as it has progressed. Chapter
+ref:creativeproc discusses this in detail. From an evaluative perspective there
+the creative process has lacked in certain areas and achieved in others. Apart
+from not quite achieving the more advanced system that was originally proposed,
+it has stayed true to the original aims to design and formulate a spatial
+computing environment. Where it has lacked is a more formal process along the
+way. More thorough prototyping would have greatly benefited the project. This
+would have sped up the greater development process by identifying pitfalls in
+design that have taken time to develop.
+
 ** Practicality of current setup
-Elements of the current software do pose some important points for further
-development.
 *** Algorithms
 
 Efficient algorithms for identifying clusters of points are an essential for
@@ -921,7 +931,7 @@ more advanced combinations of the sensory parameters. These will be needed for a
 more stable system. As mentioned previously (ref:technicaldebug) currently
 single blobs are can easily be disrupted by noise and interaction from the user.
 Algorithmically locating higher level patterns amongst the coloured blobs will
-solve this issue. In Paperprogams and Dynamicland sheets of paper are lined with
+solve this issue. In Paperprograms and Dynamicland sheets of paper are lined with
 dots and the patterns of these colours encode an indentity for each program.
 Similarly another algorithm could use some sort of pattern recognition to
 identify such encodings. When tested on the Raspberry pi there it was unusably
@@ -943,13 +953,6 @@ accessibility of the system, as this would add the need for more equipment and
 cost. Some testing could be done with different and easily sourced sensors to
 final a practical solution.
 
-** Branch ideas
-In the original aims there was some hope to build some simple tools with CL. One
-idea was for a tool for improving memory, taking inspiration from Anki, a
-program for spaced-repetition of flash cards. A couple of sources purport good
-results for increasing memory capacity cite:brownhanson,NielsenMich2018altm and
-it seemed a good candidate translating into CL’s model.
-
 ** Psychological aspects
 
 The psychological aspects that were originally discussed and speculated on in
@@ -960,7 +963,6 @@ evaluation and development of the project from a psychological persepective are
 discussed below.
 
 *** Memory :noexport:
-
 ** Secondary outcome
 
 The theoretical outcome (ref:abstractspec) was a brief addition to the software
@@ -970,21 +972,52 @@ discussion of it's potential use cases. It also offers a description of the
 problems this project aims to address; attempting to add a more robust
 specification for development of the prototype.
 
-** Social aspects. Proposed social evaluation
+** TODO Social aspects. Proposed social evaluation
 
 Originally social surveying was to be used in evaluation. This would involve
 surveys and conversation analysis cite:SharpHelen2019IDBH to assess various
-aspects of the system. This would regard usability, any benefits and difficults
-with use. This was not carried out as CL will only be of interest to developers
-in its current state.
+aspects of the system. This would regard usability, any benefits and
+difficulties with use. This was not carried out as CL will only be of interest
+to developers in its current state. No user testing in person has been tried out
+due to not being able to get appropriate users to physically use the work and
+also it's incomplete nature. A survey of proposed survey questions are listed
+below. These aim to gauge the potential users interest in the use of such
+software and thereby areas for system improvement.
 
-*** TODO Have you done methodical user testing? Collected audience responses to your work?
-*** Survey? Proposed survey Questions
-** Overall durability
-*** TODO Have you tested your implementation / interaction thoroughly to make sure it is robust?
-** Future scope for software development
-** Personal notes / expectations
+*** Proposed survey questions for potential developers
+#+ATTR_LATEX: :options [noitemsep]
+- Could you envisage using integrating this interaction model into your
+  workflow?
+- Are you interested in open-source software development?
+*** Proposed survey questions for general users
+#+ATTR_LATEX: :options [noitemsep]
+- Could you envisage using integrating this interaction model into your current
+  usage of computers?
+- Do you feel that this would help you have a healthier relationships when using
+  your computer? {Rate on a scale from 1(not at all useful) to 5(very useful)}
+- Do you feel like you could have a healthier or more productive relationship
+  with your computer (Desktop or laptop).
+** TODO Durability
+The implementation has been fairly well tested, identifying different points for
+improvement and progression of the software. As the system progresses beyond the
+scope of this report, more bugs will probably be found. Overall the prototypical
+nature of the software means that improvement is inevitable. The aim for
+creating a system to improve on the stability and speed of Paperprograms was not
+achieved. This is one the major failings of the project in that it is not
+offering, in it's current state anything directly usable to this area of
+interaction-design.
 
+** TODO Future scope for software development
+Here are some finalised discussion points for progression of the project.
+*** Branch ideas
+In the original aims there was some hope to build some simple tools with CL. One
+idea was for a tool for improving memory, taking inspiration from Anki, a
+program for spaced-repetition of flash cards. A couple of sources purport good
+results for increasing memory capacity cite:BrownHanson,NielsenMich2018altm and
+it seemed a good candidate translating into CL’s model.
+** TODO Improvements to creative process
+
+** TODO Personal notes / expectations
 * Research notes :noexport:
 ** SAGE GUIDEBOOK for digital technology research
 *** Theories of embodiment in HCI
