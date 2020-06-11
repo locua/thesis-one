@@ -307,7 +307,7 @@ Haptic interfaces
   approach we are looking to formalise the computational interaction system /
   schema
   
-** Multi-modal interaction
+** Multi-modal interaction label:multimodalpro
 
 #+caption: Multi-modal painting
 #+ATTR_LATEX: :width 14cm 
@@ -327,8 +327,7 @@ applicable it explored the capabilities of some more unusual interactive modes.
 
 #+caption: Multi modal schematic
 #+ATTR_LATEX: :width 15cm
-[[file:assets/multi-modal-proj-diag.jpg]]
-
+[[file:assets/multi-modal-proj-diag.jpg]
 ** MIT Prof - tangible media group                                :noexport:
 http://tangible.media.mit.edu/projects/
 
@@ -439,7 +438,7 @@ After the testing of different software and approaches (detailed in Chapter
 ref:creativeproc) the setup for the software outcome was chosen. This is
 illustrated in Fig. ref:systemSchema. The hardware used was an *Epson EH-TW650*
 *3LCD*, a *Logitech C920* HD Webcam and a laptop running Ubuntu Linux (18.04
-LTS). The projector was secured to the ceiling with a mount and all cables were
+LATS). The projector was secured to the ceiling with a mount and all cables were
 extended to the floor. The projector setup can be seen in Appendix I, Fig
 ref:projncam. All the source code can be found by following links in Appendix
 II (ref:codelinks). \\
@@ -672,9 +671,46 @@ vector<vector<int>> Projector::findPairs(vector<cv::Point3f> &blobs) {
 }
 #+end_src
 
-** TODO Memory mapping prototype
+** Memory mapping prototype label:protomem
+A prototypical experiment using the *CL* system has also been added. This is a
+rudimentary interface for inputting text and assigning it to blobs in space.
+When the =t= key is pressed two dialogue boxes are triggered. The first takes
+the text you would like to assign and the second the id number of the blob you
+would like to attach it to. The id number is sanitised to remove all but numeric
+characters and checked so that there is blob with that id. See listing
+ref:textinput to see the code. A ~std::map~, from the *C++ Standard Library*, is
+used to associate a particular id number with a string of text. This acts as a
+key value pair to retrieve the text for each associated id, stored in ~mapi~.
+The maps are stored in the vector ~maps~. This rudimentary prototype is a
+beginning for further developments of the system. See [[https://gitlab.doc.gold.ac.uk/ljame002/dynamic-cognition/-/commit/12beeff8b13bf4ea99d17e5a62a975efaa9794ab][Commit 12beeff8]].
 
-** API
+#+caption: Text input using the OF ofSystemTextBoxDialog function. label:textinput
+#+begin_src cpp
+// testing text dialog
+if(key=='t'){
+    // Text dialog for input text
+    string out = ofSystemTextBoxDialog("Enter some text:");
+    // Text dialog for blob id number
+    string idstring = ofSystemTextBoxDialog("Enter blob number:");
+    // Sanitize by removing anything non alphanumeric from the idstring
+    idstring = std::regex_replace(idstring, std::regex(R"([\D])"), "");
+    // convert to int
+    int blobid=-1;
+    if(!idstring.empty()) blobid = stoi(idstring);
+    // If blob exists store map and id
+    if(blobid<ss->blobs.size() && blobid >= 0){
+      map<int, string> tmpmap;
+      tmpmap[blobid] = out;
+      // cout << tmpmap[blobid] << endl;
+      maps.push_back(tmpmap);
+      mapi.push_back(blobid);
+    } else {
+        ofSystemAlertDialog("Blob does not exist");
+        cout << "Blob does not exist\n";
+    }
+}
+#+end_src
+** TODO API label:api
 
 In the software outcome there is only a rudimentary "API" which is to access the
 colour points. It can only be accessed inside the program itself at the current
@@ -751,7 +787,7 @@ found OF had more available in close reach. Cinder (a similar c++ framework) was
 also considered but certain libraries for graphics didn’t seem to be working so
 stuff with OF.
 
-** ofxPiMapper, projection mapping issue.
+** ofxPiMapper, projection mapping issue. label:projectionmapping
 
 There is an open branch for called [[https://gitlab.doc.gold.ac.uk/ljame002/dynamic-cognition/-/tree/pimapper][pimapper]] which is where it is intended to
 remerge some earlier commits. This early work was changing around the projector
@@ -810,20 +846,59 @@ Some testing on the raspberry pi has also been carrried out (see Fig.
 ref:pitest). This was on a Raspberry pi 4 running Raspbian and openFrameworks
 (armv6). There are points for accessibility here as it ran out of the box
 without configuration. Speed was an issue though. There was a big delay in
-framerate on the camera and the reponse on the projector window was lagging. An
-interesting experiement this shows there is a good deal of effciency
+frame-rate on the camera and the response on the projector window was lagging. An
+interesting experiment this shows there is a good deal of effciency
 improvements that could be made. It could be that it would always struggle on
 the relatively slow processing capability of the pi but currently, it is
 unusable on that platform.
 
 ** TODO Improvements to creative process
-* TODO Debugging and problem solving 
-** Main technical issues 
+*** Prototyping
+* TODO Debugging and problem solving
+** Main technical issues label:technicaldebug
+This chapter will deal with debugging and problem solving processes and how they
+were used for various technical problems faced in this project.
 *** Projection mapping
-An original 
-**** Simple Aspect mapping solution
-*** Algorithmics
-*** Lighting issues
+Originally implementing a form of projection mapping was proposed. A simplified
+calibration tool is seen in the *Colour Locator*. This doesn't include any
+advanced perspective point mapping but simply mapping the location and scale of
+the located points. The perspective mapping is needed if the projector is not
+exactly perpendicular to the ceiling. Currently *CL* relies on the projectors
+built in keystone mapping. The calibration process is highlighted in the video
+linked in Appendix III (ref:mappingvid).[fn:5] \\
+
+The issue early on was that attempting to draw to the ~ofFbo~, OF's frame buffer
+object would warp the contents of the frame buffer in the centre. This is
+because no perspective mapping is implemented in the ~ofFbo~ object. See image
+ref:mappingfail, linked in Appendix III, to see the issue. This was an
+interesting and confusing bug, but the combination of internal location mapping
+and the projector's mapping was the solution.
+
+*** Algorithms and optimisation
+The prototype is currently slower than it could be. Some optimisation in the
+algorithms will be necessary for it to be more useful and extensible. As
+discussed in section ref:relpointalgo, it's complexity means while it may run
+for a few colour points it is not scalable when there are many points. "Depth
+first search" looks like a good candidate for use in further development. \\
+
+Optimisation could also be achieved by better utilisation of C++'s low level
+memory capabilities. This has been used already, for example the State class is
+instantiated as a ~shared_ptr~ which is passed to both the ~Projector~ and
+~ofApp~ classes. This "smart pointer" means variables are not being moved around
+by value, but each classes references the same shared instance.
+
+*** Lighting issues label:lightissues
+The ambient light in the space has been a source for a few bugs. As light
+changes throughout the day this causes hues of the colours to change. If there
+is change in light, target colours that are set are no longer calibrated to the
+colours coming in through the camera. These issues motivated the controls on the
+*GUI* window. These meant that parameters can be adjusted and re-calibrated
+quickly and many different combinations could experiment with. The keyboard
+shortcuts that controlled the exposure and reset the camera settings were
+another useful part of this to quickly get the system working. An algorithm that
+adjusts colours every so often could be useful to find the optimum values and
+calibrate over time would be a useful solution. This is in the scope of future
+development.
 *** String sanitization for memory prototype
 *** Optimisation
 *** Calibration while using
@@ -843,14 +918,14 @@ development.
 
 Efficient algorithms for identifying clusters of points are an essential for
 more advanced combinations of the sensory parameters. These will be needed for a
-more stable system. As mentioned previously (ref:debuggingcolourtracking)
-currently single blobs are can easily be disrupted by noise and interaction from
-the user. Algorithmically locating higher level patterns amongst the coloured
-blobs will solve this issue. In Paperprogams and Dynamicland sheets of paper are
-lined with dots and the patterns of these colours encode an indentity for each
-program. Similarly another algorithm could use some sort of pattern recognition
-to identify such encodings. When tested on the Raspberry pi there it was
-unusably slow (ref:pitesting) so there is plenty of room for improvement. \\
+more stable system. As mentioned previously (ref:technicaldebug) currently
+single blobs are can easily be disrupted by noise and interaction from the user.
+Algorithmically locating higher level patterns amongst the coloured blobs will
+solve this issue. In Paperprogams and Dynamicland sheets of paper are lined with
+dots and the patterns of these colours encode an indentity for each program.
+Similarly another algorithm could use some sort of pattern recognition to
+identify such encodings. When tested on the Raspberry pi there it was unusably
+slow (ref:pitesting) so there is plenty of room for improvement. \\
 
 Envisaged in the Colour Locator different patterns of /colour points/ were to
 represent corresponding “TUI (tangible user interface)”-like elements
@@ -936,15 +1011,25 @@ create completely new touch sensations."
 #+caption: Testing on Raspberry Pi 4. label:pitest
 #+ATTR_LATEX: :width 17cm :float 
 [[file:assets/pitest.jpg]]
+
+#+caption: Projection mapping bug. label:mappingfail
+#+ATTR_LATEX: :width 17cm :float 
+[[file:assets/nomapping.jpg]]
 ** Appendix II: Code repository links label:codelinks
 *** Code repository on [[https://gitlab.doc.gold.ac.uk/ljame002/dynamic-cognition][Gitlab]]. 
 *** Code repository on [[https://github.com/locua/spatial-memoriser][Github.]]
 
 ** Appendix III: Links to video documentation label:videodoc
+*** label:framebufbug
+*** label:mappingvid
 * Bibliography :ignore:
 bibliographystyle:ieeetr
 bibliography:references.bib
 * Footnotes
+
+[fn:5]  [[https://ofxpimapper.com/][ofxPiMapper]] was one solution with projective transformation algorithms.
+Development with this as previously mentioned could be useful as it removes the
+need for keystone calibration which is limited on some projectors.
 
 [fn:4] This may not be precise but the main takeaway is that is not scalable. It
 runs well with a few points and tight thresholds but it becomes very slow if there
