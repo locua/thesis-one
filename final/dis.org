@@ -9,6 +9,11 @@
 #+LATEX_HEADER: \usepackage{enumitem}
 # #+LATEX_HEADER: \usepackage[draft]{graphicx}
 
+* TODO 's before submission :noexport:
+** TODO upload and reference video documentation
+** TODO create video evidence of the basic system's capabilities
+** TODO beef out creative proj
+** TODO beef out debugging and problem solvin
 * other title ideas :noexport:
 # #+title:w Describing systems for the exploration of tangible and spatial computer interaction  
 # #+title: Spatial memory, embodied thinking, computer vision projection application \\
@@ -22,7 +27,7 @@
 In no particular order thanks to Florent, Liz, Andrew, as well all my fellow
 living companions in Ladywell who've come together in this unusual time. Special
 thanks Jamie Forth for humoring the exprimental direction of this project and
-offering diverse reference and support.
+offering diverse references and support.
 
 \end{abstract}
 \newpage
@@ -33,8 +38,8 @@ offering diverse reference and support.
 Presented here is a specification for experimental approaches to computer
 interaction based on spatial and tangible methods. The report describes a
 prototypical implementation of a base system for computer interaction using
-physical objects on a surface. A theoretical API (Application Programming
-Interface) for such a system and similar systems is proposed. This utilises
+physical objects on a surface. A theoretical specification (Application
+Programming Interface) this model and similar models is proposed. This utilises
 computer vision techniques to analyse a surface to track objects and the
 subsequent projection of graphics back onto the space creating a feedback system
 for interaction. An attempt to gather together literature and examples of such
@@ -43,7 +48,7 @@ described is summarised in the sentence below:
 
 #+begin_quote
 Physical objects on an /action surface/ have interactive properties; each object
-is both a sensor and actuator.
+is tracked by colour and located on a two dimensional surface.
 #+end_quote
 
 
@@ -57,47 +62,45 @@ is both a sensor and actuator.
 #+latex: \listoflistings \listoffigures
 * Introduction
 
-A project for the discussion and development of a comptuer vision based
-interaction systems. Originally I (maybe ambitiously) aimed at creating a fully
-, to explore the psychological aspects of interacting with computers
-by moving objects around in a space. Motivated by years spent in some space or
-another, hunched in front of a screen in all manner of contortions it is the aim
-of this work to challenge this composition and contribute to something new. It
-is an attempt to further expand interaction and assimilate computing into space.
-\\
+This is a project for the discussion and development of a computer vision based
+interaction system. Originally it (maybe ambitiously) aimed to create a fully
+fledged software solution, to explore the psychological aspects of interacting
+with computers by moving objects around in a space. Motivated by years spent in
+some space or another, hunched in front of a screen in all manner of
+contortions, it is the aim of this work to challenge this composition and
+contribute an alternative. It is an attempt to further expand computer
+interaction and assimilate computing with space. \\
 
-Presented here is a report on a open-source software prototype, a spatial
-interaction system where coloured objects (in this case felt shapes), are
-detected and located by a camera and projected back onto. This model of spatial
-objects on an interaction surface is the proposed departure from the
-keyboard-monitor paradigm. The floor (or table) becomes the monitor and objects
-in the space the mouse. The potential for the use of a keyboard for text input
-is also envisaged, and beyond that, any kind of controller that could be used in
-this environment. \\
+Presented here is an open-source software prototype, a spatial interaction
+system where coloured objects (in this case felt shapes), are detected and
+located by a camera and projected back onto. This model of spatial objects on an
+interaction surface is the proposed departure from the keyboard-mouse-monitor
+paradigm. The floor (or table) becomes the monitor and objects in the space the
+mouse. The potential for the use of a keyboard for text input is also envisaged,
+and beyond that, any kind of controller that could be used in space. The
+software is named \\
 
-In no way an original idea, this project presents an open-source rendition of
-this model using OpenFrameworks (a C++ toolkit for “creative coding”)(OF). This
+This project presents an open-source application using interaction model
+described above, named *Colour Locator* (abbreviated with *CL* throughout). The
+software uses OpenFrameworks (a C++ toolkit for “creative coding”)(OF). This
 library allowed for speedy assembly with out-of-the-box consolidation of various
 graphics, computer-vision and GUI libraries. In this case ofxCv, ofxXmlSettings
-and ofxGui alongside the built-in graphics functionality of OF. Due to the large
-number of additional libraries and active community it seemed a positive
+and ofxGui, alongside the built-in graphics functionality of OF. Due to the
+large number of additional libraries and active community it seemed a good
 environment for future expansion and collaboration. \\
 
-Alongside the software, an abstract formalisation is briefly described. This
-considers this interaction model in a conceptual manner, so that it might be
-approached from a multi-discplinary scientific perspective. Human-Computer
-Interaction, as a discipline, lives at the cross roads of diverse fields such as
-computing, design and behavioural science. Although the scope and context of
-this project has not allowed for extra-disciplinary collaboration through the
-presentation of this secondary component it aims to keep itself open to this
-future possibility. \\
+Alongside the software, an abstract specification is described. This considers
+this interaction model in a conceptual manner, so that it might be analysed from
+a multi-disciplinary scientific perspective. Human-Computer Interaction, as a
+discipline, lives at the cross roads of diverse fields such as computing, design
+and behavioural science. Although the scope and context has not allowed for
+extra-disciplinary collaboration, through the presentation of this secondary
+component it aims to keep itself open to this future possibility. \\
 
-Originally further prototyping and development was planned in addition to
-evaluation. This was proposed for evaluating end user interaction, such as
-thorough user-testing. In its current form the potential userbase would be the
-author and other software developers, interested in pursuing and developing this
-research in an open-source way. The further reaching end goal is one of
-prototyping software for diverse and non-technical users, essentially for any
+In its current form the potential user base would be the author and other
+software developers, interested in pursuing and developing the software in an
+collaborative way. The far reaching end goal is one of prototyping software for
+diverse and non-technical users, essentially to make this model available to any
 computer user. A critical reference that I would like to put special note to
 here is the work of Bret Victor and Alan Kay, particulary in the rather elusive
 project Dynamicland (based in the US) and Victor's other writing and design.
@@ -124,11 +127,13 @@ The motivation for this project stems in part from a feeling of frustration in
  cite:TwengeJeanM2020Wiia? How might such an environment fundamentally augment
  our cognitive capabilities; memory and learning as well as creativity itself?
  
-** Acronyms / definitions.
+** Acronyms / definitions
+- CL - *Colour Locator*, the software prototype detailed in this report.
 - CV - Computer vision
 - HCI - Human Computer Interaction
 - KMM - keyboard-mouse-monitor
-- Exocortex - A software extension of a cognitive task.
+- Exocortex - An externalised software extension for a one or more cognitive
+  tasks.
 - GUI - Graphical User Interface
 ** /Exocortices/ and augmented cognition
 
@@ -345,7 +350,7 @@ document aims to describe is summarised in the sentence below.
 
 #+begin_quote
 Physical objects on an /action surface/ have interactive properties; each object
-is both a sensor and actuator.
+is tracked by colour and located on a two dimensional surface.
 #+end_quote
 
 I provide this foundation so as to differentiate it from commonly used
@@ -516,9 +521,10 @@ The other main window used is in the *Projector* class. This deals with the
 display of the reaction surface. The crux of what this class achieves is in the
 mapping and locating of the various colour blobs detected by the
 ~ContourFinder~'s. This is shown in the code block ref:pf. The ~contourFinders~
-are accessed via the ~State~ class [fn:3]. All of the areas of interest are
-looped over and their /centroids/ accessed. The locations are mapped to the
-projector window size and aspect ratio and the colour index is stored. \\
+are accessed via the ~State~ class [fn:3]. All the blobs/points, of the
+different colours, are looped over and the location of their centres accessed.
+The locations are mapped to the projector window size and aspect ratio and the
+colour index is stored.[fn:6] \\
 
 #+caption: Crucial projector code. label:pf
 #+begin_src cpp
@@ -681,11 +687,11 @@ A prototypical experiment using the *CL* system has also been added. This is a
 rudimentary interface for inputting text and assigning it to blobs in space.
 When the =t= key is pressed two dialogue boxes are triggered. The first takes
 the text you would like to assign and the second the id number of the blob you
-would like to attach it to. The id number is sanitised to remove all but numeric
-characters and checked so that there is blob with that id. See listing
+would like to attach it to. The id number is sanitised, to remove all but
+numeric characters and checked so that there is a blob with that id. See listing
 ref:textinput to see the code. A ~std::map~, from the *C++ Standard Library*, is
-used to associate a particular id number with a string of text. This acts as a
-key value pair to retrieve the text for each associated id, stored in ~mapi~.
+used to associate a particular number with a string of text. This acts as a key
+value pair to retrieve the text for each associated number, stored in ~mapi~.
 The maps are stored in the vector ~maps~. This rudimentary prototype is a
 beginning for further developments of the system. See [[https://gitlab.doc.gold.ac.uk/ljame002/dynamic-cognition/-/commit/12beeff8b13bf4ea99d17e5a62a975efaa9794ab][Commit 12beeff8]].
 
@@ -864,7 +870,7 @@ unusable on that platform.
 This chapter will deal with debugging and problem solving processes and how they
 were used for various technical problems faced in this project.
 *** Projection mapping
-Originally implementing a form of projection mapping was proposed. A simplified
+Originally, implementing a form of projection mapping was proposed. A simplified
 calibration tool is seen in the *Colour Locator*. This doesn't include any
 advanced perspective point mapping but simply mapping the location and scale of
 the located points. The perspective mapping is needed if the projector is not
@@ -887,39 +893,54 @@ for a few colour points it is not scalable when there are many points. "Depth
 first search" looks like a good candidate for use in further development. \\
 
 Optimisation could also be achieved by better utilisation of C++'s low level
-memory capabilities. This has been used already, for example the State class is
-instantiated as a ~shared_ptr~ which is passed to both the ~Projector~ and
-~ofApp~ classes. This "smart pointer" means variables are not being moved around
-by value, but each classes references the same shared instance.
+memory management capabilities. This has been used already, for example the
+State class is instantiated as a ~shared_ptr~ which is passed to both the
+~Projector~ and ~ofApp~ classes. This "smart pointer" means variables are not
+being moved around by value, but each class references the same shared instance.
+Further efficiencies in memory could be achieved through changing how
+the region of interest is cropped (this involves passing large arrays of pixel
+data around) and  with the detection algorithms.
 
 *** Lighting issues label:lightissues
 The ambient light in the space has been a source for a few bugs. As light
 changes throughout the day this causes hues of the colours to change. If there
 is change in light, target colours that are set are no longer calibrated to the
 colours coming in through the camera. These issues motivated the controls on the
-*GUI* window. These meant that parameters can be adjusted and re-calibrated
-quickly and many different combinations could experiment with. The keyboard
+*GUI* window. This meant that CV parameters can be adjusted and re-calibrated
+quickly and different combinations could be experimented with. The keyboard
 shortcuts that controlled the exposure and reset the camera settings were
 another useful part of this to quickly get the system working. An algorithm that
 adjusts colours every so often could be useful to find the optimum values and
 calibrate over time would be a useful solution. This is in the scope of future
 development.
-*** 
+*** Memory prototype and high level reflection
+The prototype add-on (ref:protomem) which uses text dialogues to input and
+assign text to a particular blob is itself a working prototype. Development of
+the overall system is needed for greater stability. Particularly in regards to
+encoding collections of /blobs/ with particular identifiers. This will increase
+stability as currently the /blobs/ can move around spontaneously as the system
+updates. More individualised identification and encoding is needed so that
+particular patterns of /blobs/ are identifiable. Currently the blob which is
+assigned an index of =0= may be reallocated a new identifier which then disrupts
+the text assignment.
+** Debugging methods :noexport:
 * Evaluation and conclusions label:evaluation
-In conclusion a software prototype for spatial and tangible interaction is
-presented. There is extensive scope for future development and various
-strategies are detailed in the sections below.
+In conclusion a software prototype for spatial interaction has been presented
+alongside arguments in favour of this model. The main capability that it allows
+for, is the location of coloured objects on a two dimensional surface. With this
+basic tool there is extensive scope for future development. Reflections and
+strategies more progression are detailed in the sections below.
 
 ** TODO Design iteration
-The design of this project has iterated changed as it has progressed. Chapter
-ref:creativeproc discusses this in detail. From an evaluative perspective there
-the creative process has lacked in certain areas and achieved in others. Apart
-from not quite achieving the more advanced system that was originally proposed,
-it has stayed true to the original aims to design and formulate a spatial
-computing environment. Where it has lacked is a more formal process along the
-way. More thorough prototyping would have greatly benefited the project. This
-would have sped up the greater development process by identifying pitfalls in
-design that have taken time to develop.
+The design of this project has iterated as it has progressed. Chapter
+ref:creativeproc discusses this in detail. From an evaluative perspective the
+creative process has lacked in certain areas and achieved in others. Apart from
+not quite achieving the more advanced system that was originally proposed, it
+has stayed true to the original aims to design and formulate a spatial computing
+environment. What it has lacked is a more formal process for this iteration.
+Thorough prototyping would have greatly benefited the project. This would
+have sped up the greater development process by identifying pitfalls in design
+that have taken time to develop.
 
 ** Practicality of current setup
 *** Algorithms
@@ -970,7 +991,7 @@ it seemed a good candidate translating into CL’s model.
 ** Secondary outcome
 
 The theoretical outcome (ref:abstractspec) was a brief addition to the software
-Colour Locator (CL). Intended as a formal conceptual summary of the design and
+*Colour Locator* (CL). Intended as a formal conceptual summary of the design and
 developmental aims of CL it aims for to better describe the model, for the
 discussion of it's potential use cases. It also offers a description of the
 problems this project aims to address; attempting to add a more robust
@@ -978,44 +999,47 @@ specification for development of the prototype.
 
 ** TODO Social aspects. Proposed social evaluation
 
-Originally social surveying was to be used in evaluation. This would involve
-surveys and conversation analysis cite:SharpHelen2019IDBH to assess various
-aspects of the system. This would regard usability, any benefits and
-difficulties with use. This was not carried out as CL will only be of interest
-to developers in its current state. No user testing in person has been tried out
-due to not being able to get appropriate users to physically use the work and
-also it's incomplete nature. A survey of proposed survey questions are listed
-below. These aim to gauge the potential users interest in the use of such
-software and thereby areas for system improvement.
+Originally, user surveys were to be used in evaluation. This would involve
+survey analysis and conversation analysis cite:SharpHelen2019IDBH to assess
+various aspects of the system. This would be in regard to usability, and any
+advantages and difficulties with use. This was not carried out as CL will only
+be of interest to developers in its current state. No user testing in person has
+been tried out due to not being able to get appropriate users to physically use
+the work and also it's incomplete nature. A survey of proposed survey questions
+are listed below. These aim to gauge the potential users interest in the use of
+such software and thereby areas for system improvement.
 
 *** Proposed survey questions for potential developers
 #+ATTR_LATEX: :options [noitemsep]
-- Could you envisage using integrating this interaction model into your
-  workflow?
+- Could you envisage integrating this interaction model into your workflow?
 - Are you interested in open-source software development?
 *** Proposed survey questions for general users
 #+ATTR_LATEX: :options [noitemsep]
-- Could you envisage using integrating this interaction model into your current
+- Could you envisage integrating this interaction model into your current
   usage of computers?
+- Do you feel like you could have a healthier or more productive relationship
+  with your computer (Desktop or laptop)?
 - Do you feel that this would help you have a healthier relationships when using
   your computer? {Rate on a scale from 1(not at all useful) to 5(very useful)}
-- Do you feel like you could have a healthier or more productive relationship
-  with your computer (Desktop or laptop).
 ** TODO Durability
-The implementation has been fairly well tested, identifying different points for
-improvement and progression of the software. As the system progresses beyond the
-scope of this report, more bugs will probably be found. Overall the prototypical
-nature of the software means that improvement is inevitable. The aim for
-creating a system to improve on the stability and speed of Paperprograms was not
+The implementation has been tested, identifying different points for improvement
+and progression of the software. As the system progresses beyond the scope of
+this report, more bugs will probably be found. Overall the prototypical nature
+of the software means that improvement is inevitable. The aim for creating a
+system to improve on the stability and speed of /Paperprograms/ was not
 achieved. This is one the major failings of the project in that it is not
-offering, in it's current state anything directly usable to this area of
+offering, in it's current state, anything directly usable to in this area of
 interaction-design.
 
-** TODO Future scope for software development
-Here are some finalised discussion points for progression of the project.
+** Final 
+Here is a concluding statement regarding the project overall. Areas for
+improvement and design progression have been specified alongside assessment of
+the achievements and bugs. I've learnt some useful lessons on design and how to
+enhance the creative processas well as gained technical insight into software
+engineering, the C++ language.
 
-** Reflection on process
-*** Simplicity of prototype and large room for development
+** Reflection on process :noexport:
+*** Simplicity of prototype large room for development
 *** Needs improvement to become significant
 * Research notes :noexport:
 ** SAGE GUIDEBOOK for digital technology research
@@ -1048,16 +1072,29 @@ create completely new touch sensations."
 #+ATTR_LATEX: :width 17cm :float 
 [[file:assets/nomapping.jpg]]
 ** Appendix II: Code repository links label:codelinks
-*** Code repository on [[https://gitlab.doc.gold.ac.uk/ljame002/dynamic-cognition][Gitlab]]. 
-*** Code repository on [[https://github.com/locua/spatial-memoriser][Github.]]
+- Code repository on [[https://gitlab.doc.gold.ac.uk/ljame002/dynamic-cognition][Gitlab]]. 
+- Code repository on [[https://github.com/locua/spatial-memoriser][Github.]]
 
 ** Appendix III: Links to video documentation label:videodoc
-*** label:framebufbug
-*** label:mappingvid
+*** [[https://youtu.be/VUTASraoR7Q?t=5][Basic Colour blob tracking]] label:usertesting
+Demonstration of the basic colour tracking on early prototype version.
+*** [[https://youtu.be/VUTASraoR7Q?t=29][Keystone calibration]] label:mappingvid
+Demonstrates keystone calibration and aspect and location mapping in *CL*.
+*** [[https://youtu.be/VUTASraoR7Q?t=104][Target colour adjustment]] label:targetadjust
+Adjustment of the target colours so tracking works for each
+*** [[https://youtu.be/VUTASraoR7Q?t=184][User testing]]  label:usertestvid
+Some rudimentary user testing
+*** [[https://youtu.be/VUTASraoR7Q?t=225][Text input prototype]]  label:prototextin
+Demonstration of the text input prototype
+*** [[https://youtu.be/VUTASraoR7Q?t=304][General use]] label:generalvid
+Some major bugs visible
 * Bibliography :ignore:
 bibliographystyle:ieeetr
 bibliography:references.bib
 * Footnotes
+
+[fn:6] The words /blob/ and /point/ are used interchangeably to refer to the colour
+felt shapes that are used detected and located.
 
 [fn:5]  [[https://ofxpimapper.com/][ofxPiMapper]] was one solution with projective transformation algorithms.
 Development with this as previously mentioned could be useful as it removes the
