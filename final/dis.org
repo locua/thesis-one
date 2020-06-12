@@ -450,8 +450,9 @@ illustrated in Fig. ref:systemSchema. The hardware used was an *Epson EH-TW650*
 *3LCD*, a *Logitech C920* HD Webcam and a laptop running Ubuntu Linux (18.04
 LATS). The projector was secured to the ceiling with a mount and all cables were
 extended to the floor. The projector setup can be seen in Appendix I, Fig
-ref:projncam. All the source code can be found by following links in Appendix
-II (ref:codelinks). \\
+ref:projncam. All the source code can be found by following links in Appendix II
+(ref:codelinks). See Video link ref:fullvideo for video documentation of all the
+different elements of the system. \\
 
 The software architecture consists of three classes:
 #+ATTR_LATEX: :options [noitemsep]
@@ -474,7 +475,7 @@ of this involves blob tracking for each colour in the ~targetColours~ and
 calling ~findContours~, passing in (by reference) the cropped pixel array using
 the corresponding ~contourFinder~ object. Therefore, we loop five array, an
 ~ofPixels~ object containing the camera pixel data for the active detection
-region.
+region. See video link ref:basictracking for demonstration of this.
 
 #+caption: Computer Vision with ofxCv  label:ofxCvCv
 #+begin_src cpp
@@ -549,7 +550,8 @@ To allow for tweaking and debugging during further development there is the
 ability to save the settings of the computer vision parameters. This uses the
 ofxXmlsettings addon. In the ~setup()~ method of the ~ofApp~ class we load and
 loop over the settings. There is also a function, ~saveSettings()~, which allows
-one to save settings at any time. This is assigned to the =s= key.
+one to save settings at any time. This is assigned to the =s= key. The settings
+are saved in a file named ~settings.xml~, stored in the data folder.
 
 *** GUI keyboard shortcuts
 The GUI interface some other functionality that it is relevant to briefly
@@ -682,7 +684,7 @@ vector<vector<int>> Projector::findPairs(vector<cv::Point3f> &blobs) {
 }
 #+end_src
 
-** TODO Memory mapping prototype label:protomem
+** Memory mapping prototype label:protomem
 A prototypical experiment using the *CL* system has also been added. This is a
 rudimentary interface for inputting text and assigning it to blobs in space.
 When the =t= key is pressed two dialogue boxes are triggered. The first takes
@@ -693,7 +695,8 @@ ref:textinput to see the code. A ~std::map~, from the *C++ Standard Library*, is
 used to associate a particular number with a string of text. This acts as a key
 value pair to retrieve the text for each associated number, stored in ~mapi~.
 The maps are stored in the vector ~maps~. This rudimentary prototype is a
-beginning for further developments of the system. See [[https://gitlab.doc.gold.ac.uk/ljame002/dynamic-cognition/-/commit/12beeff8b13bf4ea99d17e5a62a975efaa9794ab][Commit 12beeff8]].
+beginning for further developments of the system. See [[https://gitlab.doc.gold.ac.uk/ljame002/dynamic-cognition/-/commit/12beeff8b13bf4ea99d17e5a62a975efaa9794ab][Commit 12beeff8]] and video
+link ref:prototextin for video documentation.
 
 #+caption: Text input using the OF ofSystemTextBoxDialog function. label:textinput
 #+begin_src cpp
@@ -756,7 +759,7 @@ class colourPoint {
 }
 #+end_src
 
-* TODO Creative process and software testing label:creativeproc
+* Creative process and software testing label:creativeproc
 
 ** Inspiration
 
@@ -863,9 +866,7 @@ improvements that could be made. It could be that it would always struggle on
 the relatively slow processing capability of the pi but currently, it is
 unusable on that platform.
 
-# ** TODO Improvements to creative process
-
-* TODO Debugging and problem solving
+* Debugging and problem solving
 ** Main technical issues label:technicaldebug
 This chapter will deal with debugging and problem solving processes and how they
 were used for various technical problems faced in this project.
@@ -922,7 +923,8 @@ stability as currently the /blobs/ can move around spontaneously as the system
 updates. More individualised identification and encoding is needed so that
 particular patterns of /blobs/ are identifiable. Currently the blob which is
 assigned an index of =0= may be reallocated a new identifier which then disrupts
-the text assignment.
+the text assignment. Illustration of this bug is illustrated in video links
+ref:prototextin and ref:generalvid.
 ** Debugging methods :noexport:
 * Evaluation and conclusions label:evaluation
 In conclusion a software prototype for spatial interaction has been presented
@@ -931,7 +933,7 @@ for, is the location of coloured objects on a two dimensional surface. With this
 basic tool there is extensive scope for future development. Reflections and
 strategies more progression are detailed in the sections below.
 
-** TODO Design iteration
+** Design iteration
 The design of this project has iterated as it has progressed. Chapter
 ref:creativeproc discusses this in detail. From an evaluative perspective the
 creative process has lacked in certain areas and achieved in others. Apart from
@@ -997,7 +999,7 @@ discussion of it's potential use cases. It also offers a description of the
 problems this project aims to address; attempting to add a more robust
 specification for development of the prototype.
 
-** TODO Social aspects. Proposed social evaluation
+** Social aspects. Proposed social evaluation
 
 Originally, user surveys were to be used in evaluation. This would involve
 survey analysis and conversation analysis cite:SharpHelen2019IDBH to assess
@@ -1021,7 +1023,7 @@ such software and thereby areas for system improvement.
   with your computer (Desktop or laptop)?
 - Do you feel that this would help you have a healthier relationships when using
   your computer? {Rate on a scale from 1(not at all useful) to 5(very useful)}
-** TODO Durability
+** Durability
 The implementation has been tested, identifying different points for improvement
 and progression of the software. As the system progresses beyond the scope of
 this report, more bugs will probably be found. Overall the prototypical nature
@@ -1041,20 +1043,9 @@ engineering, the C++ language.
 ** Reflection on process :noexport:
 *** Simplicity of prototype large room for development
 *** Needs improvement to become significant
-* Research notes :noexport:
-** SAGE GUIDEBOOK for digital technology research
-*** Theories of embodiment in HCI
-*** Haptic interfaces
-"the widgets cannot provide the haptic response that physical objects do when
-touched or clicked. By adding haptic feedback to user interfaces, we can
-recreate the physical sensation of pressing a button, holding a ball or even
-create completely new touch sensations."
-
-*** ethno methodology
-- Propose and trial ethnomethodological framework for project evaluation
-* Links :noexport:
-- http://web.mit.edu/ebj/www/JPER.pdf - similar project - urban planning workbench
 * Appendices
+Here are links to additional images, screenshots, code repository links and
+video documentation.
 ** Appendix I: Additional images label:additionalimages
 #+caption: Camera and projector secured on ceiling. label:projncam
 #+ATTR_LATEX: :width 15cm :float
@@ -1076,7 +1067,9 @@ create completely new touch sensations."
 - Code repository on [[https://github.com/locua/spatial-memoriser][Github.]]
 
 ** Appendix III: Links to video documentation label:videodoc
-*** [[https://youtu.be/VUTASraoR7Q?t=5][Basic Colour blob tracking]] label:usertesting
+*** [[https://youtu.be/VUTASraoR7Q][Full video link]] label:fullvideo
+The link to the full video containing all the sections below.
+*** [[https://youtu.be/VUTASraoR7Q?t=5][Basic Colour blob tracking]] label:basictracking
 Demonstration of the basic colour tracking on early prototype version.
 *** [[https://youtu.be/VUTASraoR7Q?t=29][Keystone calibration]] label:mappingvid
 Demonstrates keystone calibration and aspect and location mapping in *CL*.
@@ -1088,6 +1081,7 @@ Some rudimentary user testing
 Demonstration of the text input prototype
 *** [[https://youtu.be/VUTASraoR7Q?t=304][General use]] label:generalvid
 Some major bugs visible
+
 * Bibliography :ignore:
 bibliographystyle:ieeetr
 bibliography:references.bib
